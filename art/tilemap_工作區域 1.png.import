@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://darh4s8h1rqyx"
-path="res://.godot/imported/SpriteSheet16x16.png-75afc00092f7dceee46d27f88fbc1f2a.ctex"
+uid="uid://mu2kvgvq3qij"
+path="res://.godot/imported/tilemap_工作區域 1.png-72c530b72372853253346ad7959b4b14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/SpriteSheet16x16.png"
-dest_files=["res://.godot/imported/SpriteSheet16x16.png-75afc00092f7dceee46d27f88fbc1f2a.ctex"]
+source_file="res://art/tilemap_工作區域 1.png"
+dest_files=["res://.godot/imported/tilemap_工作區域 1.png-72c530b72372853253346ad7959b4b14.ctex"]
 
 [params]
 
