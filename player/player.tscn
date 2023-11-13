@@ -107,7 +107,7 @@ z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_n4vna")
-speed = 50
+speed = 200
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nfqv3")
