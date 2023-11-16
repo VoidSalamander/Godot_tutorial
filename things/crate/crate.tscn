@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgq2i7ujvev66"]
+
+[ext_resource type="Script" path="res://things/crate/crate_area.gd" id="1_e5wqd"]
+[ext_resource type="PackedScene" uid="uid://c4acewfd7thdw" path="res://things/item/item.tscn" id="2_dluqo"]
+[ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_w7d1d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spw42"]
+size = Vector2(32, 9.5)
+
+[node name="crate_area" type="Area2D" groups=["pick_up_item"]]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_e5wqd")
+item = ExtResource("2_dluqo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.25)
+shape = SubResource("RectangleShape2D_spw42")
+
+[node name="crate_unopen" type="Sprite2D" parent="."]
+texture = ExtResource("2_w7d1d")
+offset = Vector2(0, -15)
+region_enabled = true
+region_rect = Rect2(64, 32, 32, 32)
+
+[node name="box" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 0)
+texture = ExtResource("2_w7d1d")
+offset = Vector2(0, -16)
+region_enabled = true
+region_rect = Rect2(128, 32, 32, 32)
+
+[node name="lid" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(0, -18)
+rotation = -3.14159
+texture = ExtResource("2_w7d1d")
+region_enabled = true
+region_rect = Rect2(160, 32, 32, 32)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="child_entered_tree" from="crate_unopen" to="." method="_on_crate_unopen_child_entered_tree"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
