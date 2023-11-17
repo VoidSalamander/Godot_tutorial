@@ -17,8 +17,11 @@ func _on_body_entered(body):
 		$box.visible = true
 		for i in range(3):
 			var spawn_item = item.instantiate()
-			spawn_item.init_item($box.position)
-			add_child(spawn_item)
+			var item_list_node = get_parent().get_node("item_list")
+			spawn_item.init_item($box.global_position)
+			
+			item_list_node.add_child(spawn_item)
+			#add_child(spawn_item)
 		$Timer.start()
 
 func _on_child_entered_tree(node):

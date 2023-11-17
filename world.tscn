@@ -996,3 +996,5 @@ zoom = Vector2(0.5, 0.5)
 [node name="dynamo" parent="." instance=ExtResource("9_srtrv")]
 position = Vector2(-651, -247)
 scale = Vector2(2, 2)
+
+[node name="item_list" type="Node2D" parent="."]
