@@ -7,8 +7,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#
-		$player.speed -= 0.3
-
-#func effect_speedup():
-	$player.speed += 50
+func _process(delta):
+	if get_parent().speed > 200:
+		get_parent().speed -= 0.3
+	elif get_parent().speed < 200:
+		get_parent().speed = 200
+		
+func effect_speedup():
+	get_parent().speed += 50
