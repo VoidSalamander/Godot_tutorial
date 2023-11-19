@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b8omwixgqe5lf"]
+[gd_scene load_steps=21 format=3 uid="uid://b8omwixgqe5lf"]
 
 [ext_resource type="Texture2D" uid="uid://gw2k3f0kg4dy" path="res://art/door.png" id="1_1fagd"]
 [ext_resource type="Script" path="res://world.gd" id="1_q7q47"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bciw6kfd4p5ha" path="res://art/icon.svg" id="5_xrp6b"]
 [ext_resource type="PackedScene" uid="uid://dgq2i7ujvev66" path="res://things/crate/crate.tscn" id="7_a6n12"]
 [ext_resource type="PackedScene" uid="uid://deiteq16dhf5x" path="res://things/dynamo/dynamo.tscn" id="9_srtrv"]
+[ext_resource type="PackedScene" uid="uid://cjnirvosm6qsq" path="res://things/mob/enemy.tscn" id="11_nfd68"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ivae6"]
 tile_data = PackedInt32Array(0, 262147, 7, 65536, 131075, 6, 131072, 3, 7, 1, 327683, 4, 65537, 3, 5, 131073, 262147, 5, 2, 327683, 7, 65538, 196611, 4, 131074, 65539, 7)
@@ -858,7 +859,6 @@ texture_region_size = Vector2i(32, 32)
 0:1/0/y_sort_origin = 1
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -2, 29.5, -3, 31, 11, 2.5, 9.5, 16, -2)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ny21e"]
 texture = ExtResource("3_r3vj5")
@@ -943,6 +943,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_118ed"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 sources/3 = SubResource("TileSetAtlasSource_vhrwc")
 sources/4 = SubResource("TileSetAtlasSource_tpter")
 sources/5 = SubResource("TileSetAtlasSource_ny21e")
@@ -950,6 +951,11 @@ sources/0 = SubResource("TileSetAtlasSource_36s4u")
 sources/1 = SubResource("TileSetAtlasSource_ryatg")
 sources/2 = SubResource("TileSetAtlasSource_vvgdi")
 pattern_0 = SubResource("TileMapPattern_ivae6")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1xnun"]
+vertices = PackedVector2Array(-498, -287, 694, -287, 694, 385, -504, 388)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-498, -287, 694, -287, 694, 385, -504, 388)])
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -991,10 +997,20 @@ layer_3/tile_data = PackedInt32Array()
 position = Vector2(99, 52)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.2, 0.2)
 
 [node name="dynamo" parent="." instance=ExtResource("9_srtrv")]
-position = Vector2(-651, -247)
+z_index = 1
+position = Vector2(184, 7)
 scale = Vector2(2, 2)
 
 [node name="item_list" type="Node2D" parent="."]
+
+[node name="enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_nfd68")]
+position = Vector2(-339, -20)
+scale = Vector2(0.5, 0.5)
+speed = 40.0
+player = NodePath("../player")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_1xnun")

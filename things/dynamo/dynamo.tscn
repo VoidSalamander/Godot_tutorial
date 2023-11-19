@@ -64,14 +64,16 @@ animations = [{
 size = Vector2(26, 8)
 
 [node name="dynamo" type="Area2D"]
+y_sort_enabled = true
 input_pickable = false
 script = ExtResource("1_g72ud")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -16)
+position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_renpe")
 animation = &"new_animation"
 frame_progress = 0.154843
+offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -4)

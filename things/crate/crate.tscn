@@ -18,7 +18,6 @@ position = Vector2(0, -5.25)
 shape = SubResource("RectangleShape2D_spw42")
 
 [node name="crate_unopen" type="Sprite2D" parent="."]
-rotation = -0.174533
 texture = ExtResource("2_w7d1d")
 offset = Vector2(0, -15)
 region_enabled = true
