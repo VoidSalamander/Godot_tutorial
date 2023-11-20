@@ -1,8 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8kkkyihybjsj"]
+[gd_scene load_steps=13 format=3 uid="uid://b8kkkyihybjsj"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_n4vna"]
 [ext_resource type="Texture2D" uid="uid://0x5igftjrf4x" path="res://art/SpriteSheet.png" id="1_nfqv3"]
 [ext_resource type="Script" path="res://player/buff.gd" id="3_31cge"]
+
+[sub_resource type="Shader" id="Shader_lfivs"]
+code = "shader_type canvas_item;
+
+void fragment() {
+	// Place fragment code here.
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rjyn4"]
+shader = SubResource("Shader_lfivs")
 
 [sub_resource type="Animation" id="Animation_g7hn4"]
 length = 0.001
@@ -113,6 +124,7 @@ script = ExtResource("1_n4vna")
 speed = 200
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_rjyn4")
 texture = ExtResource("1_nfqv3")
 offset = Vector2(0, -8)
 hframes = 4
@@ -133,7 +145,6 @@ script = ExtResource("3_31cge")
 
 [node name="bigger_Timer" type="Timer" parent="buff"]
 process_callback = 0
-one_shot = true
 
 [connection signal="timeout" from="buff/bigger_Timer" to="." method="_on_bigger_timer_timeout"]
 [connection signal="timeout" from="buff/bigger_Timer" to="buff" method="_on_bigger_timer_timeout"]

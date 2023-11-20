@@ -17,5 +17,5 @@ func init_item(parent_position):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		body.get_node("buff").effect_speedup()
-		body.get_node("buff").effect_bigger()
+		#body.get_node("buff").effect_bigger()
 		queue_free()

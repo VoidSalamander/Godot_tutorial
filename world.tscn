@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8omwixgqe5lf"]
+[gd_scene load_steps=23 format=3 uid="uid://b8omwixgqe5lf"]
 
 [ext_resource type="Texture2D" uid="uid://gw2k3f0kg4dy" path="res://art/door.png" id="1_1fagd"]
 [ext_resource type="Script" path="res://world.gd" id="1_q7q47"]
@@ -860,6 +860,16 @@ texture_region_size = Vector2i(32, 32)
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qua0x"]
+vertices = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_23fqk"]
+vertices = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ny21e"]
 texture = ExtResource("3_r3vj5")
 texture_region_size = Vector2i(32, 32)
@@ -881,39 +891,18 @@ texture_region_size = Vector2i(32, 32)
 4:3/0 = 0
 4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:3/0/physics_layer_0/angular_velocity = 0.0
-2:8/0 = 0
-2:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:8/0/physics_layer_0/angular_velocity = 0.0
-4:8/0 = 0
-4:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:8/0/physics_layer_0/angular_velocity = 0.0
-5:8/0 = 0
-5:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:8/0/physics_layer_0/angular_velocity = 0.0
 6:8/0 = 0
 6:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:8/0/physics_layer_0/angular_velocity = 0.0
 7:8/0 = 0
 7:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:8/0/physics_layer_0/angular_velocity = 0.0
-2:9/0 = 0
-2:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:9/0/physics_layer_0/angular_velocity = 0.0
-4:9/0 = 0
-4:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-4:9/0/physics_layer_0/angular_velocity = 0.0
-5:9/0 = 0
-5:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:9/0/physics_layer_0/angular_velocity = 0.0
 6:9/0 = 0
 6:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:9/0/physics_layer_0/angular_velocity = 0.0
 7:9/0 = 0
 7:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:9/0/physics_layer_0/angular_velocity = 0.0
-5:10/0 = 0
-5:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:10/0/physics_layer_0/angular_velocity = 0.0
 6:10/0 = 0
 6:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:10/0/physics_layer_0/angular_velocity = 0.0
@@ -939,6 +928,44 @@ texture_region_size = Vector2i(32, 32)
 9:0/0/texture_origin = Vector2i(-16, 0)
 9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:0/0/physics_layer_0/angular_velocity = 0.0
+2:12/0 = 0
+2:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:12/0/physics_layer_0/angular_velocity = 0.0
+2:13/0 = 0
+2:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:13/0/physics_layer_0/angular_velocity = 0.0
+3:13/0 = 0
+3:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:13/0/physics_layer_0/angular_velocity = 0.0
+3:12/0 = 0
+3:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:12/0/physics_layer_0/angular_velocity = 0.0
+5:12/0 = 0
+5:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:12/0/physics_layer_0/angular_velocity = 0.0
+5:13/0 = 0
+5:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:13/0/physics_layer_0/angular_velocity = 0.0
+6:13/0 = 0
+6:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:13/0/physics_layer_0/angular_velocity = 0.0
+6:12/0 = 0
+6:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:12/0/physics_layer_0/angular_velocity = 0.0
+2:8/size_in_atlas = Vector2i(1, 2)
+2:8/0 = 0
+2:8/0/texture_origin = Vector2i(0, 16)
+2:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:8/0/physics_layer_0/angular_velocity = 0.0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:8/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_qua0x")
+4:8/size_in_atlas = Vector2i(1, 2)
+4:8/0 = 0
+4:8/0/texture_origin = Vector2i(0, 16)
+4:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:8/0/physics_layer_0/angular_velocity = 0.0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:8/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_23fqk")
 
 [sub_resource type="TileSet" id="TileSet_118ed"]
 tile_size = Vector2i(32, 32)
@@ -961,6 +988,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-498, -287, 694, -287, 
 y_sort_enabled = true
 script = ExtResource("1_q7q47")
 crate_node = ExtResource("7_a6n12")
+mob_node = ExtResource("11_nfd68")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -984,7 +1012,7 @@ layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
-layer_2/tile_data = PackedInt32Array(458760, 131077, 8, 458761, 131077, 8, 458762, 131077, 8, 458763, 131077, 8, 458759, 131077, 8, 393223, 393221, 10, 327687, 393221, 10, 196615, 393221, 10, 131079, 262149, 9, 131080, 262149, 9, 131081, 262149, 9, 131082, 262149, 9, 131083, 262149, 9, 196619, 458757, 8, 262155, 458757, 8, 327691, 458757, 8, 393227, 458757, 8, 327688, 524293, 5, 262154, 131077, 5, 65541, 262149, 3, 196608, 262149, 1, 196609, 327685, 1, 393221, 589829, 0, 196613, 589829, 0, -1441795, 131077, 3, -1441775, 1, 0)
+layer_2/tile_data = PackedInt32Array(393223, 393221, 10, 327687, 393221, 10, 196615, 393221, 10, 131079, 262149, 8, 131080, 262149, 8, 131081, 262149, 8, 131082, 262149, 8, 131083, 262149, 8, 196619, 458757, 8, 262155, 458757, 8, 327691, 458757, 8, 393227, 458757, 8, 327688, 524293, 5, 262154, 131077, 5, 65541, 262149, 3, 196608, 262149, 1, 196609, 327685, 1, 393221, 589829, 0, 196613, 589829, 0, -1441795, 131077, 3, -1441775, 1, 0, 458759, 262149, 8, 458760, 262149, 8, 458761, 262149, 8, 458762, 262149, 8, 458763, 262149, 8)
 layer_3/name = "border"
 layer_3/enabled = true
 layer_3/modulate = Color(1, 1, 1, 1)
@@ -995,22 +1023,27 @@ layer_3/tile_data = PackedInt32Array()
 
 [node name="player" parent="." instance=ExtResource("1_s8u4t")]
 position = Vector2(99, 52)
+scale = Vector2(1.5, 1.5)
+collision_layer = 1
+collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(0.2, 0.2)
-
-[node name="dynamo" parent="." instance=ExtResource("9_srtrv")]
-z_index = 1
-position = Vector2(184, 7)
-scale = Vector2(2, 2)
+zoom = Vector2(0.5, 0.5)
 
 [node name="item_list" type="Node2D" parent="."]
 
-[node name="enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_nfd68")]
-position = Vector2(-339, -20)
-scale = Vector2(0.5, 0.5)
-speed = 40.0
-player = NodePath("../player")
+[node name="mob_spawn_timer" type="Timer" parent="."]
+autostart = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_1xnun")
+
+[node name="dynamo" parent="." instance=ExtResource("9_srtrv")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(100, -8)
+scale = Vector2(2, 2)
+
+[connection signal="timeout" from="mob_spawn_timer" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="mob_spawn_timer" to="." method="_on_mob_spawn_timer_timeout"]

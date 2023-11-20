@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://deiteq16dhf5x"]
+[gd_scene load_steps=13 format=3 uid="uid://deiteq16dhf5x"]
 
 [ext_resource type="Texture2D" uid="uid://cccgwmxwlji5g" path="res://art/dynamo-Sheet.png" id="1_5k14a"]
 [ext_resource type="Script" path="res://things/dynamo/dynamo.gd" id="1_g72ud"]
@@ -60,21 +60,31 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1kth"]
-size = Vector2(26, 8)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3hpa"]
+size = Vector2(25, 10)
 
-[node name="dynamo" type="Area2D"]
-y_sort_enabled = true
-input_pickable = false
+[sub_resource type="CircleShape2D" id="CircleShape2D_aag5r"]
+radius = 19.105
+
+[node name="dynamo" type="Node2D"]
 script = ExtResource("1_g72ud")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -8)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_renpe")
 animation = &"new_animation"
 frame_progress = 0.154843
 offset = Vector2(0, -8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -4)
-shape = SubResource("RectangleShape2D_c1kth")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.5, -5)
+shape = SubResource("RectangleShape2D_m3hpa")
+
+[node name="Area2D" type="Area2D" parent="."]
+y_sort_enabled = true
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_aag5r")

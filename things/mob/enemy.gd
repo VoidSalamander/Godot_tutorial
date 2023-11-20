@@ -10,12 +10,18 @@ func _ready():
 func _physics_process(delta) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
-	print(nav_agent.get_next_path_position())
 	move_and_slide()
 
 func makepath():
 	nav_agent.target_position = player.global_position
 	
-func _on_timer_timeout():
-	
+func _on_timer_timeout():	
 	makepath()
+
+func _on_tree_entered():
+	global_position = Vector2(randi_range(-500, 500), randi_range(-500, 500))
+	
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("player"):
+		queue_free()
