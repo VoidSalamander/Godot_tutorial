@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b8omwixgqe5lf"]
+[gd_scene load_steps=24 format=3 uid="uid://b8omwixgqe5lf"]
 
 [ext_resource type="Texture2D" uid="uid://gw2k3f0kg4dy" path="res://art/door.png" id="1_1fagd"]
 [ext_resource type="Script" path="res://world.gd" id="1_q7q47"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dgq2i7ujvev66" path="res://things/crate/crate.tscn" id="7_a6n12"]
 [ext_resource type="PackedScene" uid="uid://deiteq16dhf5x" path="res://things/dynamo/dynamo.tscn" id="9_srtrv"]
 [ext_resource type="PackedScene" uid="uid://cjnirvosm6qsq" path="res://things/mob/enemy.tscn" id="11_nfd68"]
+[ext_resource type="PackedScene" uid="uid://ikuuhsumbdhe" path="res://things/turret/turret.tscn" id="12_gd23r"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ivae6"]
 tile_data = PackedInt32Array(0, 262147, 7, 65536, 131075, 6, 131072, 3, 7, 1, 327683, 4, 65537, 3, 5, 131073, 262147, 5, 2, 327683, 7, 65538, 196611, 4, 131074, 65539, 7)
@@ -1022,13 +1023,12 @@ layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array()
 
 [node name="player" parent="." instance=ExtResource("1_s8u4t")]
-position = Vector2(99, 52)
-scale = Vector2(1.5, 1.5)
+position = Vector2(145, -137)
 collision_layer = 1
 collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.2, 0.2)
 
 [node name="item_list" type="Node2D" parent="."]
 
@@ -1045,5 +1045,12 @@ y_sort_enabled = true
 position = Vector2(100, -8)
 scale = Vector2(2, 2)
 
-[connection signal="timeout" from="mob_spawn_timer" to="." method="_on_timer_2_timeout"]
+[node name="turret" parent="." instance=ExtResource("12_gd23r")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-206, -185)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [connection signal="timeout" from="mob_spawn_timer" to="." method="_on_mob_spawn_timer_timeout"]
+[connection signal="timeout" from="mob_spawn_timer" to="." method="_on_timer_2_timeout"]

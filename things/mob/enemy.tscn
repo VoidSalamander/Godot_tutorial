@@ -9,10 +9,8 @@ radius = 25.02
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyo7h"]
 size = Vector2(52, 52)
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="enemy" type="CharacterBody2D" groups=["mob"]]
 position = Vector2(-2, 0)
-collision_layer = 2
-collision_mask = 3
 script = ExtResource("1_4lkp1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -36,7 +34,6 @@ autostart = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_wyo7h")
 

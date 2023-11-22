@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var player = $".."
 @onready var collisionShape = $"../CollisionShape2D"
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,20 +8,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if get_parent().speed > 200:
-		get_parent().speed -= 0.3
-	elif get_parent().speed < 200:
-		get_parent().speed = 200
+	if player.speed > 200:
+		player.speed -= 0.3
+	elif player.speed < 200:
+		player.speed = 200
 		
 func effect_speedup():
-	get_parent().speed += 50
+	player.speed += 50
 
 func effect_bigger():
-	get_parent().scale += Vector2(0.1,0.1)
+	player.scale += Vector2(0.1,0.1)
 	collisionShape.scale += Vector2(0.1,0.1)
 	if !$bigger_Timer.is_stopped():
 		$bigger_Timer.wait_time += 0.1
 	$bigger_Timer.start()
+	
+func effect_get_sheild():
+	pass
 	
 func _on_bigger_timer_timeout():
 	collisionShape.scale = Vector2(1, 1)

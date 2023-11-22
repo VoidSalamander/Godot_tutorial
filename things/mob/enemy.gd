@@ -11,7 +11,9 @@ func _physics_process(delta) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
 	move_and_slide()
-
+	#look_at(player.position)
+	$Sprite2D.rotate(0.1)
+	
 func makepath():
 	nav_agent.target_position = player.global_position
 	
@@ -25,3 +27,4 @@ func _on_tree_entered():
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
 		queue_free()
+		
