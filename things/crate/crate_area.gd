@@ -9,7 +9,6 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		if $lid.visible == false:
@@ -23,16 +22,13 @@ func _on_body_entered(body):
 			for i in range(3):
 				var spawn_item = item.instantiate()
 				spawn_item.init_item($box.global_position)
-				item_list_node.add_child(spawn_item)
+				item_list_node.call_deferred("add_child", spawn_item)
 				
 			if randi_range(0,1) == 1:
 				var spawn_item = shield.instantiate()
 				spawn_item.init_item($box.global_position)
-				item_list_node.add_child(spawn_item)
+				item_list_node.call_deferred("add_child", spawn_item)
 			$Timer.start()
-
-func _on_child_entered_tree(node):
-	pass
 
 func _on_timer_timeout():
 	queue_free()

@@ -13,7 +13,3 @@ func _on_body_entered(body):
 
 func _on_timer_timeout():
 	queue_free()
-
-
-func _on_tree_entered():
-	attack_range = get_parent().get_node("attack_range")

@@ -37,8 +37,6 @@ position = Vector2(26, -8)
 [node name="fire_rate" type="Timer" parent="."]
 autostart = true
 
-[connection signal="area_entered" from="atack_range" to="." method="_on_atack_range_area_entered"]
 [connection signal="body_entered" from="atack_range" to="." method="_on_atack_range_body_entered"]
 [connection signal="body_exited" from="atack_range" to="." method="_on_atack_range_body_exited"]
-[connection signal="body_shape_entered" from="atack_range" to="." method="_on_atack_range_body_shape_entered"]
 [connection signal="timeout" from="fire_rate" to="." method="_on_fire_rate_timeout"]

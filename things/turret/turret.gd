@@ -36,4 +36,5 @@ func turret_fire():
 	projectile.transform = $Marker2D.transform
 	
 func _on_fire_rate_timeout():
-	turret_fire()
+	if !attack_able_mob.is_empty():
+		turret_fire()

@@ -46,7 +46,5 @@ region_rect = Rect2(160, 32, 32, 32)
 wait_time = 3.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
-[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="child_entered_tree" from="crate_unopen" to="." method="_on_crate_unopen_child_entered_tree"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
