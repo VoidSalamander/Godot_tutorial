@@ -14,9 +14,11 @@ func _process(delta):
 		player.speed = 200
 		
 func effect_speedup():
+	player.item_num += 1
 	player.speed += 50
 
 func effect_bigger():
+	
 	player.scale += Vector2(0.1,0.1)
 	collisionShape.scale += Vector2(0.1,0.1)
 	if !$bigger_Timer.is_stopped():
@@ -24,7 +26,8 @@ func effect_bigger():
 	$bigger_Timer.start()
 	
 func effect_get_sheild():
-	pass
+	player.item_num += 1
+	player.health += 1
 	
 func _on_bigger_timer_timeout():
 	collisionShape.scale = Vector2(1, 1)

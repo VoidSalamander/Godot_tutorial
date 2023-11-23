@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgq2i7ujvev66"]
+[gd_scene load_steps=6 format=3 uid="uid://dgq2i7ujvev66"]
 
 [ext_resource type="Script" path="res://things/crate/crate_area.gd" id="1_e5wqd"]
 [ext_resource type="PackedScene" uid="uid://c4acewfd7thdw" path="res://things/item/item.tscn" id="2_dluqo"]
 [ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_w7d1d"]
+[ext_resource type="PackedScene" uid="uid://qrifcfardkrg" path="res://things/item/shield_item.tscn" id="3_eod87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spw42"]
 size = Vector2(32, 9.5)
@@ -12,6 +13,7 @@ z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_e5wqd")
 item = ExtResource("2_dluqo")
+shield = ExtResource("3_eod87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5.25)
