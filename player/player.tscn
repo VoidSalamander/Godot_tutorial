@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8kkkyihybjsj"]
+[gd_scene load_steps=14 format=3 uid="uid://b8kkkyihybjsj"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_n4vna"]
 [ext_resource type="Texture2D" uid="uid://0x5igftjrf4x" path="res://art/SpriteSheet.png" id="1_nfqv3"]
+[ext_resource type="Resource" uid="uid://b84qadkglc6gw" path="res://inventory/player_inventory.tres" id="2_b7lwl"]
 [ext_resource type="Script" path="res://player/buff.gd" id="3_31cge"]
 
 [sub_resource type="Shader" id="Shader_lfivs"]
@@ -121,7 +122,7 @@ texture_filter = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_n4vna")
-speed = 200
+inv = ExtResource("2_b7lwl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_rjyn4")

@@ -15,7 +15,7 @@ func _process(delta):
 		
 func effect_speedup():
 	player.item_num += 1
-	player.speed += 50
+	player.speed = 50
 
 func effect_bigger():
 	

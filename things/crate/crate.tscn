@@ -1,23 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgq2i7ujvev66"]
+[gd_scene load_steps=7 format=3 uid="uid://dgq2i7ujvev66"]
 
-[ext_resource type="Script" path="res://things/crate/crate_area.gd" id="1_e5wqd"]
+[ext_resource type="Script" path="res://things/crate/crate.gd" id="1_raopw"]
 [ext_resource type="PackedScene" uid="uid://c4acewfd7thdw" path="res://things/item/item.tscn" id="2_dluqo"]
 [ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_w7d1d"]
 [ext_resource type="PackedScene" uid="uid://qrifcfardkrg" path="res://things/item/shield_item.tscn" id="3_eod87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spw42"]
-size = Vector2(32, 9.5)
+size = Vector2(32, 11.5)
 
-[node name="crate_area" type="Area2D" groups=["pick_up_item"]]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkk3r"]
+radius = 15.0
+height = 54.0
+
+[node name="crate" type="Node2D" groups=["crate"]]
 z_index = 1
 y_sort_enabled = true
-script = ExtResource("1_e5wqd")
+script = ExtResource("1_raopw")
 item = ExtResource("2_dluqo")
 shield = ExtResource("3_eod87")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5.25)
-shape = SubResource("RectangleShape2D_spw42")
 
 [node name="crate_unopen" type="Sprite2D" parent="."]
 texture = ExtResource("2_w7d1d")
@@ -45,6 +45,19 @@ region_rect = Rect2(160, 32, 32, 32)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="child_entered_tree" from="crate_unopen" to="." method="_on_crate_unopen_child_entered_tree"]
+[node name="crate_area" type="StaticBody2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crate_area"]
+position = Vector2(0, -6.25)
+shape = SubResource("RectangleShape2D_spw42")
+
+[node name="interact_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact_area"]
+position = Vector2(0, -6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dkk3r")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
