@@ -1,10 +1,9 @@
-[gd_scene load_steps=49 format=3 uid="uid://b8omwixgqe5lf"]
+[gd_scene load_steps=48 format=3 uid="uid://b8omwixgqe5lf"]
 
 [ext_resource type="Script" path="res://main/world.gd" id="1_mmv5q"]
 [ext_resource type="PackedScene" uid="uid://dgq2i7ujvev66" path="res://things/crate/crate.tscn" id="2_e40or"]
 [ext_resource type="PackedScene" uid="uid://cjnirvosm6qsq" path="res://things/mob/enemy.tscn" id="3_ihats"]
 [ext_resource type="PackedScene" uid="uid://ikuuhsumbdhe" path="res://things/turret/turret.tscn" id="4_5unfn"]
-[ext_resource type="Texture2D" uid="uid://bciw6kfd4p5ha" path="res://art/icon.svg" id="7_8cvsh"]
 [ext_resource type="Texture2D" uid="uid://locqyqs56guf" path="res://art/tilemap.png" id="10_ucvhv"]
 [ext_resource type="PackedScene" uid="uid://b8kkkyihybjsj" path="res://player/player.tscn" id="11_8jl0v"]
 [ext_resource type="PackedScene" uid="uid://deiteq16dhf5x" path="res://things/dynamo/dynamo.tscn" id="12_4wlww"]
@@ -906,6 +905,8 @@ layer_1/tile_data = PackedInt32Array(1179660, 589825, 5, 1114124, 589825, 5, 104
 position = Vector2(145, -137)
 collision_layer = 1
 collision_mask = 1
+speed = 35
+inventory = null
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(0.5, 0.5)
@@ -915,39 +916,6 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(607, -137)
 scale = Vector2(2, 2)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer"]
-offset_right = 36.0
-offset_bottom = 17.0
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HSplitContainer"]
-position = Vector2(25, 8)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("7_8cvsh")
-
-[node name="Label" type="Label" parent="CanvasLayer/HSplitContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "0
-"
-
-[node name="HSplitContainer2" type="HSplitContainer" parent="CanvasLayer"]
-offset_top = 15.0
-offset_right = 40.0
-offset_bottom = 31.0
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HSplitContainer2"]
-modulate = Color(0, 0.317647, 0.921569, 1)
-position = Vector2(25, 8)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("7_8cvsh")
-
-[node name="Label" type="Label" parent="CanvasLayer/HSplitContainer2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "0"
 
 [node name="MobGenerator" type="Node2D" parent="."]
 y_sort_enabled = true
