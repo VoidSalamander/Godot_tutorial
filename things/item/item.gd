@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var drop_range: int
+@export var itemRes: InventoryItem
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -18,3 +19,7 @@ func _on_body_entered(body):
 		body.get_node("buff").effect_speedup()
 		#body.get_node("buff").effect_bigger()
 		queue_free()
+		
+
+func collect(inventory: Inventory):
+	inventory.insert(itemRes)
