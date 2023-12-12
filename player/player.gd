@@ -7,9 +7,8 @@ var item_num = 0
 var health = 5
 var speed = 35
 
-@onready var tile_map = $"../newMap"
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func handle_input():
@@ -26,7 +25,7 @@ func updatAnimation():
 		elif(velocity.x > 0): direction = "right"
 		animations.play("walk_" + direction)
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	handle_input()
 	move_and_slide()
 	updatAnimation()

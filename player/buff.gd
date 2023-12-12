@@ -7,7 +7,7 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if player.speed > 200:
 		player.speed -= 0.3
 	elif player.speed < 200:

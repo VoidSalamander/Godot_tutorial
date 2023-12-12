@@ -4,7 +4,6 @@ class_name  World
 
 @export var turret : PackedScene
 @onready var player = $player
-@onready var tile_map: TileMap = $newMap
 
 
 
@@ -12,7 +11,7 @@ class_name  World
 func _ready():
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$CanvasLayer/HSplitContainer/Label.text = str(player.item_num)
 	$CanvasLayer/HSplitContainer2/Label.text = str(player.health)
 	if Input.is_action_just_pressed("build"):

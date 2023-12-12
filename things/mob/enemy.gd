@@ -7,7 +7,7 @@ extends CharacterBody2D
 func _ready():
 	makepath()
 
-func _physics_process(delta) -> void:
+func _physics_process(_delta) -> void:
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
 	move_and_slide()
