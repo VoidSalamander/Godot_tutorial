@@ -33,7 +33,7 @@ var menu_show = false
 
 var face = Vector2(1,0)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	handle_input()
 	move_and_slide()
 	updatAnimation()

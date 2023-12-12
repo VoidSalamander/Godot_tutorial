@@ -9,7 +9,7 @@ var dir = Vector2(1,0)
 var face = [Vector2(1,0), Vector2(0,1), Vector2(-1,0), Vector2(0,-1),
 			Vector2(1,1), Vector2(-1,1), Vector2(-1,-1), Vector2(1,-1)]
 			
-var attack_range = 100
+var attack_range = 500
 
 var random_number = 0
 
@@ -17,7 +17,7 @@ func _ready():
 	#makepath()
 	pass
 
-func _physics_process(delta) -> void:
+func _physics_process(_delta) -> void:
 	motion()
 	velocity = dir * speed
 	move_and_slide()
