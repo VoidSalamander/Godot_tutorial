@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bcgndkkx34l1w"]
+[gd_scene load_steps=33 format=3 uid="uid://bcgndkkx34l1w"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_7yl7d"]
 [ext_resource type="FontFile" uid="uid://cdsft4jit0pak" path="res://art/font.TTF" id="2_56l2w"]
@@ -8,7 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cjdplab33o0dd" path="res://art/Setting/設定返回.png" id="4_y215b"]
 [ext_resource type="Texture2D" uid="uid://cba548ooihjni" path="res://art/攻擊.png" id="5_cvjn3"]
 [ext_resource type="Script" path="res://Menu/Joystick.gd" id="5_glntf"]
+[ext_resource type="Texture2D" uid="uid://bd3ostqgn4gxw" path="res://art/Setting/設定背景.png" id="5_nxo1l"]
 [ext_resource type="Script" path="res://Menu/Attack.gd" id="6_ka87m"]
+[ext_resource type="Texture2D" uid="uid://dk5b3s413tqrf" path="res://art/音樂.png" id="6_ysn0y"]
+[ext_resource type="Texture2D" uid="uid://c7gew8if8ylft" path="res://art/音樂 (2).png" id="7_64nrg"]
 [ext_resource type="Texture2D" uid="uid://bqwm5a6u2vwa2" path="res://art/建造.png" id="7_vsem5"]
 [ext_resource type="Script" path="res://Menu/Build.gd" id="8_1hwed"]
 [ext_resource type="Texture2D" uid="uid://bs616kipr4y7c" path="res://art/Setting/設定 底.png" id="12_5ttde"]
@@ -30,6 +33,29 @@ font = ExtResource("2_56l2w")
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_vm5xr"]
+line_spacing = 0.0
+font = ExtResource("2_56l2w")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_b8nxd"]
+font = ExtResource("2_56l2w")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_mc6fv"]
+font = ExtResource("2_56l2w")
+font_size = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a44s7"]
+texture = ExtResource("7_64nrg")
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rsm0v"]
+texture = ExtResource("7_64nrg")
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_6qubf"]
 line_spacing = 0.0
 font = ExtResource("2_56l2w")
 font_size = 30
@@ -205,6 +231,103 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="Music_page"]
+position = Vector2(120, 68)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_nxo1l")
+
+[node name="name" type="VBoxContainer" parent="Music_page/Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -162.5
+offset_right = -292.0
+offset_bottom = -81.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 33
+
+[node name="bgm" type="Label" parent="Music_page/Sprite2D/name"]
+layout_mode = 2
+text = "BGM"
+label_settings = SubResource("LabelSettings_b8nxd")
+horizontal_alignment = 1
+
+[node name="se" type="Label" parent="Music_page/Sprite2D/name"]
+layout_mode = 2
+text = "SE"
+label_settings = SubResource("LabelSettings_mc6fv")
+horizontal_alignment = 1
+
+[node name="value" type="VBoxContainer" parent="Music_page/Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.0
+offset_top = -166.5
+offset_right = -85.0
+offset_bottom = -80.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="bgmSlider" type="HSlider" parent="Music_page/Sprite2D/value"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("6_ysn0y")
+theme_override_icons/grabber_highlight = ExtResource("6_ysn0y")
+theme_override_styles/slider = SubResource("StyleBoxTexture_a44s7")
+min_value = -6.0
+max_value = 6.0
+step = 0.01
+
+[node name="seSlider" type="HSlider" parent="Music_page/Sprite2D/value"]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("6_ysn0y")
+theme_override_icons/grabber_highlight = ExtResource("6_ysn0y")
+theme_override_styles/slider = SubResource("StyleBoxTexture_rsm0v")
+min_value = -6.0
+max_value = 6.0
+step = 0.01
+
+[node name="BackFromMusic" type="Button" parent="Music_page/Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = -72.5
+offset_right = -80.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+focus_mode = 0
+icon = ExtResource("4_y215b")
+flat = true
+
+[node name="Label" type="Label" parent="Music_page/Sprite2D/BackFromMusic"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+label_settings = SubResource("LabelSettings_6qubf")
+horizontal_alignment = 1
+
 [node name="Adjust_page" type="Control" parent="."]
 visible = false
 layout_mode = 1
@@ -374,6 +497,8 @@ label_settings = SubResource("LabelSettings_8phhf")
 [connection signal="pressed" from="Options/VBoxContainer/Adjustment" to="." method="_on_adjustment_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/Quit_game" to="." method="_on_quit_game_pressed"]
 [connection signal="pressed" from="Options/BackFromOption" to="." method="_on_back_from_option_pressed"]
+[connection signal="value_changed" from="Music_page/Sprite2D/value/bgmSlider" to="." method="_on_bgm_slider_value_changed"]
+[connection signal="pressed" from="Music_page/Sprite2D/BackFromMusic" to="." method="_on_back_from_music_pressed"]
 [connection signal="pressed" from="Adjust_page/Joystick/TouchScreenButton" to="Adjust_page/Joystick" method="_on_touch_screen_button_pressed"]
 [connection signal="released" from="Adjust_page/Joystick/TouchScreenButton" to="Adjust_page/Joystick" method="_on_touch_screen_button_released"]
 [connection signal="pressed" from="Adjust_page/Attack/TouchScreenButton" to="Adjust_page/Attack" method="_on_touch_screen_button_pressed"]

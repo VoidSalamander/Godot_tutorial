@@ -4,11 +4,10 @@ var attack_able_mob = []
 @export var bullet : PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	$StaticBody2D/CollisionShape2D.disabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	pass
 
 func _on_atack_range_body_entered(body):
@@ -38,3 +37,9 @@ func turret_fire():
 func _on_fire_rate_timeout():
 	if !attack_able_mob.is_empty():
 		turret_fire()
+
+func _on_area_2d_body_exited(body):
+	call_deferred("_able_collision")
+
+func _able_collision():
+	$StaticBody2D/CollisionShape2D.disabled = false

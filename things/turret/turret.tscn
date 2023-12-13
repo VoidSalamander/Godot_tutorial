@@ -1,11 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://ikuuhsumbdhe"]
+[gd_scene load_steps=7 format=3 uid="uid://ikuuhsumbdhe"]
 
 [ext_resource type="Script" path="res://things/turret/turret.gd" id="1_miti0"]
 [ext_resource type="PackedScene" uid="uid://dvxswhls63tpn" path="res://things/turret/bomb.tscn" id="2_exmrk"]
 [ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_o5onj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7khm"]
-size = Vector2(51, 40)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibbat"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1h3pc"]
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vq8ds"]
 radius = 268.007
@@ -23,8 +26,14 @@ region_rect = Rect2(288, 0, 64, 64)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0.5, 6)
-shape = SubResource("RectangleShape2D_t7khm")
+position = Vector2(-12, 9)
+shape = SubResource("CircleShape2D_ibbat")
+
+[node name="Area2D" type="Area2D" parent="." groups=["turret"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12, 9)
+shape = SubResource("CircleShape2D_1h3pc")
 
 [node name="atack_range" type="Area2D" parent="."]
 
@@ -37,6 +46,7 @@ position = Vector2(26, -8)
 [node name="fire_rate" type="Timer" parent="."]
 autostart = true
 
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="atack_range" to="." method="_on_atack_range_body_entered"]
 [connection signal="body_exited" from="atack_range" to="." method="_on_atack_range_body_exited"]
 [connection signal="timeout" from="fire_rate" to="." method="_on_fire_rate_timeout"]

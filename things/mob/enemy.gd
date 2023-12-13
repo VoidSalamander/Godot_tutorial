@@ -52,7 +52,7 @@ func _on_area_2d_area_entered(area):
 
 func motion():
 	#白天
-	if Global.time % 40 < 20:
+	if Global.time % 60 < 30:
 		dir = face[random_number].normalized()
 		if global_position.distance_to(player.global_position) < attack_range:
 			dir = to_local(nav_agent.get_next_path_position()).normalized()

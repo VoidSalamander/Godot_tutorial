@@ -3,7 +3,7 @@ extends Control
 signal close_menu
 signal button_move
 
-var master_bus = AudioServer.get_bus_index("Master")
+var bgm_bus = AudioServer.get_bus_index("BGM")
 
 
 func show_and_hide(first, second):
@@ -17,12 +17,12 @@ func _on_back_from_option_pressed():
 func _on_music_pressed():
 	show_and_hide($Music_page, $Options)
 
-func _on_back_from_setting_pressed():
+func _on_back_from_music_pressed():
 	show_and_hide($Options, $Music_page)
 
 
-func _on_music_value_changed(value):
-	AudioServer.set_bus_volume_db(master_bus, value)
+func _on_bgm_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(bgm_bus, value)
 	
 
 func _on_adjustment_pressed():
@@ -47,3 +47,4 @@ func _on_no_pressed():
 
 func _on_yes_pressed():
 	get_tree().reload_current_scene()
+

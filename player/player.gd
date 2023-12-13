@@ -26,6 +26,7 @@ var health = 100
 
 var can_shoot = true
 var is_shooting = false
+var can_build = true
 
 var attack_able_mob = []
 
@@ -78,7 +79,8 @@ func _input(event):
 						is_shooting = true
 					
 					if $HUD/game_button/Build_button.get_global_rect().has_point(event.position):
-						emit_signal("build_terret")
+						if can_build:
+							emit_signal("build_terret")
 
 			if event.is_pressed() == false:
 				if event.index == left_hand_index:
@@ -98,6 +100,7 @@ func _input(event):
 func handle_left_hand_touch(touch_position):
 	if $HUD/game_button/Joystick/Touch_area.is_pressed():
 		move_vector = calculate_move_vector(touch_position)
+		$Sprite2D/Face.rotation_degrees = move_vector.angle() * 180 / PI
 		joystick_active = true
 		var joystick_range = touch_position.distance_to($HUD/game_button/Joystick.position)
 		if joystick_range > 15: 
@@ -141,6 +144,11 @@ func _on_area_2d_area_entered(area):
 		$Stun.start()
 	if area.has_method("collect"):
 		area.collect(inventory)
+	if area.is_in_group("turret"):
+		can_build = false
+
+func _on_area_2d_area_exited(area):
+	can_build = true
 
 func _on_stun_timeout():
 	modulate = Color.WHITE
@@ -184,3 +192,4 @@ func _on_hud_back_to_game():
 func _on_hud_reset_player():
 	Global.time = 0
 	Global.mob_dead = 0
+
