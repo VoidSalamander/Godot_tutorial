@@ -8,6 +8,7 @@ signal pause
 signal back_to_game
 signal button_position
 signal reset_player
+signal reset_inventory
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -36,10 +37,12 @@ func _on_menu_button_move(joystick, attack, build):
 
 func _on_retry_pressed():
 	emit_signal("reset_player")
+	emit_signal("reset_inventory")
 	get_tree().reload_current_scene()
 
 func _on_exit_pressed():
 	emit_signal("reset_player")
+	emit_signal("reset_inventory")
 	get_tree().reload_current_scene()
 
 func _on_player_player_dead(time,mob):

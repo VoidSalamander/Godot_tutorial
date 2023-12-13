@@ -198,3 +198,6 @@ func _on_hud_reset_player():
 	Global.time = 0
 	Global.mob_dead = 0
 
+func _on_menu_reset_player_menu():
+	Global.time = 0
+	Global.mob_dead = 0

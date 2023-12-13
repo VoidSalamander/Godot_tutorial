@@ -18,3 +18,9 @@ func update(slot: InventorySlot):
 		if(slot.amount > 1):
 			amountLabel.visible = true
 		amountLabel.text = str(slot.amount)
+
+func reset(slot: InventorySlot):
+	slot.item = null
+	backgroundSprite.frame = 0
+	itemSprite.visible = false
+	amountLabel.visible = false

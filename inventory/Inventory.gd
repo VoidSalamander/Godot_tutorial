@@ -11,3 +11,12 @@ func _ready():
 func update():
 	for i in range(min(inventory.slots.size(), slots.size())):
 		slots[i].update(inventory.slots[i])
+
+
+func _on_hud_reset_inventory():
+	for i in range(min(inventory.slots.size(), slots.size())):
+		slots[i].reset(inventory.slots[i])
+
+func _on_menu_reset_inventory_menu():
+	for i in range(min(inventory.slots.size(), slots.size())):
+		slots[i].reset(inventory.slots[i])

@@ -19,6 +19,7 @@ bullet = ExtResource("2_exmrk")
 
 [node name="turret_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_o5onj")
+offset = Vector2(12, -9)
 flip_h = true
 region_enabled = true
 region_rect = Rect2(288, 0, 64, 64)
@@ -26,13 +27,11 @@ region_rect = Rect2(288, 0, 64, 64)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-12, 9)
 shape = SubResource("CircleShape2D_ibbat")
 
 [node name="Area2D" type="Area2D" parent="." groups=["turret"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-12, 9)
 shape = SubResource("CircleShape2D_1h3pc")
 
 [node name="atack_range" type="Area2D" parent="."]
