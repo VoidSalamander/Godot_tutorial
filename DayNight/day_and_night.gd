@@ -1,11 +1,11 @@
-extends StaticBody2D
+extends Node2D
 
 var state = "day"
 
 var change_state = false
 
-var length_of_day = 30 #sec
-var length_of_night = 30 #sec
+@export var length_of_day = 30 #sec
+@export var length_of_night = 30 #sec
 
 
 func _ready():
@@ -24,7 +24,7 @@ func _on_timer_timeout():
 	change_state = true
 
 
-func _process(delta):
+func _process(_delta):
 	if change_state == true:
 		change_state = false
 		if state == "day":

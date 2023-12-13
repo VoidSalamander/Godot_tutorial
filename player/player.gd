@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var joystick_position: Array = [45 ,95]
 @export var inventory: Inventory
 
+@export var tilemap: TileMap
+
 @onready var animations = $AnimationPlayer
 
 var bullet = preload("res://player/bullet.tscn")
@@ -34,6 +36,8 @@ var menu_show = false
 
 var face = Vector2(1,0)
 
+var speed_modify: float
+
 func _physics_process(_delta):
 	handle_input()
 	move_and_slide()
@@ -41,10 +45,11 @@ func _physics_process(_delta):
 	$HUD/HealthBar.value = health
 	$HUD/Shield/Label.text = str(shield)
 	dead_and_statistics()
+	speed_modify = tilemap.get_tile_data(self.position, "speed_modify")
 
 func handle_input():
 	if joystick_active:
-		velocity = move_vector * speed
+		velocity = move_vector * speed * speed_modify
 		face = move_vector
 	else:
 		velocity = Vector2(0,0) * speed

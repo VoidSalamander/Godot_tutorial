@@ -12,7 +12,6 @@ func _process(_delta):
 	pass
 
 func init_crate():
-	position = Vector2(randi_range(0,1000),randi_range(0,1000))
 	self.connect("open_signal", open_box)
 
 func open_box():
@@ -41,3 +40,8 @@ func open_box():
 
 func _on_timer_timeout():
 	queue_free()
+
+
+func _on_interact_area_body_entered(body):
+	if body.is_in_group("player"):
+		open_box()
