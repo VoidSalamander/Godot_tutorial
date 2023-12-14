@@ -10,8 +10,8 @@ func _ready():
 func _process(_delta):
 	pass
 
-func get_tile_data(position: Vector2, data_name: String) -> Variant:
-	var tile_position = self.local_to_map(position)
+func get_tile_data(data_position: Vector2, data_name: String) -> Variant:
+	var tile_position = self.local_to_map(data_position)
 	var data: TileData = self.get_cell_tile_data(0, tile_position)
 	if data:
 		return data.get_custom_data(data_name)

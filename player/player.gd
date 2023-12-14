@@ -152,7 +152,7 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("turret"):
 		can_build = false
 
-func _on_area_2d_area_exited(area):
+func _on_area_2d_area_exited(_area):
 	can_build = true
 
 func _on_stun_timeout():
