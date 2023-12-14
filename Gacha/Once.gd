@@ -57,6 +57,8 @@ func _on_transition_animation_finished():
 			cardTemp.visible = false
 			if CardInfo[0] == "Tool":
 				cardTemp.scale = Vector2(300,300) / cardTemp.size
+			else:
+				cardTemp.scale =  cardTemp.size / cardTemp.size
 			$"../../Cards".add_child(cardTemp)
 			cardTemp.visible = true
 			Global.GemAmount -= 5

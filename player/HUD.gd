@@ -36,14 +36,19 @@ func _on_menu_button_move(joystick, attack, build):
 	$game_button/Build_button.set_position(Vector2(build[0], build[1]))
 
 func _on_retry_pressed():
+	if Global.mob_dead > Global.Account["kills"]:
+		Global.Account["kills"] = Global.mob_dead
+		Global.Account["time"] = Global.time
 	emit_signal("reset_player")
-	emit_signal("reset_inventory")
 	get_tree().reload_current_scene()
 
 func _on_exit_pressed():
+	if Global.mob_dead > Global.Account["kills"]:
+		Global.Account["kills"] = Global.mob_dead
+		Global.Account["time"] = Global.time
 	emit_signal("reset_player")
-	emit_signal("reset_inventory")
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
 
 func _on_player_player_dead(time,mob):
 	$Dead/Sprite2D/time/value.text = str(time/60) + " : " + str(time%60)

@@ -24,7 +24,7 @@ texture = ExtResource("2_2mqqq")
 centered = false
 
 [node name="Name" type="Node2D" parent="."]
-position = Vector2(0, 46)
+position = Vector2(4.7619, 17.4286)
 
 [node name="NameLabel" type="Label" parent="Name"]
 offset_left = 246.0
@@ -35,6 +35,7 @@ theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("3_k1qo3")
 theme_override_font_sizes/font_size = 35
 text = "NAME:"
+metadata/_edit_use_anchors_ = true
 
 [node name="Name" type="LineEdit" parent="Name"]
 offset_left = 464.0
@@ -45,9 +46,10 @@ theme_override_fonts/font = SubResource("SystemFont_5kynq")
 theme_override_font_sizes/font_size = 25
 text = "player"
 editable = false
+metadata/_edit_use_anchors_ = true
 
 [node name="Pen" type="Sprite2D" parent="."]
-position = Vector2(880, 194)
+position = Vector2(884.762, 160.667)
 scale = Vector2(1.309, 1.309)
 texture = ExtResource("4_cyrx8")
 
@@ -56,7 +58,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_08y5o")
 
 [node name="BGM" type="Node2D" parent="."]
-position = Vector2(26, -35)
+position = Vector2(30.7619, -49.2857)
 scale = Vector2(1.309, 1.309)
 
 [node name="BGMLabel" type="Label" parent="BGM"]
@@ -86,7 +88,7 @@ ticks_on_borders = true
 metadata/_edit_use_anchors_ = true
 
 [node name="SE" type="Node2D" parent="."]
-position = Vector2(26, 26.9999)
+position = Vector2(30.7619, 41.2856)
 scale = Vector2(1.309, 1.309)
 
 [node name="SELabel" type="Label" parent="SE"]

@@ -13,7 +13,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ylayw"]
 
 [node name="LeaderBoard" type="Node2D"]
-position = Vector2(1, 7)
+position = Vector2(5.96046e-08, 2.38419e-07)
 scale = Vector2(0.21, 0.21)
 script = ExtResource("1_36eq6")
 
@@ -21,9 +21,9 @@ script = ExtResource("1_36eq6")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 offset_left = 372.0
-offset_top = 83.0
+offset_top = 130.619
 offset_right = 1072.0
-offset_bottom = 533.0
+offset_bottom = 580.619
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
@@ -566,11 +566,10 @@ text = "
 "
 
 [node name="Notice" type="MarginContainer" parent="."]
-visible = false
 offset_left = 451.0
-offset_top = 207.0
+offset_top = 259.381
 offset_right = 701.0
-offset_bottom = 327.5
+offset_bottom = 379.881
 
 [node name="Black_BG" type="ColorRect" parent="Notice"]
 layout_mode = 2
@@ -582,6 +581,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 61.9047)
 
 [node name="YourRank" type="Label" parent="Node2D"]
 offset_left = 77.0
@@ -631,9 +631,9 @@ text = "300"
 
 [node name="Back" type="MarginContainer" parent="."]
 offset_left = 44.0
-offset_top = 463.0
-offset_right = 147.0
-offset_bottom = 513.0
+offset_top = 543.953
+offset_right = 164.0
+offset_bottom = 593.953
 
 [node name="BackLabel" type="Label" parent="Back"]
 layout_mode = 2
@@ -653,9 +653,9 @@ shape = SubResource("RectangleShape2D_ylayw")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 389.0
-offset_top = 28.0
+offset_top = 66.0952
 offset_right = 1062.0
-offset_bottom = 63.0
+offset_bottom = 101.095
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("5_jxikx")
 theme_override_font_sizes/font_size = 30
