@@ -1,0 +1,204 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0mripivslgh"]
+
+[ext_resource type="Script" path="res://Storage/StoragePage.gd" id="1_1o46y"]
+[ext_resource type="Texture2D" uid="uid://dsjm6n8njvbqo" path="res://png/frame.png" id="1_n4seb"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_7h7vo"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="3_tog2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljunc"]
+
+[node name="Storage" type="Node2D"]
+position = Vector2(-1, 9)
+scale = Vector2(0.21, 0.21)
+script = ExtResource("1_1o46y")
+
+[node name="Object" type="Node2D" parent="."]
+
+[node name="Frame" type="Node2D" parent="."]
+
+[node name="Frame1" type="Sprite2D" parent="Frame"]
+position = Vector2(166, 175)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_n4seb")
+
+[node name="Amount" type="Label" parent="Frame/Frame1"]
+offset_left = -30.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 910.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame2" type="Sprite2D" parent="Frame"]
+position = Vector2(371, 175)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_n4seb")
+
+[node name="Amount" type="Label" parent="Frame/Frame2"]
+offset_left = -30.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 910.0
+theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame3" type="Sprite2D" parent="Frame"]
+position = Vector2(576, 175)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_n4seb")
+
+[node name="Amount" type="Label" parent="Frame/Frame3"]
+offset_left = -30.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 910.0
+theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame4" type="Sprite2D" parent="Frame"]
+position = Vector2(781, 175)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_n4seb")
+
+[node name="Amount" type="Label" parent="Frame/Frame4"]
+offset_left = -30.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 910.0
+theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame5" type="Sprite2D" parent="Frame"]
+position = Vector2(986, 175)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_n4seb")
+
+[node name="Amount" type="Label" parent="Frame/Frame5"]
+offset_left = -30.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 910.0
+theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame6" type="Sprite2D" parent="Frame"]
+position = Vector2(166, 375)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_n4seb")
+
+[node name="Amount" type="Label" parent="Frame/Frame6"]
+offset_left = -30.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 910.0
+theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame7" type="Sprite2D" parent="Frame"]
+position = Vector2(371, 375)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_n4seb")
+
+[node name="Amount" type="Label" parent="Frame/Frame7"]
+offset_left = -30.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 910.0
+theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame8" type="Sprite2D" parent="Frame"]
+position = Vector2(576, 375)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_n4seb")
+
+[node name="Amount" type="Label" parent="Frame/Frame8"]
+offset_left = -30.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 910.0
+theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame9" type="Sprite2D" parent="Frame"]
+position = Vector2(781, 375)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_n4seb")
+
+[node name="Amount" type="Label" parent="Frame/Frame9"]
+offset_left = -30.0
+offset_top = 400.0
+offset_right = 800.0
+offset_bottom = 910.0
+theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Frame10" type="Sprite2D" parent="Frame"]
+position = Vector2(986, 375)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_n4seb")
+
+[node name="Amount" type="Label" parent="Frame/Frame10"]
+anchors_preset = -1
+anchor_top = 0.000384615
+anchor_bottom = 0.000384615
+offset_left = -30.0
+offset_top = 272.0
+offset_right = 800.0
+offset_bottom = 909.0
+theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BG" parent="." instance=ExtResource("3_tog2w")]
+
+[node name="Back" type="MarginContainer" parent="."]
+offset_left = 1060.0
+offset_top = 25.0
+offset_right = 1140.0
+offset_bottom = 55.0
+
+[node name="BackLabel" type="Label" parent="Back"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 20
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TouchScreenButton" parent="Back"]
+position = Vector2(40, 13)
+scale = Vector2(4.5, 2)
+shape = SubResource("RectangleShape2D_ljunc")
+
+[connection signal="pressed" from="Back/Back" to="." method="_on_back_pressed"]

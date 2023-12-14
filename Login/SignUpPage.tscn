@@ -1,0 +1,346 @@
+[gd_scene load_steps=20 format=3 uid="uid://bfwpgb4hpty4a"]
+
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="1_14ej2"]
+[ext_resource type="Script" path="res://Login/SignUpPage.gd" id="1_ijjgh"]
+[ext_resource type="Texture2D" uid="uid://b4kihrq7mv6sk" path="res://png/StartPage/logo-05.png" id="3_t51g7"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="4_27oyt"]
+
+[sub_resource type="SystemFont" id="SystemFont_5gil0"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="SystemFont" id="SystemFont_afkp4"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="SystemFont" id="SystemFont_a3pkk"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ii0q"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.45098, 0.388235, 0.341176, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="SystemFont" id="SystemFont_37wv6"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="SystemFont" id="SystemFont_v3q6c"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbl8n"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.45098, 0.388235, 0.341176, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="SystemFont" id="SystemFont_swpj7"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="SystemFont" id="SystemFont_7i532"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdjc4"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.45098, 0.388235, 0.341176, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="SystemFont" id="SystemFont_yoax0"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="SystemFont" id="SystemFont_s5dnb"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7d6j"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.45098, 0.388235, 0.341176, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="SystemFont" id="SystemFont_cy7s2"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3epov"]
+
+[node name="SignUpPage" type="Node2D"]
+position = Vector2(0, 7)
+scale = Vector2(0.21, 0.21)
+script = ExtResource("1_ijjgh")
+
+[node name="BG" parent="." instance=ExtResource("1_14ej2")]
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(576, 112)
+texture = ExtResource("3_t51g7")
+
+[node name="Whole" type="HSplitContainer" parent="."]
+offset_left = 95.0
+offset_top = 175.0
+offset_right = 1045.0
+offset_bottom = 425.0
+theme_override_constants/separation = 70
+split_offset = 425
+dragger_visibility = 1
+
+[node name="Left" type="HSplitContainer" parent="Whole"]
+layout_mode = 2
+theme_override_constants/separation = 0
+split_offset = 185
+dragger_visibility = 1
+
+[node name="Labels" type="VSplitContainer" parent="Whole/Left"]
+layout_mode = 2
+theme_override_constants/separation = 40
+split_offset = 100
+dragger_visibility = 1
+
+[node name="UserName" type="VSplitContainer" parent="Whole/Left/Labels"]
+layout_mode = 2
+split_offset = 55
+dragger_visibility = 1
+
+[node name="UserNameLabel" type="Label" parent="Whole/Left/Labels/UserName"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_27oyt")
+theme_override_font_sizes/font_size = 24
+text = "USERNAME"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Whole/Left/Labels/UserName"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = SubResource("SystemFont_5gil0")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Password" type="VSplitContainer" parent="Whole/Left/Labels"]
+layout_mode = 2
+split_offset = 55
+dragger_visibility = 1
+
+[node name="PasswordLabel" type="Label" parent="Whole/Left/Labels/Password"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_27oyt")
+theme_override_font_sizes/font_size = 24
+text = "PASSWORD"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Whole/Left/Labels/Password"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = SubResource("SystemFont_afkp4")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="InputBoxes" type="VSplitContainer" parent="Whole/Left"]
+layout_mode = 2
+theme_override_constants/separation = 40
+split_offset = 100
+dragger_visibility = 1
+
+[node name="UserName" type="VSplitContainer" parent="Whole/Left/InputBoxes"]
+layout_mode = 2
+theme_override_constants/separation = 0
+split_offset = 60
+dragger_visibility = 1
+
+[node name="UserNameInputBox" type="LineEdit" parent="Whole/Left/InputBoxes/UserName"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_a3pkk")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ii0q")
+
+[node name="Label" type="Label" parent="Whole/Left/InputBoxes/UserName"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = SubResource("SystemFont_37wv6")
+theme_override_font_sizes/font_size = 20
+vertical_alignment = 1
+
+[node name="Password" type="VSplitContainer" parent="Whole/Left/InputBoxes"]
+layout_mode = 2
+split_offset = 60
+dragger_visibility = 1
+
+[node name="PasswordInputBox" type="LineEdit" parent="Whole/Left/InputBoxes/Password"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_v3q6c")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_fbl8n")
+secret = true
+secret_character = "*"
+
+[node name="Label" type="Label" parent="Whole/Left/InputBoxes/Password"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = SubResource("SystemFont_swpj7")
+theme_override_font_sizes/font_size = 20
+
+[node name="Right" type="HSplitContainer" parent="Whole"]
+layout_mode = 2
+theme_override_constants/separation = 0
+split_offset = 185
+dragger_visibility = 1
+
+[node name="Labels" type="VSplitContainer" parent="Whole/Right"]
+layout_mode = 2
+theme_override_constants/separation = 40
+split_offset = 100
+dragger_visibility = 1
+
+[node name="Email" type="VSplitContainer" parent="Whole/Right/Labels"]
+layout_mode = 2
+split_offset = 60
+dragger_visibility = 1
+
+[node name="EmailLabel" type="Label" parent="Whole/Right/Labels/Email"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_27oyt")
+theme_override_font_sizes/font_size = 24
+text = "EMAIL"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Whole/Right/Labels/Email"]
+layout_mode = 2
+
+[node name="ConfirmPw" type="VSplitContainer" parent="Whole/Right/Labels"]
+layout_mode = 2
+split_offset = 60
+dragger_visibility = 1
+
+[node name="ConfirmPwLabel" type="Label" parent="Whole/Right/Labels/ConfirmPw"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_27oyt")
+theme_override_font_sizes/font_size = 24
+text = " CONFIRM
+PASSWORD"
+
+[node name="Label" type="Label" parent="Whole/Right/Labels/ConfirmPw"]
+layout_mode = 2
+
+[node name="InputBoxes" type="VSplitContainer" parent="Whole/Right"]
+layout_mode = 2
+theme_override_constants/separation = 40
+split_offset = 100
+dragger_visibility = 1
+
+[node name="Email" type="VSplitContainer" parent="Whole/Right/InputBoxes"]
+layout_mode = 2
+split_offset = 60
+dragger_visibility = 1
+
+[node name="EmailInputBox" type="LineEdit" parent="Whole/Right/InputBoxes/Email"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_7i532")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_kdjc4")
+
+[node name="Label" type="Label" parent="Whole/Right/InputBoxes/Email"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = SubResource("SystemFont_yoax0")
+theme_override_font_sizes/font_size = 20
+
+[node name="ConfirmPw" type="VSplitContainer" parent="Whole/Right/InputBoxes"]
+layout_mode = 2
+split_offset = 60
+dragger_visibility = 1
+
+[node name="ConfirmPwInputBox" type="LineEdit" parent="Whole/Right/InputBoxes/ConfirmPw"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_s5dnb")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_p7d6j")
+secret = true
+secret_character = "*"
+
+[node name="Label" type="Label" parent="Whole/Right/InputBoxes/ConfirmPw"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = SubResource("SystemFont_cy7s2")
+theme_override_font_sizes/font_size = 20
+
+[node name="SignUp" type="MarginContainer" parent="."]
+offset_left = 483.0
+offset_top = 432.0
+offset_right = 669.0
+offset_bottom = 467.0
+
+[node name="SignUpLabel" type="Label" parent="SignUp"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_27oyt")
+theme_override_font_sizes/font_size = 30
+text = "SIGN UP"
+horizontal_alignment = 1
+
+[node name="SignUp" type="TouchScreenButton" parent="SignUp"]
+position = Vector2(93, 14)
+scale = Vector2(9.5, 2)
+shape = SubResource("RectangleShape2D_3epov")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 287.0
+offset_top = 486.0
+offset_right = 686.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_27oyt")
+theme_override_font_sizes/font_size = 20
+text = "Already have an account?"
+
+[node name="LogIn" type="MarginContainer" parent="Label"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = -9.0
+offset_right = 539.0
+offset_bottom = 26.0
+
+[node name="LogInLabel" type="Label" parent="Label/LogIn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_27oyt")
+theme_override_font_sizes/font_size = 25
+text = "LOG IN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LogIn" type="TouchScreenButton" parent="Label/LogIn"]
+position = Vector2(63, 16)
+scale = Vector2(6.5, 1.5)
+shape = SubResource("RectangleShape2D_3epov")
+
+[node name="Notice" type="MarginContainer" parent="."]
+offset_left = 451.0
+offset_top = 207.0
+offset_right = 701.0
+offset_bottom = 327.5
+
+[node name="Black_BG" type="ColorRect" parent="Notice"]
+layout_mode = 2
+color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[node name="Label" type="Label" parent="Notice"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="SignUp/SignUp" to="." method="_on_sign_up_pressed"]
+[connection signal="pressed" from="Label/LogIn/LogIn" to="." method="_on_log_in_pressed"]

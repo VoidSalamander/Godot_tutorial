@@ -46,5 +46,6 @@ func _on_no_pressed():
 	$Quit_page.hide()
 
 func _on_yes_pressed():
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
+	#get_tree().reload_current_scene()
 

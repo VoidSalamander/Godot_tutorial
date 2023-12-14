@@ -1,0 +1,342 @@
+[gd_scene load_steps=32 format=3 uid="uid://dygmdff7w6ism"]
+
+[ext_resource type="Script" path="res://Gacha/GachaPage.gd" id="1_g35st"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="2_sdeuc"]
+[ext_resource type="Texture2D" uid="uid://b1phog1uordx6" path="res://png/Gacha/big_WarCorrespondent.png" id="3_6ybra"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="5_v8qjs"]
+[ext_resource type="Texture2D" uid="uid://dat1rk2bpv8ps" path="res://png/Gacha/單抽.png" id="6_xtjt2"]
+[ext_resource type="Script" path="res://Gacha/Once.gd" id="7_ybu4d"]
+[ext_resource type="Texture2D" uid="uid://dyqd2ar66u28n" path="res://png/Gacha/十連.png" id="8_nxed2"]
+[ext_resource type="Script" path="res://Gacha/TenTimes.gd" id="9_rq2b5"]
+[ext_resource type="Texture2D" uid="uid://dsl3ecoy1s3pn" path="res://png/MainScene/錢跟鑽.png" id="10_gbjpb"]
+[ext_resource type="Texture2D" uid="uid://c4tu4c716rhfy" path="res://png/Gacha/fox.png" id="11_6lp0u"]
+
+[sub_resource type="SystemFont" id="SystemFont_lsitt"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akrvt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umyxx"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(0, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6gfk"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(33, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g134r"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(66, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tkts"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(99, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8rd4"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(132, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0itg"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(165, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aycab"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(0, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfl7g"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(33, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndvve"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(66, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssb2l"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(99, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4ptb"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(132, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njjqn"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(165, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tq0i"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(0, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eli6s"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(33, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcg18"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(66, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fspky"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(99, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d56tl"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(132, 32, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3geye"]
+atlas = ExtResource("11_6lp0u")
+region = Rect2(165, 32, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_msgko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umyxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6gfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g134r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tkts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8rd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0itg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aycab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfl7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndvve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssb2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4ptb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njjqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tq0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eli6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcg18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fspky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d56tl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3geye")
+}],
+"loop": false,
+"name": &"transition",
+"speed": 5.0
+}]
+
+[node name="GachaPage" type="Node2D"]
+position = Vector2(-4, 10)
+scale = Vector2(0.21, 0.21)
+script = ExtResource("1_g35st")
+
+[node name="BG" parent="." instance=ExtResource("2_sdeuc")]
+
+[node name="CardSample" type="Node2D" parent="."]
+
+[node name="Card" type="Sprite2D" parent="CardSample"]
+position = Vector2(758, 244)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_6ybra")
+
+[node name="Timer" type="Timer" parent="CardSample"]
+wait_time = 2.0
+autostart = true
+
+[node name="Possibility" type="Label" parent="."]
+offset_left = 925.0
+offset_top = 150.0
+offset_right = 1025.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = SubResource("SystemFont_lsitt")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[node name="Cards" type="Node2D" parent="."]
+
+[node name="Once" type="MarginContainer" parent="."]
+offset_left = 568.0
+offset_top = 435.0
+offset_right = 668.0
+offset_bottom = 485.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Once"]
+position = Vector2(40, 25)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("6_xtjt2")
+
+[node name="Once" type="TouchScreenButton" parent="Once"]
+position = Vector2(40, 25)
+scale = Vector2(12, 3.5)
+shape = SubResource("RectangleShape2D_akrvt")
+script = ExtResource("7_ybu4d")
+
+[node name="TenTimes" type="MarginContainer" parent="."]
+offset_left = 861.0
+offset_top = 435.0
+offset_right = 966.0
+offset_bottom = 485.0
+
+[node name="Sprite2D" type="Sprite2D" parent="TenTimes"]
+position = Vector2(50, 25)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("8_nxed2")
+
+[node name="TenTimes" type="TouchScreenButton" parent="TenTimes"]
+position = Vector2(50, 25)
+scale = Vector2(12, 3.5)
+shape = SubResource("RectangleShape2D_akrvt")
+script = ExtResource("9_rq2b5")
+
+[node name="CoinAndDiamond" type="Node2D" parent="."]
+position = Vector2(1024, 34)
+
+[node name="CoinAmount" type="Label" parent="CoinAndDiamond"]
+offset_left = -339.0
+offset_top = 1.0
+offset_right = -179.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("5_v8qjs")
+theme_override_font_sizes/font_size = 30
+text = "1000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GemAmount" type="Label" parent="CoinAndDiamond"]
+offset_left = -84.0
+offset_top = 1.0
+offset_right = 16.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("5_v8qjs")
+theme_override_font_sizes/font_size = 30
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CoinAndGem" type="TouchScreenButton" parent="CoinAndDiamond"]
+position = Vector2(-388, -10)
+scale = Vector2(1.3, 1.3)
+texture_normal = ExtResource("10_gbjpb")
+
+[node name="Name" type="Node2D" parent="."]
+
+[node name="Name" type="Label" parent="Name"]
+offset_left = 58.0
+offset_top = 38.0
+offset_right = 308.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("5_v8qjs")
+theme_override_font_sizes/font_size = 30
+text = "Player"
+
+[node name="Back" type="MarginContainer" parent="."]
+offset_left = 44.0
+offset_top = 453.0
+offset_right = 147.0
+offset_bottom = 503.0
+
+[node name="BackLabel" type="Label" parent="Back"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("5_v8qjs")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TouchScreenButton" parent="Back"]
+position = Vector2(49, 24)
+scale = Vector2(5.5, 2)
+shape = SubResource("RectangleShape2D_akrvt")
+
+[node name="Continue" type="MarginContainer" parent="."]
+offset_left = 1024.0
+offset_top = 34.0
+offset_right = 1144.0
+offset_bottom = 84.0
+
+[node name="ContinueLabel" type="Label" parent="Continue"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("5_v8qjs")
+theme_override_font_sizes/font_size = 18
+text = "Continue
+"
+
+[node name="Continue" type="TouchScreenButton" parent="Continue"]
+position = Vector2(57, 24)
+scale = Vector2(6, 2)
+shape = SubResource("RectangleShape2D_akrvt")
+
+[node name="List" type="Node2D" parent="."]
+
+[node name="First" type="Sprite2D" parent="List"]
+position = Vector2(205, 195)
+scale = Vector2(1.25, 1.25)
+
+[node name="Second" type="Sprite2D" parent="List"]
+position = Vector2(205, 340)
+scale = Vector2(1.25, 1.25)
+
+[node name="Transition" type="AnimatedSprite2D" parent="."]
+position = Vector2(582, 330)
+scale = Vector2(4.5, 3.707)
+sprite_frames = SubResource("SpriteFrames_msgko")
+animation = &"transition"
+autoplay = "transition"
+frame = 17
+frame_progress = 1.0
+
+[node name="Notice" type="MarginContainer" parent="."]
+offset_left = 451.0
+offset_top = 207.0
+offset_right = 701.0
+offset_bottom = 327.5
+
+[node name="Black_BG" type="ColorRect" parent="Notice"]
+layout_mode = 2
+color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[node name="Label" type="Label" parent="Notice"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="CardSample/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Once/Once" to="Once/Once" method="_on_pressed"]
+[connection signal="pressed" from="TenTimes/TenTimes" to="TenTimes/TenTimes" method="_on_pressed"]
+[connection signal="pressed" from="CoinAndDiamond/CoinAndGem" to="." method="_on_coin_and_gem_pressed"]
+[connection signal="pressed" from="Back/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Continue/Continue" to="Once/Once" method="_on_continue_pressed"]
+[connection signal="pressed" from="Continue/Continue" to="TenTimes/TenTimes" method="_on_continue_pressed"]
+[connection signal="animation_finished" from="Transition" to="Once/Once" method="_on_transition_animation_finished"]
+[connection signal="animation_finished" from="Transition" to="TenTimes/TenTimes" method="_on_transition_animation_finished"]

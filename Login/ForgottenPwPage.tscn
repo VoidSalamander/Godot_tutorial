@@ -1,0 +1,265 @@
+[gd_scene load_steps=11 format=3 uid="uid://djpbjvuf5yxp1"]
+
+[ext_resource type="Script" path="res://Login/ForgottenPwPage.gd" id="1_xxrns"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="2_8kqwj"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_q2bc1"]
+
+[sub_resource type="SystemFont" id="SystemFont_p7tj7"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0226"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.45098, 0.388235, 0.341176, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmo7s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld3s0"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.45098, 0.388235, 0.341176, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgdbq"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.45098, 0.388235, 0.341176, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82lcr"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.45098, 0.388235, 0.341176, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i81f5"]
+
+[node name="ForgottenPwPage" type="Node2D"]
+position = Vector2(-1, 10)
+scale = Vector2(0.21, 0.21)
+script = ExtResource("1_xxrns")
+
+[node name="BG" parent="." instance=ExtResource("2_8kqwj")]
+
+[node name="ResetPwLabel" type="Label" parent="."]
+offset_left = 346.0
+offset_top = 90.0
+offset_right = 806.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_q2bc1")
+theme_override_font_sizes/font_size = 35
+text = "RESET PASSWORD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Directions" type="Label" parent="."]
+offset_left = 309.0
+offset_top = 185.0
+offset_right = 839.0
+offset_bottom = 260.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_q2bc1")
+theme_override_font_sizes/font_size = 21
+text = "ENTER YOUR EMAIL,
+WE WILL SEND A VERIFY CODE
+TO RESET NEW PASSWORD."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SendEmail" type="HSplitContainer" parent="."]
+offset_left = 300.0
+offset_top = 300.0
+offset_right = 860.0
+offset_bottom = 360.0
+theme_override_constants/separation = 10
+split_offset = 150
+dragger_visibility = 1
+
+[node name="EmailLabel" type="Label" parent="SendEmail"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_q2bc1")
+theme_override_font_sizes/font_size = 25
+text = "EMAIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Email" type="LineEdit" parent="SendEmail"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_p7tj7")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_o0226")
+
+[node name="Send" type="MarginContainer" parent="."]
+offset_left = 511.0
+offset_top = 415.0
+offset_right = 641.0
+offset_bottom = 455.0
+
+[node name="SendLabel" type="Label" parent="Send"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_q2bc1")
+theme_override_font_sizes/font_size = 33
+text = "SEND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Send" type="TouchScreenButton" parent="Send"]
+position = Vector2(65, 19)
+scale = Vector2(7, 2.5)
+shape = SubResource("RectangleShape2D_fmo7s")
+
+[node name="Verify" type="HSplitContainer" parent="."]
+offset_left = 279.0
+offset_top = 160.0
+offset_right = 879.0
+offset_bottom = 390.0
+theme_override_constants/separation = 25
+split_offset = 200
+dragger_visibility = 1
+
+[node name="Labels" type="VSplitContainer" parent="Verify"]
+layout_mode = 2
+theme_override_constants/separation = 25
+split_offset = 145
+dragger_visibility = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Verify/Labels"]
+layout_mode = 2
+theme_override_constants/separation = 25
+split_offset = 60
+dragger_visibility = 1
+
+[node name="EmailLabel" type="Label" parent="Verify/Labels/VSplitContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_q2bc1")
+theme_override_font_sizes/font_size = 25
+text = "EMAIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewPasswordLabel" type="Label" parent="Verify/Labels/VSplitContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_q2bc1")
+theme_override_font_sizes/font_size = 25
+text = "New Password"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VertifyCodeLabel" type="Label" parent="Verify/Labels"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_q2bc1")
+theme_override_font_sizes/font_size = 25
+text = "Vertify Code"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InputBox" type="VSplitContainer" parent="Verify"]
+layout_mode = 2
+theme_override_constants/separation = 25
+split_offset = 145
+dragger_visibility = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Verify/InputBox"]
+layout_mode = 2
+theme_override_constants/separation = 25
+split_offset = 60
+dragger_visibility = 1
+
+[node name="Email" type="LineEdit" parent="Verify/InputBox/VSplitContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_p7tj7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ld3s0")
+
+[node name="NewPassword" type="LineEdit" parent="Verify/InputBox/VSplitContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_p7tj7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_cgdbq")
+secret = true
+secret_character = "*"
+
+[node name="VertifyCode" type="LineEdit" parent="Verify/InputBox"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_p7tj7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_82lcr")
+
+[node name="ResetPassword" type="MarginContainer" parent="."]
+offset_left = 365.0
+offset_top = 430.0
+offset_right = 797.0
+offset_bottom = 470.0
+
+[node name="ResetPasswordLabel" type="Label" parent="ResetPassword"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_q2bc1")
+theme_override_font_sizes/font_size = 33
+text = "RESET PASSWORD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResetPassword" type="TouchScreenButton" parent="ResetPassword"]
+position = Vector2(214, 19)
+scale = Vector2(22, 2.5)
+shape = SubResource("RectangleShape2D_fmo7s")
+
+[node name="Notice" type="MarginContainer" parent="."]
+offset_left = 451.0
+offset_top = 207.0
+offset_right = 701.0
+offset_bottom = 327.5
+
+[node name="Black_BG" type="ColorRect" parent="Notice"]
+layout_mode = 2
+color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[node name="Label" type="Label" parent="Notice"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="MarginContainer" parent="."]
+offset_left = 23.0
+offset_top = 485.0
+offset_right = 139.0
+offset_bottom = 520.0
+
+[node name="BackLabel" type="Label" parent="Back"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_q2bc1")
+theme_override_font_sizes/font_size = 30
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TouchScreenButton" parent="Back"]
+position = Vector2(58, 15)
+scale = Vector2(6.5, 2)
+shape = SubResource("RectangleShape2D_i81f5")
+
+[connection signal="pressed" from="Send/Send" to="." method="_on_send_pressed"]
+[connection signal="pressed" from="ResetPassword/ResetPassword" to="." method="_on_reset_password_pressed"]
+[connection signal="pressed" from="Back/Back" to="." method="_on_back_pressed"]
