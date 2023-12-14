@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7oxv54mhdgtl"]
+
+[ext_resource type="Script" path="res://Storage/StorageUnit.gd" id="1_smdln"]
+
+[node name="StorageUnit" type="MarginContainer"]
+offset_right = 535.0
+offset_bottom = 535.0
+scale = Vector2(0.21, 0.21)
+script = ExtResource("1_smdln")
+
+[node name="Object" type="Sprite2D" parent="."]
+centered = false
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

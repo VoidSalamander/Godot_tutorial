@@ -48,7 +48,6 @@ func _on_no_pressed():
 	$Quit_page.hide()
 
 func _on_yes_pressed():
-	emit_signal("reset_player_menu")
-	emit_signal("reset_inventory_menu")
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
+	#get_tree().reload_current_scene()
 

@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0m1ex0u822nx"]
+
+[ext_resource type="Script" path="res://MainScene/Settings.gd" id="1_2tcq0"]
+[ext_resource type="Texture2D" uid="uid://rtrfqiywhhxx" path="res://png/設定 底.png" id="2_2mqqq"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_k1qo3"]
+[ext_resource type="Texture2D" uid="uid://dx6hnbxjvo60q" path="res://png/MainScene/改名字的筆.png" id="4_cyrx8"]
+[ext_resource type="Texture2D" uid="uid://d2f6peoekkwrf" path="res://png/音樂.png" id="5_2ov7a"]
+[ext_resource type="Texture2D" uid="uid://5ac85aq63y4a" path="res://png/音樂 (2).png" id="6_bssvw"]
+
+[sub_resource type="SystemFont" id="SystemFont_5kynq"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08y5o"]
+
+[node name="Settings" type="Node2D"]
+position = Vector2(-1, 12)
+scale = Vector2(0.21, 0.21)
+script = ExtResource("1_2tcq0")
+
+[node name="SettingsBG" type="Sprite2D" parent="."]
+position = Vector2(0, -57.1429)
+scale = Vector2(1.309, 1.585)
+texture = ExtResource("2_2mqqq")
+centered = false
+
+[node name="Name" type="Node2D" parent="."]
+position = Vector2(0, 46)
+
+[node name="NameLabel" type="Label" parent="Name"]
+offset_left = 246.0
+offset_top = 130.0
+offset_right = 400.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_k1qo3")
+theme_override_font_sizes/font_size = 35
+text = "NAME:"
+
+[node name="Name" type="LineEdit" parent="Name"]
+offset_left = 464.0
+offset_top = 124.0
+offset_right = 764.0
+offset_bottom = 169.0
+theme_override_fonts/font = SubResource("SystemFont_5kynq")
+theme_override_font_sizes/font_size = 25
+text = "player"
+editable = false
+
+[node name="Pen" type="Sprite2D" parent="."]
+position = Vector2(880, 194)
+scale = Vector2(1.309, 1.309)
+texture = ExtResource("4_cyrx8")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Pen"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_08y5o")
+
+[node name="BGM" type="Node2D" parent="."]
+position = Vector2(26, -35)
+scale = Vector2(1.309, 1.309)
+
+[node name="BGMLabel" type="Label" parent="BGM"]
+offset_left = 175.0
+offset_top = 251.0
+offset_right = 245.0
+offset_bottom = 278.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_k1qo3")
+theme_override_font_sizes/font_size = 23
+text = "BGM"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider" type="HSlider" parent="BGM"]
+offset_left = 265.088
+offset_top = 249.045
+offset_right = 515.088
+offset_bottom = 279.045
+theme_override_icons/grabber = ExtResource("5_2ov7a")
+theme_override_icons/grabber_highlight = ExtResource("5_2ov7a")
+theme_override_icons/grabber_disabled = ExtResource("5_2ov7a")
+theme_override_icons/tick = ExtResource("6_bssvw")
+step = 10.0
+ticks_on_borders = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SE" type="Node2D" parent="."]
+position = Vector2(26, 26.9999)
+scale = Vector2(1.309, 1.309)
+
+[node name="SELabel" type="Label" parent="SE"]
+offset_left = 175.0
+offset_top = 251.0
+offset_right = 245.0
+offset_bottom = 278.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_k1qo3")
+theme_override_font_sizes/font_size = 23
+text = "SE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="SE"]
+offset_left = 265.088
+offset_top = 249.045
+offset_right = 515.088
+offset_bottom = 279.045
+theme_override_icons/grabber = ExtResource("5_2ov7a")
+theme_override_icons/grabber_highlight = ExtResource("5_2ov7a")
+theme_override_icons/grabber_disabled = ExtResource("5_2ov7a")
+theme_override_icons/tick = ExtResource("6_bssvw")
+step = 10.0
+ticks_on_borders = true
+
+[node name="Notice" type="MarginContainer" parent="."]
+offset_left = 451.0
+offset_top = 207.0
+offset_right = 701.0
+offset_bottom = 327.5
+
+[node name="Black_BG" type="ColorRect" parent="Notice"]
+layout_mode = 2
+color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[node name="Label" type="Label" parent="Notice"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Pen/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

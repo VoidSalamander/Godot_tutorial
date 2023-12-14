@@ -1,0 +1,248 @@
+[gd_scene load_steps=24 format=3 uid="uid://cmooqripkn2pq"]
+
+[ext_resource type="Script" path="res://MainScene/MainPage.gd" id="1_bfu1e"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="2_jcx87"]
+[ext_resource type="PackedScene" uid="uid://cuc8q0gmdxa5w" path="res://Global/Loading.tscn" id="3_8o55a"]
+[ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="4_244lm"]
+[ext_resource type="Texture2D" uid="uid://dsl3ecoy1s3pn" path="res://png/MainScene/錢跟鑽.png" id="5_v4mhm"]
+[ext_resource type="Texture2D" uid="uid://badl5u37qsvol" path="res://png/MainScene/選角.png" id="6_c13ur"]
+[ext_resource type="Texture2D" uid="uid://d0dc81i4vmo7o" path="res://png/MainScene/抽卡.png" id="7_w117k"]
+[ext_resource type="Texture2D" uid="uid://biylss5ftb8tj" path="res://png/MainScene/背包.png" id="8_j8xao"]
+[ext_resource type="Texture2D" uid="uid://do4wqlhjrjojy" path="res://png/MainScene/新房間.png" id="9_iifv4"]
+[ext_resource type="Texture2D" uid="uid://btq68yp1u4500" path="res://png/MainScene/快速配對.png" id="10_wvi1k"]
+[ext_resource type="Texture2D" uid="uid://bwa2rnrf0on2g" path="res://png/MainScene/UserCharacter.png" id="11_u8lf7"]
+[ext_resource type="Texture2D" uid="uid://b8f2erhh70o81" path="res://png/LeaderBoard/Others.png" id="12_vkrm3"]
+[ext_resource type="Script" path="res://MainScene/ToSetting.gd" id="13_1olx2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyb0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyw8i"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35whs"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_7gfbr"]
+points = PackedVector2Array(-10, -8, 6, -10, 10, 8, -6, 10)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_d8exy"]
+points = PackedVector2Array(30, -50, 60, -40, 80, 5, 85, 55, 55, 70, 0, 80, -35, 65, -50, 50, -40, 15, -25, -10, 0, -35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dt2pc"]
+size = Vector2(105, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w30yj"]
+size = Vector2(105, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppmig"]
+size = Vector2(260, 30)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_27aws"]
+points = PackedVector2Array(32, -59, 25, -15, 5, 10, 5, 27, 23, 27, 23, 46, 31, 46, 31, 60, -31, 60, -31, 46, -23, 46, -23, 27, -5, 27, -5, 10, -25, -15, -32, -59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15l7t"]
+
+[node name="MainPage" type="Node2D"]
+position = Vector2(-1, 11)
+scale = Vector2(0.21, 0.21)
+script = ExtResource("1_bfu1e")
+
+[node name="BG" parent="." instance=ExtResource("2_jcx87")]
+
+[node name="Main" type="Node2D" parent="."]
+
+[node name="Name" type="Node2D" parent="Main"]
+
+[node name="Name" type="Label" parent="Main/Name"]
+offset_left = 58.0
+offset_top = 38.0
+offset_right = 508.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_244lm")
+theme_override_font_sizes/font_size = 38
+text = "Player"
+vertical_alignment = 1
+
+[node name="Settings" type="TouchScreenButton" parent="Main/Name"]
+position = Vector2(283, 57)
+scale = Vector2(23, 2)
+shape = SubResource("RectangleShape2D_cyb0c")
+
+[node name="CoinAndDiamond" type="Node2D" parent="Main"]
+
+[node name="CoinAmount" type="Label" parent="Main/CoinAndDiamond"]
+offset_left = 685.0
+offset_top = 35.0
+offset_right = 845.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_244lm")
+theme_override_font_sizes/font_size = 30
+text = "1000"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GemAmount" type="Label" parent="Main/CoinAndDiamond"]
+offset_left = 940.0
+offset_top = 35.0
+offset_right = 1040.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_244lm")
+theme_override_font_sizes/font_size = 30
+text = "100"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TopUp1" type="TouchScreenButton" parent="Main/CoinAndDiamond"]
+position = Vector2(860, 51)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_tyw8i")
+
+[node name="TopUp2" type="TouchScreenButton" parent="Main/CoinAndDiamond"]
+position = Vector2(1055, 51)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_tyw8i")
+
+[node name="CoinAndDiamond" type="Sprite2D" parent="Main/CoinAndDiamond"]
+position = Vector2(855, 51)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("5_v4mhm")
+
+[node name="Character" type="Node2D" parent="Main"]
+position = Vector2(69, 121)
+
+[node name="Sprite2D" type="Sprite2D" parent="Main/Character"]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6_c13ur")
+centered = false
+
+[node name="Character" type="TouchScreenButton" parent="Main/Character"]
+position = Vector2(142, 89)
+scale = Vector2(14, 8.5)
+shape = SubResource("RectangleShape2D_35whs")
+
+[node name="Gacha" type="Node2D" parent="Main"]
+position = Vector2(139, 411)
+
+[node name="Sprite2D" type="Sprite2D" parent="Main/Gacha"]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("7_w117k")
+
+[node name="Gacha" type="TouchScreenButton" parent="Main/Gacha"]
+scale = Vector2(7, 7.5)
+shape = SubResource("ConvexPolygonShape2D_7gfbr")
+
+[node name="Storage" type="Node2D" parent="Main"]
+position = Vector2(293, 395)
+
+[node name="Sprite2D" type="Sprite2D" parent="Main/Storage"]
+position = Vector2(20, 15)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("8_j8xao")
+
+[node name="Storage" type="TouchScreenButton" parent="Main/Storage"]
+shape = SubResource("ConvexPolygonShape2D_d8exy")
+
+[node name="NewRoom" type="Node2D" parent="Main"]
+visible = false
+position = Vector2(981, 289)
+
+[node name="Sprite2D" type="Sprite2D" parent="Main/NewRoom"]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("9_iifv4")
+
+[node name="NewRoom" type="TouchScreenButton" parent="Main/NewRoom"]
+position = Vector2(0, -2)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_dt2pc")
+
+[node name="QuickMatch" type="Node2D" parent="Main"]
+visible = false
+position = Vector2(981, 421)
+
+[node name="Sprite2D" type="Sprite2D" parent="Main/QuickMatch"]
+position = Vector2(-2, 5)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("10_wvi1k")
+
+[node name="QuickMatch" type="TouchScreenButton" parent="Main/QuickMatch"]
+position = Vector2(0, 4)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_w30yj")
+
+[node name="StartGame" type="Node2D" parent="Main"]
+position = Vector2(950, 457)
+
+[node name="Label" type="Label" parent="Main/StartGame"]
+offset_left = -126.0
+offset_top = -16.0
+offset_right = 128.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("4_244lm")
+theme_override_font_sizes/font_size = 30
+text = "Start game"
+
+[node name="StartGame" type="TouchScreenButton" parent="Main/StartGame"]
+shape = SubResource("RectangleShape2D_ppmig")
+
+[node name="UserCharacter" type="Node2D" parent="Main"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Main/UserCharacter"]
+position = Vector2(550, 253)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("11_u8lf7")
+
+[node name="LeaderBoard" type="Node2D" parent="Main"]
+position = Vector2(979, 161)
+
+[node name="Trophy" type="Sprite2D" parent="Main/LeaderBoard"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_vkrm3")
+
+[node name="ToLeaderBoard" type="TouchScreenButton" parent="Main/LeaderBoard"]
+shape = SubResource("ConvexPolygonShape2D_27aws")
+
+[node name="Back" type="Node2D" parent="."]
+scale = Vector2(1.309, 1.309)
+script = ExtResource("13_1olx2")
+
+[node name="Left" type="TouchScreenButton" parent="Back"]
+position = Vector2(55.7639, 204.236)
+scale = Vector2(5.5, 24.5)
+shape = SubResource("RectangleShape2D_15l7t")
+
+[node name="Bottom" type="TouchScreenButton" parent="Back"]
+position = Vector2(440.348, 411.993)
+scale = Vector2(44, 4)
+shape = SubResource("RectangleShape2D_15l7t")
+
+[node name="Right" type="TouchScreenButton" parent="Back"]
+position = Vector2(825.817, 204.236)
+scale = Vector2(5.5, 24.5)
+shape = SubResource("RectangleShape2D_15l7t")
+
+[node name="Top" type="TouchScreenButton" parent="Back"]
+position = Vector2(440.348, -3.33733)
+scale = Vector2(44, 4)
+shape = SubResource("RectangleShape2D_15l7t")
+
+[node name="Loading" parent="." instance=ExtResource("3_8o55a")]
+
+[connection signal="pressed" from="Main/Name/Settings" to="Back" method="_on_settings_pressed"]
+[connection signal="pressed" from="Main/CoinAndDiamond/TopUp1" to="." method="_on_coin_and_gem_pressed"]
+[connection signal="pressed" from="Main/CoinAndDiamond/TopUp2" to="." method="_on_coin_and_gem_pressed"]
+[connection signal="pressed" from="Main/Character/Character" to="." method="_on_character_pressed"]
+[connection signal="pressed" from="Main/Gacha/Gacha" to="." method="_on_gatcha_pressed"]
+[connection signal="pressed" from="Main/Storage/Storage" to="." method="_on_storage_pressed"]
+[connection signal="pressed" from="Main/NewRoom/NewRoom" to="." method="_on_new_room_pressed"]
+[connection signal="pressed" from="Main/QuickMatch/QuickMatch" to="." method="_on_quick_match_pressed"]
+[connection signal="pressed" from="Main/StartGame/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Main/LeaderBoard/ToLeaderBoard" to="." method="_on_to_leader_board_pressed"]
+[connection signal="pressed" from="Back/Left" to="Back" method="_on_left_pressed"]
+[connection signal="pressed" from="Back/Bottom" to="Back" method="_on_bottom_pressed"]
+[connection signal="pressed" from="Back/Right" to="Back" method="_on_right_pressed"]
+[connection signal="pressed" from="Back/Top" to="Back" method="_on_top_pressed"]

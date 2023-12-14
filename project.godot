@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="mobile_game_project"
-run/main_scene="res://main/world.tscn"
+run/main_scene="res://Login/StartPage.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://art/icon.svg"
 
 [autoload]
 
 Global="*res://main/Global.gd"
+LoadAndSave="*res://Global/LoadAndSave.gd"
 
 [display]
 
