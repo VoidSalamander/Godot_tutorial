@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://player/HUD.gd" id="4_un3h3"]
 [ext_resource type="Texture2D" uid="uid://d2e1cwl4oqmrd" path="res://art/方向.png" id="4_xfutu"]
 [ext_resource type="Texture2D" uid="uid://dgyeaf0w5u8wl" path="res://art/移動桿.png" id="5_kmxrf"]
-[ext_resource type="PackedScene" path="res://inventory/inventory.tscn" id="6_ecnbl"]
+[ext_resource type="PackedScene" uid="uid://t6srhsr414d8" path="res://inventory/inventory.tscn" id="6_ecnbl"]
 [ext_resource type="PackedScene" uid="uid://bcgndkkx34l1w" path="res://Menu/menu.tscn" id="8_5cky0"]
 [ext_resource type="Texture2D" uid="uid://cktm45pf8xyqd" path="res://art/設定.png" id="10_0iej2"]
 [ext_resource type="Texture2D" uid="uid://crc53tkbwf1ye" path="res://art/Healthbar/HealthBack.png" id="11_crass"]
@@ -244,7 +244,7 @@ shape = SubResource("CircleShape2D_eafo0")
 wait_time = 0.3
 
 [node name="Stun" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.5
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("4_un3h3")

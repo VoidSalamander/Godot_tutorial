@@ -29,6 +29,8 @@ var health = 100
 var can_shoot = true
 var is_shooting = false
 var can_build = true
+var touch_mob = false
+var is_stun = false
 
 var attack_able_mob = []
 
@@ -62,6 +64,9 @@ func handle_input():
 	
 	if can_shoot and is_shooting:
 		shoot()
+		
+	if touch_mob and !is_stun:
+		get_hurt()
 
 var left_hand_index = -1  
 var right_hand_index = -1  
@@ -144,19 +149,29 @@ func dead_and_statistics():
 	
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Enemy_damage"):
-		health -= 10 - shield
-		modulate = Color.RED
-		$Stun.start()
+		touch_mob = true
 	if area.has_method("collect"):
 		area.collect(inventory)
 	if area.is_in_group("turret"):
 		can_build = false
 
-func _on_area_2d_area_exited(_area):
-	can_build = true
+func _on_area_2d_area_exited(area):
+	if area.is_in_group("Enemy_damage"):
+		touch_mob = false
+	if area.is_in_group("turret"):
+		can_build = true
+	if area.is_in_group("Enemy_damage"):
+		touch_mob = false
+
+func get_hurt():
+	health -= 10 - shield
+	modulate = Color.RED
+	$Stun.start()
+	is_stun = true
 
 func _on_stun_timeout():
 	modulate = Color.WHITE
+	is_stun = false
 
 func _on_auto_attack_body_entered(body):
 	if body.is_in_group("mob"):
