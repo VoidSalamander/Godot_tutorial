@@ -37,7 +37,7 @@ func _on_send_pressed():
 			remove_child(new)
 			$Verify.visible = true
 			$ResetPassword.visible = true
-			$ResetPwLabel.position = Vector2(346,85)
+			#$ResetPwLabel.position = Vector2(346,85)
 			$Directions.visible = false
 			$SendEmail.visible = false
 			$Send.visible = false

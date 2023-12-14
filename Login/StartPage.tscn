@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hoxcc"]
 
 [node name="StartPage" type="Node2D"]
-position = Vector2(1, 9)
+position = Vector2(5.96046e-08, 2.38419e-07)
 scale = Vector2(0.21, 0.21)
 script = ExtResource("1_pfcly")
 
@@ -22,20 +22,20 @@ shape = SubResource("RectangleShape2D_hoxcc")
 shape_visible = false
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(575, 120)
+position = Vector2(575, 134.286)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_pas02")
 
 [node name="Pic" type="Sprite2D" parent="."]
-position = Vector2(579, 267)
+position = Vector2(579, 276.524)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("4_rr1tn")
 
 [node name="Tip" type="Label" parent="."]
 offset_left = 225.0
-offset_top = 455.0
+offset_top = 507.381
 offset_right = 925.0
-offset_bottom = 490.0
+offset_bottom = 542.381
 theme_override_colors/font_color = Color(0.658824, 0.615686, 0.533333, 1)
 theme_override_fonts/font = ExtResource("5_fbrxi")
 theme_override_font_sizes/font_size = 28

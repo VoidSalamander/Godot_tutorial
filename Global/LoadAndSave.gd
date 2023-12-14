@@ -10,9 +10,10 @@ func saveGame():
 		"xposition" : Global.Account['xposition'],
 		"yposition" : Global.Account['yposition'],
 		"kills" : Global.Account['kills'],
-		"time" : Global.Account['time']
+		"time" : Global.Account['time'],
+		"storage" : Global.storage[2]
 	}
-	print("xpos : ", Global.Account['xposition'])
+	#print("xpos : ", Global.Account['xposition'])
 	var jstr = JSON.stringify(data)
 	file.store_line(jstr)
 	
@@ -26,3 +27,4 @@ func loadGame():
 				Global.Account['yposition'] = current_line["yposition"]
 				Global.Account['kills'] = current_line["kills"]
 				Global.Account['time'] = current_line["time"]
+				Global.storage[2] = current_line["storage"]

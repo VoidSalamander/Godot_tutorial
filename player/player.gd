@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var attack_position: Array = [200 ,85]
 @export var build_position: Array = [160 ,85]
 @export var joystick_position: Array = [45 ,95]
+#@export var joystick_position: Array = [Global.Account["xposition"] ,Global.Account["yposition"]]
 @export var inventory: Inventory
 
 @export var tilemap: TileMap

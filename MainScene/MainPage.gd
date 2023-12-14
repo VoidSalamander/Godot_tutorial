@@ -2,8 +2,6 @@ extends Node2D
 
 
 func _ready():
-	#$Loading.visible = false
-	#$Main.visible = true
 	$Loading.visible = true
 	$Back.visible = false
 	$Main.visible = false
@@ -32,7 +30,7 @@ func _ready():
 	$Main/CoinAndDiamond/GemAmount.text = str(Global.GemAmount)
 	$Main/Name/Name.text = Global.Account["nickname"]
 	$Main.visible = true
-	#print(Global.Account["xposition"], ", ", Global.Account["yposition"])
+	LoadAndSave.saveGame()
 	
 	
 func _process(delta):
@@ -71,5 +69,6 @@ func _on_to_leader_board_pressed():
 
 
 func _on_start_game_pressed():
+	LoadAndSave.loadGame()
 	get_tree().change_scene_to_file("res://main/world.tscn")
 

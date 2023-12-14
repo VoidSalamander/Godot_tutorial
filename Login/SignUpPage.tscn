@@ -74,7 +74,7 @@ font_names = PackedStringArray("Constantia")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3epov"]
 
 [node name="SignUpPage" type="Node2D"]
-position = Vector2(0, 7)
+position = Vector2(0, 2.38419e-07)
 scale = Vector2(0.21, 0.21)
 script = ExtResource("1_ijjgh")
 
@@ -86,9 +86,9 @@ texture = ExtResource("3_t51g7")
 
 [node name="Whole" type="HSplitContainer" parent="."]
 offset_left = 95.0
-offset_top = 175.0
+offset_top = 194.048
 offset_right = 1045.0
-offset_bottom = 425.0
+offset_bottom = 444.048
 theme_override_constants/separation = 70
 split_offset = 425
 dragger_visibility = 1
@@ -279,9 +279,9 @@ theme_override_font_sizes/font_size = 20
 
 [node name="SignUp" type="MarginContainer" parent="."]
 offset_left = 483.0
-offset_top = 432.0
+offset_top = 460.572
 offset_right = 669.0
-offset_bottom = 467.0
+offset_bottom = 495.572
 
 [node name="SignUpLabel" type="Label" parent="SignUp"]
 layout_mode = 2
@@ -298,9 +298,9 @@ shape = SubResource("RectangleShape2D_3epov")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 287.0
-offset_top = 486.0
+offset_top = 528.857
 offset_right = 686.0
-offset_bottom = 510.0
+offset_bottom = 552.857
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("4_27oyt")
 theme_override_font_sizes/font_size = 20
