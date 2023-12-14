@@ -32,7 +32,7 @@ func _on_timer_timeout():
 	makepath()
 
 func _on_tree_entered():
-	global_position = Vector2(randi_range(-500, 500), randi_range(-500, 500))
+	global_position = Vector2(randi_range(-1600, 1600), randi_range(-1600, 1600))
 	
 		
 func _on_area_2d_body_entered(body):
