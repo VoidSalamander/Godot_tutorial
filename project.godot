@@ -18,6 +18,7 @@ config/icon="res://art/icon.svg"
 [autoload]
 
 Global="*res://main/Global.gd"
+LoadAndSave="*res://Global/LoadAndSave.gd"
 
 [display]
 
