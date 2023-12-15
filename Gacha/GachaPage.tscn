@@ -322,9 +322,9 @@ frame_progress = 1.0
 
 [node name="Notice" type="MarginContainer" parent="."]
 offset_left = 451.0
-offset_top = 245.095
+offset_top = 254.619
 offset_right = 701.0
-offset_bottom = 365.595
+offset_bottom = 375.119
 
 [node name="Black_BG" type="ColorRect" parent="Notice"]
 layout_mode = 2

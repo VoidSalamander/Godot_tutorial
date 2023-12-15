@@ -57,9 +57,9 @@ script = ExtResource("1_xxrns")
 
 [node name="ResetPwLabel" type="Label" parent="."]
 offset_left = 346.0
-offset_top = 123.333
+offset_top = 113.809
 offset_right = 806.0
-offset_bottom = 162.333
+offset_bottom = 152.809
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("3_q2bc1")
 theme_override_font_sizes/font_size = 35
@@ -69,9 +69,9 @@ vertical_alignment = 1
 
 [node name="Directions" type="Label" parent="."]
 offset_left = 309.0
-offset_top = 213.571
+offset_top = 204.047
 offset_right = 839.0
-offset_bottom = 288.571
+offset_bottom = 279.047
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("3_q2bc1")
 theme_override_font_sizes/font_size = 21
@@ -83,9 +83,9 @@ vertical_alignment = 1
 
 [node name="SendEmail" type="HSplitContainer" parent="."]
 offset_left = 300.0
-offset_top = 342.857
+offset_top = 333.333
 offset_right = 860.0
-offset_bottom = 402.857
+offset_bottom = 393.333
 theme_override_constants/separation = 10
 split_offset = 150
 dragger_visibility = 1
@@ -107,9 +107,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_o0226")
 
 [node name="Send" type="MarginContainer" parent="."]
 offset_left = 511.0
-offset_top = 491.191
+offset_top = 481.667
 offset_right = 641.0
-offset_bottom = 531.191
+offset_bottom = 521.667
 
 [node name="SendLabel" type="Label" parent="Send"]
 layout_mode = 2
@@ -127,9 +127,9 @@ shape = SubResource("RectangleShape2D_fmo7s")
 
 [node name="Verify" type="HSplitContainer" parent="."]
 offset_left = 279.0
-offset_top = 217.143
+offset_top = 207.619
 offset_right = 879.0
-offset_bottom = 447.143
+offset_bottom = 437.619
 theme_override_constants/separation = 25
 split_offset = 200
 dragger_visibility = 1
@@ -207,9 +207,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_82lcr")
 
 [node name="ResetPassword" type="MarginContainer" parent="."]
 offset_left = 365.0
-offset_top = 506.191
+offset_top = 496.667
 offset_right = 797.0
-offset_bottom = 546.191
+offset_bottom = 536.667
 
 [node name="ResetPasswordLabel" type="Label" parent="ResetPassword"]
 layout_mode = 2

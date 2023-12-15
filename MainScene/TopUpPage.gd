@@ -1,13 +1,13 @@
 extends Node2D
 
 var amount
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	$CoinAmount.text = str(Global.CoinAmount)
 	$GemAmount.text = str(Global.GemAmount)
 	$ConfirmBG.visible = false
 	$Notice.visible = false
-	
+	$Loading.visible = false
 
 func _process(delta):
 	$CoinAmount.text = str(Global.CoinAmount)
@@ -132,7 +132,6 @@ func _on_confirm_button_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
-		#print(Global.response)
 		if Global.response["status"] == "Successful":
 			Global.GemAmount += amount
 		else:
@@ -147,6 +146,7 @@ func _on_confirm_button_pressed():
 		Global.topup_args["diamond"] = 0
 		Global.topup_args["cookies"] = Global.Account["cookies"]
 		
+		$Loading.visible = true
 		Global.currentAction = 9
 		var newcall = load("res://Global/HttpRequest.tscn")
 		var new = newcall.instantiate()
@@ -154,6 +154,7 @@ func _on_confirm_button_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
+		$Loading.visible = false
 		if Global.response["status"] == "Successful":
 			Global.CoinAmount += amount
 		else:

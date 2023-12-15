@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0m1ex0u822nx"]
+[gd_scene load_steps=10 format=3 uid="uid://b0m1ex0u822nx"]
 
 [ext_resource type="Script" path="res://MainScene/Settings.gd" id="1_2tcq0"]
 [ext_resource type="Texture2D" uid="uid://rtrfqiywhhxx" path="res://png/設定 底.png" id="2_2mqqq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dx6hnbxjvo60q" path="res://png/MainScene/改名字的筆.png" id="4_cyrx8"]
 [ext_resource type="Texture2D" uid="uid://d2f6peoekkwrf" path="res://png/音樂.png" id="5_2ov7a"]
 [ext_resource type="Texture2D" uid="uid://5ac85aq63y4a" path="res://png/音樂 (2).png" id="6_bssvw"]
+[ext_resource type="PackedScene" uid="uid://cuc8q0gmdxa5w" path="res://Global/Loading.tscn" id="7_8daou"]
 
 [sub_resource type="SystemFont" id="SystemFont_5kynq"]
 font_names = PackedStringArray("Constantia")
@@ -38,12 +39,12 @@ text = "NAME:"
 metadata/_edit_use_anchors_ = true
 
 [node name="Name" type="LineEdit" parent="Name"]
-offset_left = 464.0
+offset_left = 416.38
 offset_top = 124.0
-offset_right = 764.0
-offset_bottom = 169.0
+offset_right = 816.38
+offset_bottom = 174.0
 theme_override_fonts/font = SubResource("SystemFont_5kynq")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 30
 text = "player"
 editable = false
 metadata/_edit_use_anchors_ = true
@@ -129,5 +130,7 @@ color = Color(0.203922, 0.203922, 0.203922, 1)
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Loading" parent="." instance=ExtResource("7_8daou")]
 
 [connection signal="pressed" from="Pen/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

@@ -13,7 +13,6 @@ func saveGame():
 		"time" : Global.Account['time'],
 		"storage" : Global.storage[2]
 	}
-	#print("xpos : ", Global.Account['xposition'])
 	var jstr = JSON.stringify(data)
 	file.store_line(jstr)
 	

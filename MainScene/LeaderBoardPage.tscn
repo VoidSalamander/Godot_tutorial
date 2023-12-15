@@ -567,9 +567,9 @@ text = "
 
 [node name="Notice" type="MarginContainer" parent="."]
 offset_left = 451.0
-offset_top = 259.381
+offset_top = 264.143
 offset_right = 701.0
-offset_bottom = 379.881
+offset_bottom = 384.643
 
 [node name="Black_BG" type="ColorRect" parent="Notice"]
 layout_mode = 2
@@ -650,6 +650,7 @@ scale = Vector2(6.5, 2.5)
 shape = SubResource("RectangleShape2D_ylayw")
 
 [node name="Loading" parent="." instance=ExtResource("9_tt2wh")]
+position = Vector2(0, 61.9048)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 389.0
