@@ -46,7 +46,7 @@ func _on_exit_pressed():
 		Global.Account["kills"] = Global.mob_dead
 		Global.Account["time"] = Global.time
 	emit_signal("reset_player")
-	#get_tree().reload_current_scene()
+	emit_signal("reset_inventory")
 	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
 
 func _on_player_player_dead(time,mob):
