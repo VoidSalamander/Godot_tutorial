@@ -37,7 +37,7 @@ func _on_touch_screen_button_pressed():
 		else:
 			$Notice/Label.text = "Failed to change nickname"
 			$Notice.visible = true
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(2).timeout
 			$Notice.visible = false
 		remove_child(new)
 		

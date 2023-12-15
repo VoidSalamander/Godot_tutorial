@@ -16,7 +16,7 @@ func _ready():
 		for j in range(5):
 			Global.cardsizeUnit = 18
 			Global.currentStorage += 1
-			print(Global.currentStorage)
+			#print(Global.currentStorage)
 			if Global.currentStorage == Global.CardAmount:
 				break
 			var cardPosition = Vector2( 0, 0)

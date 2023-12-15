@@ -132,6 +132,7 @@ func _on_confirm_button_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
+		#print(Global.response)
 		if Global.response["status"] == "Successful":
 			Global.GemAmount += amount
 		else:
