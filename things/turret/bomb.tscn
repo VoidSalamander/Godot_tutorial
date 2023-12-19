@@ -7,7 +7,6 @@
 radius = 7.07107
 
 [node name="bomb" type="Area2D" groups=["projectile"]]
-collision_layer = 2
 script = ExtResource("1_nkg6c")
 
 [node name="bomb_sprite" type="Sprite2D" parent="."]
