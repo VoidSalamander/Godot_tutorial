@@ -2,7 +2,7 @@ extends Node2D
 class_name Navigation_component
 
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
-@onready var target = $"..".player
+@onready var target = get_parent().player
 var face = [Vector2(1,0), Vector2(0,1), Vector2(-1,0), Vector2(0,-1),
 			Vector2(1,1), Vector2(-1,1), Vector2(-1,-1), Vector2(1,-1)]
 			

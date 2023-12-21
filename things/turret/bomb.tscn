@@ -18,7 +18,4 @@ region_rect = Rect2(224, 32, 32, 32)
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_6ektk")
 
-[node name="Timer" type="Timer" parent="."]
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -14,6 +14,6 @@ func _on_mob_spawn_timer_timeout():
 	var mob_position = Vector2(randi_range(-1600, 1600), randi_range(-1600, 1600))
 	if tilemap.get_tile_data(mob_position, "spawn_able"):
 		var mob = mob_node.instantiate()
-		mob.player = get_parent().get_node("player")
+		mob.player = $"../player"
 		mob.global_position = mob_position
 		add_child(mob)

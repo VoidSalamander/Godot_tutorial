@@ -1,8 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://ikuuhsumbdhe"]
+[gd_scene load_steps=13 format=3 uid="uid://ikuuhsumbdhe"]
 
 [ext_resource type="Script" path="res://things/turret/turret.gd" id="1_miti0"]
 [ext_resource type="PackedScene" uid="uid://dvxswhls63tpn" path="res://things/turret/bomb.tscn" id="2_exmrk"]
 [ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_o5onj"]
+[ext_resource type="Script" path="res://things/turret/HitboxComponent.gd" id="4_ch0m4"]
+[ext_resource type="Script" path="res://things/mob/HealthComponent.gd" id="4_sierj"]
+[ext_resource type="Script" path="res://things/turret/atack_range.gd" id="4_tjfcy"]
+[ext_resource type="Texture2D" uid="uid://crc53tkbwf1ye" path="res://art/Healthbar/HealthBack.png" id="5_0fgck"]
+[ext_resource type="Texture2D" uid="uid://dc6yx4e317edp" path="res://art/Healthbar/Healthover.png" id="6_7aexl"]
+[ext_resource type="Texture2D" uid="uid://b16mvt6thnf05" path="res://art/Healthbar/HealthProcess.png" id="7_w3m2n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibbat"]
 radius = 16.0
@@ -29,12 +35,16 @@ region_rect = Rect2(288, 0, 64, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_ibbat")
 
-[node name="Area2D" type="Area2D" parent="." groups=["turret"]]
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("HealthComponent") groups=["turret"]]
+script = ExtResource("4_ch0m4")
+HealthComponent = NodePath("../HealthComponent")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_1h3pc")
 
 [node name="atack_range" type="Area2D" parent="."]
+visible = false
+script = ExtResource("4_tjfcy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="atack_range"]
 shape = SubResource("CircleShape2D_vq8ds")
@@ -45,7 +55,23 @@ position = Vector2(26, -8)
 [node name="fire_rate" type="Timer" parent="."]
 autostart = true
 
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="HealthComponent" type="Node2D" parent="."]
+script = ExtResource("4_sierj")
+
+[node name="HealthBar" type="TextureProgressBar" parent="HealthComponent"]
+offset_left = -21.0
+offset_top = 19.0
+offset_right = 882.0
+offset_bottom = 154.0
+scale = Vector2(0.05, 0.05)
+max_value = 30.0
+value = 30.0
+texture_under = ExtResource("5_0fgck")
+texture_over = ExtResource("6_7aexl")
+texture_progress = ExtResource("7_w3m2n")
+
+[connection signal="body_exited" from="HitboxComponent" to="." method="_on_area_2d_body_exited"]
+[connection signal="area_exited" from="atack_range" to="atack_range" method="_on_area_exited"]
 [connection signal="body_entered" from="atack_range" to="." method="_on_atack_range_body_entered"]
 [connection signal="body_exited" from="atack_range" to="." method="_on_atack_range_body_exited"]
 [connection signal="timeout" from="fire_rate" to="." method="_on_fire_rate_timeout"]

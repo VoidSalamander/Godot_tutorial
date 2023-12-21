@@ -1,7 +1,6 @@
 extends Area2D
 
-
-@export var speed : int = 300
+@export var speed : int = 500
 
 var velocity = Vector2.ZERO
 var look_once = true
@@ -19,3 +18,7 @@ func _on_timer_timeout():
 	queue_free()
 
 
+func _on_area_entered(area):
+	if area.has_method("damage"):
+		area.damage(2)
+		queue_free()
