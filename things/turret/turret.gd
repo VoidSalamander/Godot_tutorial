@@ -3,10 +3,11 @@ extends Node2D
 var attack_able_mob = []
 
 @export var bullet : PackedScene
-@export var fire_rate :float = 1 #second
+@export var fire_rate :float = 2 #second
 
 func _ready():
 	$StaticBody2D/CollisionShape2D.disabled = true
+	$fire_rate.wait_time = fire_rate
 
 func _on_atack_range_body_entered(body):
 	if body.is_in_group("mob"):
@@ -15,8 +16,6 @@ func _on_atack_range_body_entered(body):
 func _on_atack_range_body_exited(body):
 	if body.is_in_group("mob") and attack_able_mob.has(body):
 		attack_able_mob.erase(body)
-	if body == bullet:
-		body.queue_free()
 
 func turret_fire():
 	var projectile = bullet.instantiate()

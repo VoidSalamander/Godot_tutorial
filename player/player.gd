@@ -8,8 +8,6 @@ extends CharacterBody2D
 
 @export var tilemap: TileMap
 
-@onready var animations = $AnimationPlayer
-
 var bullet = preload("res://player/bullet.tscn")
 
 signal build_terret
@@ -20,11 +18,9 @@ var joystick_active = false
 
 var is_dead = false
 var dead_moment = 0
-var mob_kill = 0
 
 var item_num = 0
 var shield = 0
-var health = 100
 
 var can_shoot = true
 var is_shooting = false
@@ -41,8 +37,7 @@ var speed_modify: float
 func _physics_process(_delta):
 	handle_input()
 	move_and_slide()
-	updatAnimation()
-	$HUD/HealthBar.value = health
+	
 	$HUD/Shield/Label.text = str(shield)
 	dead_and_statistics()
 	speed_modify = tilemap.get_tile_data(self.position, "speed_modify")
@@ -116,47 +111,17 @@ func handle_left_hand_touch(touch_position):
 func calculate_move_vector(event_position):
 	return (event_position - $HUD/game_button/Joystick.position).normalized()	
 			
-func updatAnimation():
-	if(velocity.length() == 0): 
-		if(animations.is_playing()): animations.stop()
-	else:
-		var direction
-		if abs(velocity.x) > abs(velocity.y):
-			if(velocity.x < 0): direction = "left"
-			else: direction = "right"
-		else:
-			if(velocity.y < 0): direction = "up"
-			else: direction = "down"
-		animations.play("walk_" + direction)
 
 func dead_and_statistics():
-	if health <= 0:
-		$HUD/Menu_button.hide()
-		$HUD/Dead.show()
-		menu_show = true
-		joystick_active = false
-		is_dead = true
 	if !is_dead:
 		dead_moment = Global.time
-		mob_kill = Global.mob_dead
 	else:
-		emit_signal("player_dead",dead_moment,mob_kill)
-	
-func _on_area_2d_area_entered(area):
-	if area.is_in_group("Enemy_damage"):
-		health -= 10 - shield
-		modulate = Color.RED
-		$Stun.start()
-	if area.has_method("collect"):
-		area.collect(inventory)
-	if area.is_in_group("turret"):
-		can_build = false
+		menu_show = true
+		joystick_active = false
+		$HUD/Menu_button.hide()
+		$HUD/Dead.show()
+		emit_signal("player_dead",dead_moment,Global.mob_dead)
 
-func _on_area_2d_area_exited(_area):
-	can_build = true
-
-func _on_stun_timeout():
-	modulate = Color.WHITE
 
 func _on_auto_attack_body_entered(body):
 	if body.is_in_group("mob"):

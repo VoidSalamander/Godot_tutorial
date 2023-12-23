@@ -12,7 +12,7 @@ func _process(_delta):
 	
 func _on_mob_spawn_timer_timeout():
 	var mob_position = Vector2(randi_range(-1600, 1600), randi_range(-1600, 1600))
-	if tilemap.get_tile_data(mob_position, "spawn_able"):
+	if tilemap.get_tile_data(mob_position, "spawn_able") and mob_position.distance_to($"../player".position) < 50:
 		var mob = mob_node.instantiate()
 		mob.player = $"../player"
 		mob.global_position = mob_position

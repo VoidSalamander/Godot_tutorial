@@ -17,8 +17,7 @@ func _physics_process(delta):
 func _on_timer_timeout():
 	queue_free()
 
-
 func _on_area_entered(area):
-	if area.has_method("damage"):
+	if area.has_method("damage") and area.is_in_group("mob"):
 		area.damage(2)
 		queue_free()
