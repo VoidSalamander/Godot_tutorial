@@ -17,8 +17,10 @@ func _on_area_entered(area):
 	if area.has_method("collect"):
 		area.collect(get_parent().inventory)
 	if area.is_in_group("turret"):
-		get_parent().can_build = false
+		pass
+		#get_parent().can_build = false
 
 
 func _on_area_exited(area):
-	get_parent().can_build = true
+	pass
+	#get_parent().can_build = true

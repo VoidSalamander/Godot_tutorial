@@ -1,20 +1,14 @@
 extends Node2D
-@onready var player = $".."
-@onready var collisionShape = $"../CollisionShape2D"
 
-func _process(_delta):
-	if player.speed > 200:
-		player.speed -= 0.3
-	elif player.speed < 200:
-		player.speed = 200
-		
-func effect_speedup():
-	player.item_num += 1
-	player.speed = 50
+func get_wood(num: int):
+	get_parent().wood += num
 
+func get_stone(num: int):
+	get_parent().stone += num
 
-	
-func effect_get_sheild():
-	if player.shield < 5:
-		player.shield += 1
-	
+func get_gear(num: int):
+	get_parent().gear += num
+
+# gradual decrease
+func speed_modify(increas: float):
+	get_parent().speed += increas
