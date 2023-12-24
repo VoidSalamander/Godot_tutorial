@@ -1,6 +1,116 @@
-[gd_scene load_steps=4 format=3 uid="uid://buf8qqwl5ptqc"]
+[gd_scene load_steps=17 format=3 uid="uid://buf8qqwl5ptqc"]
 
+[ext_resource type="Script" path="res://things/tree/tree.gd" id="1_0jkbn"]
 [ext_resource type="Texture2D" uid="uid://c87ljahs1oagr" path="res://art/tilemap-04.png" id="1_ftl07"]
+[ext_resource type="Texture2D" uid="uid://bjcilakpnyv02" path="res://art/joystick.png" id="3_7y28d"]
+[ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="3_b2k64"]
+[ext_resource type="Texture2D" uid="uid://crc53tkbwf1ye" path="res://art/Healthbar/HealthBack.png" id="5_ubllb"]
+[ext_resource type="Texture2D" uid="uid://dc6yx4e317edp" path="res://art/Healthbar/Healthover.png" id="6_ish2v"]
+[ext_resource type="Texture2D" uid="uid://b16mvt6thnf05" path="res://art/Healthbar/HealthProcess.png" id="6_t780w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rbxi"]
+atlas = ExtResource("3_b2k64")
+region = Rect2(48, 236, 65, 105)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76hjd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rbxi")
+}],
+"loop": true,
+"name": &"wood",
+"speed": 0.0
+}]
+
+[sub_resource type="Animation" id="Animation_sjc0k"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -19)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.5, -19)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_20m6c"]
+resource_name = "falling"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, -85), Vector2(-1, -19)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.5, -85.5), Vector2(-1.5, -19)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gbmj8"]
+_data = {
+"fade": SubResource("Animation_sjc0k"),
+"falling": SubResource("Animation_20m6c")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp505"]
+size = Vector2(23, 45)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pdk2t"]
 radius = 8.0
@@ -10,7 +120,11 @@ height = 26.0
 radius = 1.0
 height = 4.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3v81"]
+size = Vector2(52, 20)
+
 [node name="tree" type="Node2D"]
+script = ExtResource("1_0jkbn")
 
 [node name="tree_B" type="Sprite2D" parent="."]
 texture = ExtResource("1_ftl07")
@@ -25,6 +139,24 @@ offset = Vector2(0, -53)
 region_enabled = true
 region_rect = Rect2(0, 32, 96, 128)
 
+[node name="wood" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="wood"]
+position = Vector2(-1, -85)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_76hjd")
+animation = &"wood"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wood"]
+libraries = {
+"": SubResource("AnimationLibrary_gbmj8")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wood"]
+position = Vector2(-1.5, -85.5)
+shape = SubResource("RectangleShape2D_bp505")
+
 [node name="spawnRegion" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spawnRegion"]
@@ -36,3 +168,43 @@ shape = SubResource("CapsuleShape2D_pdk2t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nappt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_d3v81")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2(-37, -17)
+scale = Vector2(0.193277, 0.201681)
+texture_normal = ExtResource("3_7y28d")
+
+[node name="Label" type="Label" parent="TouchScreenButton"]
+offset_left = 20.6956
+offset_top = 19.8333
+offset_right = 99.6956
+offset_bottom = 93.8333
+theme_override_font_sizes/font_size = 24
+text = "Collect
+Wood"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -24.0
+offset_top = -125.0
+offset_right = 879.0
+offset_bottom = 10.0
+scale = Vector2(0.05, 0.05)
+value = 100.0
+texture_under = ExtResource("5_ubllb")
+texture_over = ExtResource("6_ish2v")
+texture_progress = ExtResource("6_t780w")
+tint_progress = Color(1, 1, 0.513726, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
