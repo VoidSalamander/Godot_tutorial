@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Menu/Build.gd" id="8_1hwed"]
 [ext_resource type="Texture2D" uid="uid://dgyeaf0w5u8wl" path="res://art/移動桿.png" id="8_861lf"]
 [ext_resource type="Texture2D" uid="uid://cba548ooihjni" path="res://art/攻擊.png" id="10_p7ogv"]
-[ext_resource type="Texture2D" uid="uid://bqwm5a6u2vwa2" path="res://art/建造.png" id="12_bghn5"]
+[ext_resource type="Texture2D" uid="uid://7alyxjve2u0e" path="res://art/build_container.png" id="12_5iehe"]
 [ext_resource type="Texture2D" uid="uid://cf4qdlb35lder" path="res://art/設定返回.png" id="14_6sjg0"]
 [ext_resource type="Texture2D" uid="uid://bs616kipr4y7c" path="res://art/Setting/設定 底.png" id="15_lxx0n"]
 [ext_resource type="Texture2D" uid="uid://c3hpce6op7pcp" path="res://art/Setting/設定確認.png" id="16_wdrrb"]
@@ -66,8 +66,8 @@ radius = 48.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ae7ov"]
 radius = 40.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x7fej"]
-radius = 40.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmmld"]
+size = Vector2(54, 200)
 
 [sub_resource type="LabelSettings" id="LabelSettings_iy8c0"]
 line_spacing = 0.0
@@ -357,13 +357,13 @@ script = ExtResource("6_ka87m")
 shape = SubResource("CircleShape2D_ae7ov")
 
 [node name="Build" type="Sprite2D" parent="Adjust_page"]
-position = Vector2(171, 96)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("12_bghn5")
+position = Vector2(167, 82)
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("12_5iehe")
 script = ExtResource("8_1hwed")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Adjust_page/Build"]
-shape = SubResource("CircleShape2D_x7fej")
+shape = SubResource("RectangleShape2D_xmmld")
 
 [node name="BackFromAdjust" type="Button" parent="Adjust_page"]
 layout_mode = 1

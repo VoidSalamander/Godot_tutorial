@@ -15,6 +15,7 @@ var dead_moment = 0
 var menu_show = false
 var face = Vector2(1,0)
 var speed_modify: float
+var can_build = true
 
 #==========#
 # resource #
@@ -31,6 +32,8 @@ var armor: int = 0
 var attack_damage: float = 5.0
 var max_health: float = 100
 var health: float = max_health
+
+
 
 
 func _physics_process(_delta):
@@ -111,3 +114,5 @@ func _on_hud_reset_player():
 func _on_menu_reset_player_menu():
 	Global.time = 0
 	Global.mob_dead = 0
+
+
