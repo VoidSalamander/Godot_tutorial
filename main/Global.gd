@@ -23,10 +23,10 @@ func instance_node(node, location):
 
 
 var startGame = 0
-var CardAmount = 3
+var CardAmount = 15
 var storage = []
 var cards = 0
-var lastrand = 0
+var gacha = 0
 var currentCard = 0
 var currentStorage = 0
 var currentStorageStart = 0
@@ -58,7 +58,7 @@ var Account = {'username': '', 'nickname': '', 'cookies': '', 'time': 0, 'kills'
 var CardUnit = preload("res://Gacha/CardUnit.tscn")
 
 # Cardinfo = [Type, Name]
-enum {Ecologist, WarCorrespondent, Bottle}
+enum {Ecologist, WarCorrespondent, Bottle, Cake, AccessoryBanana, AccessoryCamera, AccessoryChristmashat, AccessoryMemo, ClothBananayellow, ClothBrown, ClothChristmas, ClothMemoyellow, ClothOrange, ClothWarCorrespondent, CatFlower}
 
 var Card = {
 	Ecologist : 
@@ -66,9 +66,33 @@ var Card = {
 	WarCorrespondent :
 		["Character", "WarCorrespondent"],
 	Bottle :
-		["Tool", "bottle"]
+		["Tool", "bottle"],
+	Cake :
+		["Tool", "cake"],
+	AccessoryBanana :
+		["Clothing", "accessory_banana"],
+	AccessoryCamera :
+		["Clothing", "accessory_camera"],
+	AccessoryChristmashat :
+		["Clothing", "accessory_christmashat"],
+	AccessoryMemo :
+		["Clothing", "accessory_memo"],
+	ClothBananayellow :
+		["Clothing", "cloth_bananayellow"],
+	ClothBrown :
+		["Clothing", "cloth_brown"],
+	ClothChristmas :
+		["Clothing", "cloth_christmas"],
+	ClothMemoyellow :
+		["Clothing", "cloth_memoyellow"],
+	ClothOrange :
+		["Clothing", "cloth_orange"],
+	ClothWarCorrespondent :
+		["Clothing", "cloth_war_correspondent"],
+	CatFlower :
+		["Clothing", "cat_flower"]
 }
 
-var RareCards = [Ecologist, WarCorrespondent]
+var RareCards = [Ecologist, WarCorrespondent, CatFlower]
 var RareCardAmount = 2
-var Pcard = [10.0, 30.0, 100.0]
+var Pcard = [100, 200, 2550, 4900, 5400, 5900, 6400, 6900, 7400, 7900, 8400, 8900, 9400, 9900, 10000]

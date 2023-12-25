@@ -180,7 +180,7 @@ theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 
 [node name="Cards" type="Node2D" parent="."]
-position = Vector2(-9.52381, 47.619)
+position = Vector2(-1.90735e-06, 38.0952)
 
 [node name="Once" type="MarginContainer" parent="."]
 offset_left = 558.476

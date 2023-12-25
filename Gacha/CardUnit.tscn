@@ -3,10 +3,8 @@
 [ext_resource type="Script" path="res://Gacha/CardUnit.gd" id="1_7atcq"]
 
 [node name="CardUnit" type="MarginContainer"]
-offset_left = -25.0
-offset_right = 1127.0
+offset_right = 1152.0
 offset_bottom = 535.0
-scale = Vector2(0.25, 0.25)
 script = ExtResource("1_7atcq")
 
 [node name="Card" type="Sprite2D" parent="."]

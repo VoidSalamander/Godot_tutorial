@@ -11,13 +11,17 @@ func SetCard():
 	var CardInfo = Global.Card[Global.currentCard]
 	#string of path to png file
 	var CardImg
-	if CardInfo[0] == "Tool":
+	if (CardInfo[0] == "Tool" or CardInfo[0] == "Clothing"):
 		CardImg = str( "res://png/Gacha/Cards/" , CardInfo[0] , "/" , CardInfo[1] , ".png" )
 		$".".size.x = 535
 		$".".size.y = 535
-	else:
+	elif (Global.gacha == 1):
 		CardImg = str( "res://png/Gacha/Cards/" , CardInfo[0] , "/" , CardInfo[1] , ".png" )
 		$".".size.x = 1152
+		$".".size.y = 535
+	else:
+		CardImg = str( "res://png/Gacha/Cards/" , CardInfo[0] , "/" , CardInfo[1] , "_small.png" )
+		$".".size.x = 535
 		$".".size.y = 535
 		
 	var CardSize = $".".size

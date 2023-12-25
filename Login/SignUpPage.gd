@@ -58,7 +58,11 @@ func _on_sign_up_pressed():
 			else:
 				remove_child(new)
 				$Notice.visible = true
-				$Notice/Label.text = "Sign up failed"
+				$Notice/Label.text = str(Global.response)
+				$Notice/Label.text = $Notice/Label.text+"\nSign up failed"
+				await get_tree().create_timer(2).timeout
+				$Notice.visible = false
+				$Notice/Label.text = ""
 		else:
 			$Notice.visible = true
 			$Notice/Label.text = "Something is invalid"

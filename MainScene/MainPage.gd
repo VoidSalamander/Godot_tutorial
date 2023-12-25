@@ -70,5 +70,5 @@ func _on_to_leader_board_pressed():
 
 func _on_start_game_pressed():
 	LoadAndSave.loadGame()
-	get_tree().change_scene_to_file("res://main/world.tscn")
+	get_tree().change_scene_to_file("res://MainScene/newWorld.tscn")
 
