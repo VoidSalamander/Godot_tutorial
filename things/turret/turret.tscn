@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://ikuuhsumbdhe"]
 
 [ext_resource type="Script" path="res://things/turret/turret.gd" id="1_miti0"]
-[ext_resource type="PackedScene" uid="uid://dvxswhls63tpn" path="res://things/turret/bomb.tscn" id="2_exmrk"]
 [ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_o5onj"]
+[ext_resource type="Script" path="res://things/turret/AttackComponent.gd" id="4_4uh3j"]
 [ext_resource type="Script" path="res://things/turret/HitboxComponent.gd" id="4_ch0m4"]
-[ext_resource type="Script" path="res://things/turret/atack_range.gd" id="4_tjfcy"]
 [ext_resource type="Texture2D" uid="uid://crc53tkbwf1ye" path="res://art/Healthbar/HealthBack.png" id="5_0fgck"]
+[ext_resource type="PackedScene" uid="uid://dvxswhls63tpn" path="res://things/turret/projectile/bomb.tscn" id="5_ec38m"]
 [ext_resource type="Texture2D" uid="uid://dc6yx4e317edp" path="res://art/Healthbar/Healthover.png" id="6_7aexl"]
 [ext_resource type="Script" path="res://things/turret/HealthComponent.gd" id="6_lfpcm"]
 [ext_resource type="Texture2D" uid="uid://b16mvt6thnf05" path="res://art/Healthbar/HealthProcess.png" id="7_w3m2n"]
@@ -21,9 +21,8 @@ radius = 268.007
 
 [node name="turret" type="Node2D"]
 script = ExtResource("1_miti0")
-bullet = ExtResource("2_exmrk")
 
-[node name="turret_sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_o5onj")
 offset = Vector2(12, -9)
 flip_h = true
@@ -42,17 +41,18 @@ HealthComponent = NodePath("../HealthComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_1h3pc")
 
-[node name="atack_range" type="Area2D" parent="."]
-script = ExtResource("4_tjfcy")
+[node name="AttackComponent" type="Area2D" parent="."]
+script = ExtResource("4_4uh3j")
+bullet = ExtResource("5_ec38m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="atack_range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
 shape = SubResource("CircleShape2D_vq8ds")
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(26, -8)
-
-[node name="fire_rate" type="Timer" parent="."]
+[node name="fire_rate" type="Timer" parent="AttackComponent"]
 autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="AttackComponent"]
+position = Vector2(26, -8)
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("6_lfpcm")
@@ -71,7 +71,6 @@ texture_over = ExtResource("6_7aexl")
 texture_progress = ExtResource("7_w3m2n")
 
 [connection signal="body_exited" from="HitboxComponent" to="." method="_on_area_2d_body_exited"]
-[connection signal="area_exited" from="atack_range" to="atack_range" method="_on_area_exited"]
-[connection signal="body_entered" from="atack_range" to="." method="_on_atack_range_body_entered"]
-[connection signal="body_exited" from="atack_range" to="." method="_on_atack_range_body_exited"]
-[connection signal="timeout" from="fire_rate" to="." method="_on_fire_rate_timeout"]
+[connection signal="body_entered" from="AttackComponent" to="AttackComponent" method="_on_body_entered"]
+[connection signal="body_exited" from="AttackComponent" to="AttackComponent" method="_on_body_exited"]
+[connection signal="timeout" from="AttackComponent/fire_rate" to="AttackComponent" method="_on_fire_rate_timeout"]

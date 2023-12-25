@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtbt13cydvq55"]
+
+[ext_resource type="Script" path="res://things/item/resorces_item/wood.gd" id="1_tyvm2"]
+[ext_resource type="Texture2D" uid="uid://4ssg26cx12ri" path="res://art/item/Sprite-0001.png" id="2_oawpg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8vv2"]
+size = Vector2(38, 38)
+
+[node name="wood" type="Area2D"]
+script = ExtResource("1_tyvm2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oawpg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r8vv2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

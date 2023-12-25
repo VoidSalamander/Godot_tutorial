@@ -1,63 +1,63 @@
 [gd_scene load_steps=33 format=3 uid="uid://bcgndkkx34l1w"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_7yl7d"]
-[ext_resource type="FontFile" uid="uid://cdsft4jit0pak" path="res://art/font.TTF" id="2_56l2w"]
-[ext_resource type="Texture2D" uid="uid://chalue1qvwuh3" path="res://art/Setting/設定按鈕.png" id="2_vmm0n"]
-[ext_resource type="Texture2D" uid="uid://cf4qdlb35lder" path="res://art/設定返回.png" id="3_bfxfd"]
-[ext_resource type="Texture2D" uid="uid://dgyeaf0w5u8wl" path="res://art/移動桿.png" id="4_eqdew"]
-[ext_resource type="Texture2D" uid="uid://cjdplab33o0dd" path="res://art/Setting/設定返回.png" id="4_y215b"]
-[ext_resource type="Texture2D" uid="uid://cba548ooihjni" path="res://art/攻擊.png" id="5_cvjn3"]
+[ext_resource type="Texture2D" uid="uid://chalue1qvwuh3" path="res://art/Setting/設定按鈕.png" id="2_l0u62"]
+[ext_resource type="FontFile" uid="uid://cdsft4jit0pak" path="res://art/font.TTF" id="3_qe57d"]
+[ext_resource type="Texture2D" uid="uid://cjdplab33o0dd" path="res://art/Setting/設定返回.png" id="4_ngwxm"]
+[ext_resource type="Texture2D" uid="uid://bd3ostqgn4gxw" path="res://art/Setting/設定背景.png" id="5_86nta"]
 [ext_resource type="Script" path="res://Menu/Joystick.gd" id="5_glntf"]
-[ext_resource type="Texture2D" uid="uid://bd3ostqgn4gxw" path="res://art/Setting/設定背景.png" id="5_nxo1l"]
+[ext_resource type="Texture2D" uid="uid://dk5b3s413tqrf" path="res://art/音樂.png" id="6_g2ndk"]
 [ext_resource type="Script" path="res://Menu/Attack.gd" id="6_ka87m"]
-[ext_resource type="Texture2D" uid="uid://dk5b3s413tqrf" path="res://art/音樂.png" id="6_ysn0y"]
-[ext_resource type="Texture2D" uid="uid://c7gew8if8ylft" path="res://art/音樂 (2).png" id="7_64nrg"]
-[ext_resource type="Texture2D" uid="uid://bqwm5a6u2vwa2" path="res://art/建造.png" id="7_vsem5"]
+[ext_resource type="Texture2D" uid="uid://c7gew8if8ylft" path="res://art/音樂 (2).png" id="7_sthyp"]
 [ext_resource type="Script" path="res://Menu/Build.gd" id="8_1hwed"]
-[ext_resource type="Texture2D" uid="uid://bs616kipr4y7c" path="res://art/Setting/設定 底.png" id="12_5ttde"]
-[ext_resource type="Texture2D" uid="uid://c3hpce6op7pcp" path="res://art/Setting/設定確認.png" id="13_wc670"]
+[ext_resource type="Texture2D" uid="uid://dgyeaf0w5u8wl" path="res://art/移動桿.png" id="8_861lf"]
+[ext_resource type="Texture2D" uid="uid://cba548ooihjni" path="res://art/攻擊.png" id="10_p7ogv"]
+[ext_resource type="Texture2D" uid="uid://bqwm5a6u2vwa2" path="res://art/建造.png" id="12_bghn5"]
+[ext_resource type="Texture2D" uid="uid://cf4qdlb35lder" path="res://art/設定返回.png" id="14_6sjg0"]
+[ext_resource type="Texture2D" uid="uid://bs616kipr4y7c" path="res://art/Setting/設定 底.png" id="15_lxx0n"]
+[ext_resource type="Texture2D" uid="uid://c3hpce6op7pcp" path="res://art/Setting/設定確認.png" id="16_wdrrb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nkqn3"]
 line_spacing = 0.0
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_h7laf"]
 line_spacing = 0.0
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_e6qpq"]
 line_spacing = 0.0
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_vm5xr"]
 line_spacing = 0.0
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_b8nxd"]
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_mc6fv"]
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 20
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a44s7"]
-texture = ExtResource("7_64nrg")
+texture = ExtResource("7_sthyp")
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rsm0v"]
-texture = ExtResource("7_64nrg")
+texture = ExtResource("7_sthyp")
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_6qubf"]
 line_spacing = 0.0
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 30
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_40o2b"]
@@ -71,22 +71,22 @@ radius = 40.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_iy8c0"]
 line_spacing = 0.0
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_k0x45"]
 line_spacing = 10.0
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_emjvq"]
 line_spacing = 0.0
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_8phhf"]
 line_spacing = 0.0
-font = ExtResource("2_56l2w")
+font = ExtResource("3_qe57d")
 font_size = 30
 
 [node name="Menu" type="Control"]
@@ -125,7 +125,7 @@ theme_override_constants/separation = 8
 [node name="Music" type="Button" parent="Options/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-icon = ExtResource("2_vmm0n")
+icon = ExtResource("2_l0u62")
 flat = true
 
 [node name="Label" type="Label" parent="Options/VBoxContainer/Music"]
@@ -147,7 +147,7 @@ label_settings = SubResource("LabelSettings_nkqn3")
 [node name="Adjustment" type="Button" parent="Options/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-icon = ExtResource("2_vmm0n")
+icon = ExtResource("2_l0u62")
 flat = true
 
 [node name="Label" type="Label" parent="Options/VBoxContainer/Adjustment"]
@@ -169,7 +169,7 @@ label_settings = SubResource("LabelSettings_h7laf")
 [node name="Quit_game" type="Button" parent="Options/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-icon = ExtResource("2_vmm0n")
+icon = ExtResource("2_l0u62")
 flat = true
 
 [node name="Label" type="Label" parent="Options/VBoxContainer/Quit_game"]
@@ -203,7 +203,7 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.3, 0.3)
 focus_mode = 0
-icon = ExtResource("4_y215b")
+icon = ExtResource("4_ngwxm")
 flat = true
 
 [node name="Label" type="Label" parent="Options/BackFromOption"]
@@ -234,7 +234,7 @@ grow_vertical = 2
 [node name="Sprite2D" type="Sprite2D" parent="Music_page"]
 position = Vector2(120, 68)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("5_nxo1l")
+texture = ExtResource("5_86nta")
 
 [node name="name" type="VBoxContainer" parent="Music_page/Sprite2D"]
 anchors_preset = 8
@@ -278,8 +278,8 @@ theme_override_constants/separation = 28
 
 [node name="bgmSlider" type="HSlider" parent="Music_page/Sprite2D/value"]
 layout_mode = 2
-theme_override_icons/grabber = ExtResource("6_ysn0y")
-theme_override_icons/grabber_highlight = ExtResource("6_ysn0y")
+theme_override_icons/grabber = ExtResource("6_g2ndk")
+theme_override_icons/grabber_highlight = ExtResource("6_g2ndk")
 theme_override_styles/slider = SubResource("StyleBoxTexture_a44s7")
 min_value = -6.0
 max_value = 6.0
@@ -287,8 +287,8 @@ step = 0.01
 
 [node name="seSlider" type="HSlider" parent="Music_page/Sprite2D/value"]
 layout_mode = 2
-theme_override_icons/grabber = ExtResource("6_ysn0y")
-theme_override_icons/grabber_highlight = ExtResource("6_ysn0y")
+theme_override_icons/grabber = ExtResource("6_g2ndk")
+theme_override_icons/grabber_highlight = ExtResource("6_g2ndk")
 theme_override_styles/slider = SubResource("StyleBoxTexture_rsm0v")
 min_value = -6.0
 max_value = 6.0
@@ -308,7 +308,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 focus_mode = 0
-icon = ExtResource("4_y215b")
+icon = ExtResource("4_ngwxm")
 flat = true
 
 [node name="Label" type="Label" parent="Music_page/Sprite2D/BackFromMusic"]
@@ -340,7 +340,7 @@ grow_vertical = 2
 [node name="Joystick" type="Sprite2D" parent="Adjust_page"]
 position = Vector2(45, 95)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_eqdew")
+texture = ExtResource("8_861lf")
 offset = Vector2(-1, 0)
 script = ExtResource("5_glntf")
 
@@ -350,7 +350,7 @@ shape = SubResource("CircleShape2D_40o2b")
 [node name="Attack" type="Sprite2D" parent="Adjust_page"]
 position = Vector2(211, 96)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_cvjn3")
+texture = ExtResource("10_p7ogv")
 script = ExtResource("6_ka87m")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Adjust_page/Attack"]
@@ -359,7 +359,7 @@ shape = SubResource("CircleShape2D_ae7ov")
 [node name="Build" type="Sprite2D" parent="Adjust_page"]
 position = Vector2(171, 96)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("7_vsem5")
+texture = ExtResource("12_bghn5")
 script = ExtResource("8_1hwed")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Adjust_page/Build"]
@@ -380,7 +380,7 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.3, 0.3)
 focus_mode = 0
-icon = ExtResource("3_bfxfd")
+icon = ExtResource("14_6sjg0")
 flat = true
 
 [node name="Label" type="Label" parent="Adjust_page/BackFromAdjust"]
@@ -411,7 +411,7 @@ grow_vertical = 2
 [node name="Sprite2D" type="Sprite2D" parent="Quit_page"]
 position = Vector2(120, 68)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("12_5ttde")
+texture = ExtResource("15_lxx0n")
 
 [node name="Label" type="Label" parent="Quit_page/Sprite2D"]
 anchors_preset = 8
@@ -442,7 +442,7 @@ offset_right = -497.0
 offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
-icon = ExtResource("13_wc670")
+icon = ExtResource("16_wdrrb")
 flat = true
 
 [node name="Label" type="Label" parent="Quit_page/Sprite2D/Yes"]
@@ -474,7 +474,7 @@ offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-icon = ExtResource("13_wc670")
+icon = ExtResource("16_wdrrb")
 flat = true
 
 [node name="Label" type="Label" parent="Quit_page/Sprite2D/No"]

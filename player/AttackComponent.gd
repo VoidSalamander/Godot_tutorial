@@ -13,7 +13,6 @@ func _on_attac_range_body_exited(body):
 		attack_able_mob.erase(body)
 
 func shoot():
-	
 	var bullet_node = Global.instance_node(bullet, global_position)
 	bullet_node.init(get_parent().attack_damage)
 	if !attack_able_mob.is_empty():

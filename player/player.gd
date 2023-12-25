@@ -62,7 +62,6 @@ func _input(event):
 					handle_left_hand_touch(event.position)
 				else:
 					right_hand_index = event.index
-
 			if event.is_pressed() == false:
 				if event.index == left_hand_index:
 					left_hand_index = -1

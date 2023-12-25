@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d2e1cwl4oqmrd" path="res://art/方向.png" id="4_xfutu"]
 [ext_resource type="Script" path="res://player/Sprite2D.gd" id="4_xpvyt"]
 [ext_resource type="Texture2D" uid="uid://dgyeaf0w5u8wl" path="res://art/移動桿.png" id="5_kmxrf"]
-[ext_resource type="PackedScene" path="res://inventory/inventory.tscn" id="6_ecnbl"]
+[ext_resource type="PackedScene" uid="uid://c2ovwrgxcxbgg" path="res://inventory/Inventory.tscn" id="6_ecnbl"]
 [ext_resource type="Script" path="res://player/HitboxComponent.gd" id="6_fklgp"]
 [ext_resource type="Script" path="res://player/HealthComponent.gd" id="7_gc1v4"]
 [ext_resource type="PackedScene" uid="uid://bcgndkkx34l1w" path="res://Menu/menu.tscn" id="8_5cky0"]
@@ -267,8 +267,6 @@ turret = ExtResource("12_pbwto")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("4_un3h3")
-
-[node name="Control" parent="HUD" instance=ExtResource("6_ecnbl")]
 
 [node name="Menu" parent="HUD" instance=ExtResource("8_5cky0")]
 visible = false
@@ -536,6 +534,8 @@ pivot_offset = Vector2(35, 10)
 focus_mode = 0
 icon = ExtResource("10_0iej2")
 flat = true
+
+[node name="Control" parent="HUD" instance=ExtResource("6_ecnbl")]
 
 [connection signal="player_dead" from="." to="HUD" method="_on_player_player_dead"]
 [connection signal="area_entered" from="HitboxComponent" to="HitboxComponent" method="_on_area_entered"]
