@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dygmdff7w6ism"]
+[gd_scene load_steps=33 format=3 uid="uid://dygmdff7w6ism"]
 
 [ext_resource type="Script" path="res://Gacha/GachaPage.gd" id="1_g35st"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="2_sdeuc"]
@@ -15,6 +15,8 @@
 font_names = PackedStringArray("Constantia")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akrvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0vi3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_umyxx"]
 atlas = ExtResource("11_6lp0u")
@@ -244,9 +246,14 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="CoinAndGem" type="TouchScreenButton" parent="CoinAndDiamond"]
-position = Vector2(-388, -10)
+position = Vector2(-111.81, 23.3333)
+scale = Vector2(23, 2)
+shape = SubResource("RectangleShape2D_o0vi3")
+
+[node name="Sprite2D" type="Sprite2D" parent="CoinAndDiamond"]
+position = Vector2(-133.333, 23.8095)
 scale = Vector2(1.5, 1.5)
-texture_normal = ExtResource("10_gbjpb")
+texture = ExtResource("10_gbjpb")
 
 [node name="Name" type="Node2D" parent="."]
 position = Vector2(-1.90735e-06, -2.09808e-05)

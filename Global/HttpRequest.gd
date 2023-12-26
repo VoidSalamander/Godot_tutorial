@@ -1,5 +1,6 @@
 extends Node
 
+#var url: String = "http://127.0.0.1:5000/"
 var url: String = "http://140.122.185.168:30000/"
 
 func _ready():

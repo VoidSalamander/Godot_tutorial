@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cmooqripkn2pq"]
+[gd_scene load_steps=25 format=3 uid="uid://cmooqripkn2pq"]
 
 [ext_resource type="Script" path="res://MainScene/MainPage.gd" id="1_bfu1e"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="2_jcx87"]
@@ -9,10 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d0dc81i4vmo7o" path="res://png/MainScene/抽卡.png" id="7_w117k"]
 [ext_resource type="Texture2D" uid="uid://biylss5ftb8tj" path="res://png/MainScene/背包.png" id="8_j8xao"]
 [ext_resource type="Texture2D" uid="uid://do4wqlhjrjojy" path="res://png/MainScene/新房間.png" id="9_iifv4"]
-[ext_resource type="Texture2D" uid="uid://cj5lowte647oe" path="res://png/Gacha/Cards/Clothing/cloth_brown.png" id="10_ey7l4"]
 [ext_resource type="Texture2D" uid="uid://btq68yp1u4500" path="res://png/MainScene/快速配對.png" id="10_wvi1k"]
-[ext_resource type="Texture2D" uid="uid://hj33ql3viij0" path="res://png/Gacha/Cards/Clothing/accessory_memo.png" id="11_armr5"]
-[ext_resource type="Texture2D" uid="uid://dvjkc82fk7bxk" path="res://png/Gacha/Cards/Clothing/cat_grey.png" id="11_qxlo5"]
 [ext_resource type="Texture2D" uid="uid://b8f2erhh70o81" path="res://png/LeaderBoard/Others.png" id="12_vkrm3"]
 [ext_resource type="Script" path="res://MainScene/ToSetting.gd" id="13_1olx2"]
 [ext_resource type="PackedScene" uid="uid://dwawdjn711anr" path="res://Global/PlayerCharacter.tscn" id="14_vihai"]
@@ -118,6 +115,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("5_v4mhm")
 
 [node name="Character" type="Node2D" parent="Main"]
+visible = false
 position = Vector2(69, 173.381)
 
 [node name="Sprite2D" type="Sprite2D" parent="Main/Character"]
@@ -131,7 +129,7 @@ scale = Vector2(14, 8.5)
 shape = SubResource("RectangleShape2D_35whs")
 
 [node name="Gacha" type="Node2D" parent="Main"]
-position = Vector2(139, 506.238)
+position = Vector2(170, 300)
 
 [node name="Sprite2D" type="Sprite2D" parent="Main/Gacha"]
 scale = Vector2(1.3, 1.3)
@@ -142,7 +140,7 @@ scale = Vector2(7, 7.5)
 shape = SubResource("ConvexPolygonShape2D_7gfbr")
 
 [node name="Storage" type="Node2D" parent="Main"]
-position = Vector2(321.572, 490.238)
+position = Vector2(160, 490.238)
 
 [node name="Sprite2D" type="Sprite2D" parent="Main/Storage"]
 position = Vector2(20, 15)
@@ -180,7 +178,7 @@ scale = Vector2(1.3, 1.3)
 shape = SubResource("RectangleShape2D_w30yj")
 
 [node name="StartGame" type="Node2D" parent="Main"]
-position = Vector2(950, 523.665)
+position = Vector2(850, 520)
 
 [node name="Label" type="Label" parent="Main/StartGame"]
 offset_left = -126.0
@@ -189,33 +187,18 @@ offset_right = 128.0
 offset_bottom = 18.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("4_244lm")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "Start game"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StartGame" type="TouchScreenButton" parent="Main/StartGame"]
+position = Vector2(38.0952, 4.7619)
+scale = Vector2(1.3, 1.1)
 shape = SubResource("RectangleShape2D_ppmig")
 
-[node name="UserCharacter" type="Node2D" parent="Main"]
-visible = false
-position = Vector2(0, -4.57764e-05)
-
-[node name="Cloth" type="Sprite2D" parent="Main/UserCharacter"]
-position = Vector2(580.952, 333.333)
-scale = Vector2(1.7, 1.7)
-texture = ExtResource("10_ey7l4")
-
-[node name="Accessory" type="Sprite2D" parent="Main/UserCharacter"]
-position = Vector2(529, 371)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("11_armr5")
-
-[node name="Cat" type="Sprite2D" parent="Main/UserCharacter"]
-position = Vector2(700, 358)
-scale = Vector2(1.7, 1.7)
-texture = ExtResource("11_qxlo5")
-
 [node name="LeaderBoard" type="Node2D" parent="Main"]
-position = Vector2(979, 275.286)
+position = Vector2(979, 250)
 
 [node name="Trophy" type="Sprite2D" parent="Main/LeaderBoard"]
 scale = Vector2(0.8, 0.8)
@@ -225,7 +208,7 @@ texture = ExtResource("12_vkrm3")
 shape = SubResource("ConvexPolygonShape2D_27aws")
 
 [node name="PlayerCharacter" parent="Main" instance=ExtResource("14_vihai")]
-position = Vector2(571.428, 328.571)
+position = Vector2(561.904, 323.809)
 scale = Vector2(4, 4)
 
 [node name="Back" type="Node2D" parent="."]

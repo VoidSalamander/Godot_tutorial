@@ -52,4 +52,9 @@ func _on_forgotten_password_pressed():
 	get_tree().change_scene_to_file("res://Login/ForgottenPwPage.tscn")
 
 
-
+func _on_visitor_pressed():
+	LoadAndSave.loadGame()
+	if len(Global.storage) == 0:
+		Global.storage.resize(100)
+		Global.storage.fill(0)
+	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")

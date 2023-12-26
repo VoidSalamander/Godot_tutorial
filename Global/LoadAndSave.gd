@@ -1,7 +1,7 @@
 extends Node
 
 
-const SAVE_PATH = "user://savegame.bin"
+var SAVE_PATH = "user://"+Global.Account["username"]+".bin"
 
 
 func saveGame():
@@ -12,6 +12,7 @@ func saveGame():
 		"kills" : Global.Account['kills'],
 		"time" : Global.Account['time'],
 		"storage" : Global.storage,
+		"nickname" : Global.Account['nickname'],
 		"clothing" : Global.Account['clothing'],
 		"accessory" : Global.Account['accessory'],
 		"cat" : Global.Account['cat']
@@ -29,6 +30,7 @@ func loadGame():
 				Global.Account['yposition'] = current_line["yposition"]
 				Global.Account['kills'] = current_line["kills"]
 				Global.Account['time'] = current_line["time"]
+				Global.Account['nickname'] = current_line["nickname"]
 				Global.Account['clothing'] = current_line["clothing"]
 				Global.Account['accessory'] = current_line["accessory"]
 				Global.Account['cat'] = current_line["cat"]

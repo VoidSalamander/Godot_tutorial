@@ -2,30 +2,35 @@ extends Node2D
 
 
 func _ready():
-	$Loading.visible = true
-	$Back.visible = false
-	$Main.visible = false
-	
-	Global.search_args['username'] = Global.Account['username']
-	Global.search_args['cookies'] = Global.Account['cookies']
-	
-	Global.currentAction = 6
-	var newcall = load("res://Global/HttpRequest.tscn")
-	Global.response["status"] = ""
-	
-	while Global.response["status"] != "Successful":
-		var new = newcall.instantiate()
-		add_child(new)
-		new.send()
+	if Global.Account['cookies'] != "":
+		$Loading.visible = true
+		$Back.visible = false
+		$Main.visible = false
 		
-		await get_tree().create_timer(2).timeout
-		if Global.response["status"] == "Successful":
-			$Loading.visible = false
-			Global.CoinAmount = Global.response["coin"]
-			Global.GemAmount = Global.response["diamond"]
-			Global.Account["nickname"] = Global.response["nickname"]
-		remove_child(new)
-	''''''
+		Global.search_args['username'] = Global.Account['username']
+		Global.search_args['cookies'] = Global.Account['cookies']
+		
+		Global.currentAction = 6
+		var newcall = load("res://Global/HttpRequest.tscn")
+		Global.response["status"] = ""
+		
+		while Global.response["status"] != "Successful":
+			var new = newcall.instantiate()
+			add_child(new)
+			new.send()
+			
+			await get_tree().create_timer(2).timeout
+			if Global.response["status"] == "Successful":
+				$Loading.visible = false
+				Global.CoinAmount = Global.response["coin"]
+				Global.GemAmount = Global.response["diamond"]
+				Global.Account["nickname"] = Global.response["nickname"]
+			remove_child(new)
+	else:
+		$Main/LeaderBoard.visible = false
+		$Main/CoinAndDiamond/TopUp1.visible = false
+		$Main/CoinAndDiamond/TopUp2.visible = false
+	
 	$Main/CoinAndDiamond/CoinAmount.text = str(Global.CoinAmount)
 	$Main/CoinAndDiamond/GemAmount.text = str(Global.GemAmount)
 	$Main/Name/Name.text = Global.Account["nickname"]
@@ -37,23 +42,6 @@ func _process(delta):
 	$Main/CoinAndDiamond/CoinAmount.text = str(Global.CoinAmount)
 	$Main/CoinAndDiamond/GemAmount.text = str(Global.GemAmount)
 	$Main/Name/Name.text = Global.Account["nickname"]
-	if Global.Account['cat'] != '':
-		$Main/UserCharacter/Cat.texture = load("res://png/Gacha/Cards/Clothing/"+Global.Account['cat']+".png")
-		$Main/UserCharacter/Cat.visible = true
-	else:
-		$Main/UserCharacter/Cat.visible = false
-	$Main/UserCharacter/Cloth.texture = load("res://png/Gacha/Cards/Clothing/"+Global.Account['clothing']+".png")
-	if Global.Account['accessory'] != '':
-		if Global.Account['accessory'].contains("hat") or Global.Account['accessory'].contains("banana"):
-			$Main/UserCharacter/Accessory.position = Vector2(592,285)
-			$Main/UserCharacter/Accessory.scale = Vector2(1.7,1.7)
-		else:
-			$Main/UserCharacter/Accessory.position = Vector2(529,371)
-			$Main/UserCharacter/Accessory.scale = Vector2(1.5,1.5)
-		$Main/UserCharacter/Accessory.texture = load("res://png/Gacha/Cards/Clothing/"+Global.Account['accessory']+".png")
-		$Main/UserCharacter/Accessory.visible = true
-	else:
-		$Main/UserCharacter/Accessory.visible = false
 
 
 func _on_storage_pressed():

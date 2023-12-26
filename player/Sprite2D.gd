@@ -21,3 +21,4 @@ func updatAnimation():
 			if(get_parent().velocity.y < 0): direction = "up"
 			else: direction = "down"
 		animations.play("walk_" + direction)
+

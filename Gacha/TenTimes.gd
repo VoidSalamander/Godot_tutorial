@@ -7,41 +7,46 @@ var newcall
 var new
 
 func _on_pressed():
-	if Global.GemAmount >= 50:
-		$"..".visible = false
-		$"../../Once".visible = false
-		$"../../CoinAndDiamond".visible = false
-		$"../../Name".visible = false
-		$"../../CardSample".visible = false
-		$"../../Possibility".visible = false
-		$"../../CardSample/Timer".stop()
-		$"../../List".visible = false
-		$"../../Continue".visible = false
-		$"../../Transition".visible = true
-		$"../../Transition".play("transition")
-		
-		print(Global.response)
-		
-		Global.gacha = 10
-		cardTemp.resize(10)
-		Global.response["status"] = ""
-		Global.gacha_args["username"] = Global.Account["username"]
-		Global.gacha_args["draws"] = 10
-		Global.gacha_args["cookies"] = Global.Account["cookies"]
-		
-		Global.currentAction = 7
-		newcall = load("res://Global/HttpRequest.tscn")
-		new = newcall.instantiate()
-		add_child(new)
-		new.send()
-		
-		await get_tree().create_timer(2).timeout
+	if Global.Account['cookies'] != "":
+		if Global.GemAmount >= 50:
+			$"..".visible = false
+			$"../../Once".visible = false
+			$"../../CoinAndDiamond".visible = false
+			$"../../Name".visible = false
+			$"../../CardSample".visible = false
+			$"../../Possibility".visible = false
+			$"../../CardSample/Timer".stop()
+			$"../../List".visible = false
+			$"../../Continue".visible = false
+			$"../../Transition".visible = true
+			$"../../Transition".play("transition")
+			
+			print(Global.response)
+			
+			Global.gacha = 10
+			cardTemp.resize(10)
+			Global.response["status"] = ""
+			Global.gacha_args["username"] = Global.Account["username"]
+			Global.gacha_args["draws"] = 10
+			Global.gacha_args["cookies"] = Global.Account["cookies"]
+			
+			Global.currentAction = 7
+			newcall = load("res://Global/HttpRequest.tscn")
+			new = newcall.instantiate()
+			add_child(new)
+			new.send()
+			
+			await get_tree().create_timer(2).timeout
+		else:
+			$"../../Notice".visible = true
+			$"../../Notice/Label".text = "Not enough diamonds"
+			await get_tree().create_timer(2).timeout
+			$"../../Notice".visible = false
 	else:
 		$"../../Notice".visible = true
-		$"../../Notice/Label".text = "Not enough diamonds"
+		$"../../Notice/Label".text = "Login for further actions"
 		await get_tree().create_timer(2).timeout
 		$"../../Notice".visible = false
-		
 	
 func _on_transition_animation_finished():
 	if Global.gacha == 10:

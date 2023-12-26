@@ -56,10 +56,10 @@ script = ExtResource("1_xxrns")
 [node name="BG" parent="." instance=ExtResource("2_8kqwj")]
 
 [node name="ResetPwLabel" type="Label" parent="."]
-offset_left = 279.332
-offset_top = 94.7614
-offset_right = 865.332
-offset_bottom = 143.761
+offset_left = 279.0
+offset_top = 95.0
+offset_right = 865.0
+offset_bottom = 144.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("3_q2bc1")
 theme_override_font_sizes/font_size = 45
@@ -82,9 +82,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SendEmail" type="HSplitContainer" parent="."]
-offset_left = 247.619
+visible = false
+offset_left = 252.381
 offset_top = 333.333
-offset_right = 897.619
+offset_right = 902.381
 offset_bottom = 413.333
 theme_override_constants/separation = 10
 split_offset = 150
@@ -106,6 +107,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_o0226")
 
 [node name="Send" type="MarginContainer" parent="."]
+visible = false
 offset_left = 511.0
 offset_top = 481.667
 offset_right = 641.0

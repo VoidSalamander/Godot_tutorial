@@ -26,6 +26,8 @@ func _ready():
 	$List/Second.texture = load(CardImg)
 	$List.visible = true
 	$Notice.visible = false
+	if Global.Account['cookies'] == "":
+		$CoinAndDiamond/CoinAndGem.visible = false
 	
 func _process(delta):
 	$Name/Name.text = Global.Account["nickname"]

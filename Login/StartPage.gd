@@ -8,7 +8,6 @@ func _ready():
 	Global.storage.resize(100)
 	Global.storage.fill(0)
 	Global.gacha = 0
-	Global.startGame = 1
 	Global.currentCard = 0
 	Global.currentStorage = 0
 	Global.currentStorageStart = 0
