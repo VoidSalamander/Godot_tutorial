@@ -158,11 +158,11 @@ script = ExtResource("1_g35st")
 [node name="BG" parent="." instance=ExtResource("2_sdeuc")]
 
 [node name="CardSample" type="Node2D" parent="."]
-position = Vector2(-9.52381, 38.0952)
+position = Vector2(-3.8147e-06, -2.09808e-05)
 
 [node name="Card" type="Sprite2D" parent="CardSample"]
-position = Vector2(758, 244)
-scale = Vector2(1.3, 1.3)
+position = Vector2(758, 291.619)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("3_6ybra")
 
 [node name="Timer" type="Timer" parent="CardSample"]
@@ -180,135 +180,137 @@ theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 
 [node name="Cards" type="Node2D" parent="."]
-position = Vector2(-9.52381, 47.619)
+position = Vector2(-1.90735e-06, 38.0952)
 
 [node name="Once" type="MarginContainer" parent="."]
 offset_left = 558.476
-offset_top = 496.905
+offset_top = 501.667
 offset_right = 658.476
-offset_bottom = 546.905
+offset_bottom = 551.667
 
 [node name="Sprite2D" type="Sprite2D" parent="Once"]
 position = Vector2(40, 25)
-scale = Vector2(1.2, 1.2)
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("6_xtjt2")
 
-[node name="Once" type="TouchScreenButton" parent="Once" groups=["buttons"]]
+[node name="Once" type="TouchScreenButton" parent="Once"]
 position = Vector2(40, 25)
-scale = Vector2(12, 3.5)
+scale = Vector2(12.5, 3.646)
 shape = SubResource("RectangleShape2D_akrvt")
 script = ExtResource("7_ybu4d")
 
 [node name="TenTimes" type="MarginContainer" parent="."]
-offset_left = 851.476
-offset_top = 496.905
-offset_right = 956.476
-offset_bottom = 546.905
+offset_left = 884.808
+offset_top = 501.667
+offset_right = 989.808
+offset_bottom = 551.667
 
 [node name="Sprite2D" type="Sprite2D" parent="TenTimes"]
 position = Vector2(50, 25)
-scale = Vector2(1.2, 1.2)
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("8_nxed2")
 
-[node name="TenTimes" type="TouchScreenButton" parent="TenTimes" groups=["buttons"]]
+[node name="TenTimes" type="TouchScreenButton" parent="TenTimes"]
 position = Vector2(50, 25)
-scale = Vector2(12, 3.5)
+scale = Vector2(12.5, 3.646)
 shape = SubResource("RectangleShape2D_akrvt")
 script = ExtResource("9_rq2b5")
 
 [node name="CoinAndDiamond" type="Node2D" parent="."]
-position = Vector2(1014.48, 81.619)
+position = Vector2(1014.48, 67.3333)
 
 [node name="CoinAmount" type="Label" parent="CoinAndDiamond"]
 offset_left = -339.0
-offset_top = 1.0
-offset_right = -179.0
-offset_bottom = 41.0
+offset_top = 5.7619
+offset_right = -149.0
+offset_bottom = 45.7619
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("5_v8qjs")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 33
 text = "1000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="GemAmount" type="Label" parent="CoinAndDiamond"]
-offset_left = -84.0
-offset_top = 1.0
-offset_right = 16.0
-offset_bottom = 41.0
+offset_left = -36.3809
+offset_top = 5.7619
+offset_right = 78.6191
+offset_bottom = 45.7619
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("5_v8qjs")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 33
 text = "100"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CoinAndGem" type="TouchScreenButton" parent="CoinAndDiamond" groups=["buttons"]]
+[node name="CoinAndGem" type="TouchScreenButton" parent="CoinAndDiamond"]
 position = Vector2(-388, -10)
-scale = Vector2(1.3, 1.3)
+scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("10_gbjpb")
 
 [node name="Name" type="Node2D" parent="."]
-position = Vector2(-9.52381, 42.8571)
+position = Vector2(-1.90735e-06, -2.09808e-05)
 
 [node name="Name" type="Label" parent="Name"]
-offset_left = 58.0
-offset_top = 38.0
-offset_right = 308.0
-offset_bottom = 73.0
+offset_left = 48.4762
+offset_top = 71.3333
+offset_right = 498.476
+offset_bottom = 116.333
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("5_v8qjs")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "Player"
+vertical_alignment = 1
 
 [node name="Back" type="MarginContainer" parent="."]
-offset_left = 34.4762
-offset_top = 510.143
-offset_right = 137.476
-offset_bottom = 560.143
+offset_left = 53.5238
+offset_top = 543.476
+offset_right = 173.524
+offset_bottom = 593.476
 
 [node name="BackLabel" type="Label" parent="Back"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("5_v8qjs")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 35
 text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="TouchScreenButton" parent="Back" groups=["buttons"]]
-position = Vector2(49, 24)
-scale = Vector2(5.5, 2)
+[node name="Back" type="TouchScreenButton" parent="Back"]
+position = Vector2(58.5238, 24)
+scale = Vector2(6.7, 2.4)
 shape = SubResource("RectangleShape2D_akrvt")
 
 [node name="Continue" type="MarginContainer" parent="."]
-offset_left = 1014.48
-offset_top = 76.8571
-offset_right = 1134.48
-offset_bottom = 126.857
+visible = false
+offset_left = 952.576
+offset_top = 29.2381
+offset_right = 1114.58
+offset_bottom = 79.2382
 
 [node name="ContinueLabel" type="Label" parent="Continue"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("5_v8qjs")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 25
 text = "Continue
 "
 
-[node name="Continue" type="TouchScreenButton" parent="Continue" groups=["buttons"]]
-position = Vector2(57, 24)
-scale = Vector2(6, 2)
+[node name="Continue" type="TouchScreenButton" parent="Continue"]
+position = Vector2(80.8097, 24)
+scale = Vector2(8.7, 2.2)
 shape = SubResource("RectangleShape2D_akrvt")
 
 [node name="List" type="Node2D" parent="."]
-position = Vector2(-9.52381, 38.0952)
+position = Vector2(-1.90735e-06, -2.09808e-05)
 
 [node name="First" type="Sprite2D" parent="List"]
-position = Vector2(205, 195)
+position = Vector2(205, 242.619)
 scale = Vector2(1.25, 1.25)
 
 [node name="Second" type="Sprite2D" parent="List"]
-position = Vector2(205, 340)
+position = Vector2(205, 387.619)
 scale = Vector2(1.25, 1.25)
 
 [node name="Transition" type="AnimatedSprite2D" parent="."]
@@ -321,10 +323,10 @@ frame = 17
 frame_progress = 1.0
 
 [node name="Notice" type="MarginContainer" parent="."]
-offset_left = 451.0
-offset_top = 245.095
-offset_right = 701.0
-offset_bottom = 365.595
+offset_left = 446.238
+offset_top = 259.381
+offset_right = 696.238
+offset_bottom = 379.881
 
 [node name="Black_BG" type="ColorRect" parent="Notice"]
 layout_mode = 2
