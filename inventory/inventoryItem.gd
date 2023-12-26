@@ -3,5 +3,5 @@ class_name InventoryItem
 
 @export var name: String = ""
 @export var texture: Texture2D
-@export var item: Item
+@export var background_color: int
 
