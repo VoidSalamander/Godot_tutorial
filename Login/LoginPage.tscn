@@ -116,7 +116,7 @@ theme_override_fonts/font = ExtResource("4_4ixtg")
 theme_override_font_sizes/font_size = 35
 text = "LOG IN"
 
-[node name="LogIn" type="TouchScreenButton" parent="LogIn" groups=["buttons"]]
+[node name="LogIn" type="TouchScreenButton" parent="LogIn"]
 position = Vector2(89, 16)
 scale = Vector2(10, 2.5)
 shape = SubResource("RectangleShape2D_eegys")
@@ -147,7 +147,7 @@ theme_override_fonts/font = ExtResource("4_4ixtg")
 theme_override_font_sizes/font_size = 22
 text = "SIGN UP"
 
-[node name="SignUp" type="TouchScreenButton" parent="HBoxContainer/SignUp" groups=["buttons"]]
+[node name="SignUp" type="TouchScreenButton" parent="HBoxContainer/SignUp"]
 position = Vector2(67, 11)
 scale = Vector2(7.3, 1.8)
 texture_normal = SubResource("ImageTexture_hgb7g")
@@ -166,7 +166,7 @@ theme_override_fonts/font = ExtResource("4_4ixtg")
 theme_override_font_sizes/font_size = 20
 text = "FORGOTTEN YOUR PASSWORD"
 
-[node name="ForgottenPassword" type="TouchScreenButton" parent="ForgottenPassword" groups=["buttons"]]
+[node name="ForgottenPassword" type="TouchScreenButton" parent="ForgottenPassword"]
 position = Vector2(214, 14)
 scale = Vector2(22, 1.8)
 shape = SubResource("RectangleShape2D_qllus")

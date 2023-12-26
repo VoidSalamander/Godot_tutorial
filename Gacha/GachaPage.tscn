@@ -193,7 +193,7 @@ position = Vector2(40, 25)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("6_xtjt2")
 
-[node name="Once" type="TouchScreenButton" parent="Once" groups=["buttons"]]
+[node name="Once" type="TouchScreenButton" parent="Once"]
 position = Vector2(40, 25)
 scale = Vector2(12, 3.5)
 shape = SubResource("RectangleShape2D_akrvt")
@@ -210,7 +210,7 @@ position = Vector2(50, 25)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("8_nxed2")
 
-[node name="TenTimes" type="TouchScreenButton" parent="TenTimes" groups=["buttons"]]
+[node name="TenTimes" type="TouchScreenButton" parent="TenTimes"]
 position = Vector2(50, 25)
 scale = Vector2(12, 3.5)
 shape = SubResource("RectangleShape2D_akrvt")
@@ -243,7 +243,7 @@ text = "100"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CoinAndGem" type="TouchScreenButton" parent="CoinAndDiamond" groups=["buttons"]]
+[node name="CoinAndGem" type="TouchScreenButton" parent="CoinAndDiamond"]
 position = Vector2(-388, -10)
 scale = Vector2(1.3, 1.3)
 texture_normal = ExtResource("10_gbjpb")
@@ -276,7 +276,7 @@ text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="TouchScreenButton" parent="Back" groups=["buttons"]]
+[node name="Back" type="TouchScreenButton" parent="Back"]
 position = Vector2(49, 24)
 scale = Vector2(5.5, 2)
 shape = SubResource("RectangleShape2D_akrvt")
@@ -295,7 +295,7 @@ theme_override_font_sizes/font_size = 18
 text = "Continue
 "
 
-[node name="Continue" type="TouchScreenButton" parent="Continue" groups=["buttons"]]
+[node name="Continue" type="TouchScreenButton" parent="Continue"]
 position = Vector2(57, 24)
 scale = Vector2(6, 2)
 shape = SubResource("RectangleShape2D_akrvt")

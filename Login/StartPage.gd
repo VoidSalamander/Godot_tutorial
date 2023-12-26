@@ -26,4 +26,3 @@ func _on_timer_timeout():
 	else:
 		$Tip.add_theme_color_override("font_color",Color(0.871, 0.851, 0.733))
 		counter = 1
-

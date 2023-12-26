@@ -644,7 +644,7 @@ text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="TouchScreenButton" parent="Back" groups=["buttons"]]
+[node name="Back" type="TouchScreenButton" parent="Back"]
 position = Vector2(57, 24)
 scale = Vector2(6.5, 2.5)
 shape = SubResource("RectangleShape2D_ylayw")
