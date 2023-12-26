@@ -7,7 +7,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b20b6"]
 
-[node name="inv_UI_slot" type="Panel"]
+[node name="inv_UI_slot1" type="Panel"]
 custom_minimum_size = Vector2(14, 14)
 offset_right = 14.0
 offset_bottom = 14.0
@@ -61,5 +61,3 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_b20b6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_b20b6")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_b20b6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b20b6")
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

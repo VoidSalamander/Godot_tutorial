@@ -12,6 +12,6 @@ func _on_timer_timeout():
 		if !$BGM_day.playing:
 			$BGM_night.stop()
 			$BGM_day.play()
-		if $BGM_day.playing:
+		if !$BGM_night.playing:
 			$BGM_day.stop()
 			$BGM_night.play()

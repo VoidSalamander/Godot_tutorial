@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d2e1cwl4oqmrd" path="res://art/方向.png" id="4_xfutu"]
 [ext_resource type="Script" path="res://player/Sprite2D.gd" id="4_xpvyt"]
 [ext_resource type="Texture2D" uid="uid://dgyeaf0w5u8wl" path="res://art/移動桿.png" id="5_kmxrf"]
-[ext_resource type="PackedScene" uid="uid://c2ovwrgxcxbgg" path="res://inventory/Inventory.tscn" id="6_ecnbl"]
+[ext_resource type="PackedScene" uid="uid://c2ovwrgxcxbgg" path="res://inventory/inventory.tscn" id="6_ecnbl"]
 [ext_resource type="Script" path="res://player/HitboxComponent.gd" id="6_fklgp"]
 [ext_resource type="Script" path="res://player/HealthComponent.gd" id="7_gc1v4"]
 [ext_resource type="PackedScene" uid="uid://bcgndkkx34l1w" path="res://Menu/menu.tscn" id="8_5cky0"]
@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bciw6kfd4p5ha" path="res://art/icon.svg" id="15_ly0ld"]
 [ext_resource type="Texture2D" uid="uid://c3hpce6op7pcp" path="res://art/Setting/設定確認.png" id="16_f4mmv"]
 [ext_resource type="Script" path="res://player/Sound.gd" id="28_gq4r0"]
-[ext_resource type="AudioStream" path="res://art/Music/pick_item.mp3" id="29_4wr2n"]
+[ext_resource type="AudioStream" uid="uid://b01tx6xd75f8k" path="res://art/Music/pick_item.mp3" id="29_4wr2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3dpv"]
 size = Vector2(15, 15)
@@ -472,6 +472,8 @@ offset_bottom = 101.0
 text = "0"
 label_settings = SubResource("LabelSettings_p506u")
 
+[node name="Control" parent="HUD" instance=ExtResource("6_ecnbl")]
+
 [node name="Dead" type="Control" parent="HUD"]
 visible = false
 layout_mode = 3
@@ -644,8 +646,6 @@ focus_mode = 0
 icon = ExtResource("10_0iej2")
 flat = true
 
-[node name="Control" parent="HUD" instance=ExtResource("6_ecnbl")]
-
 [node name="Time" type="Control" parent="HUD"]
 layout_mode = 3
 anchors_preset = 0
@@ -704,6 +704,8 @@ stream = ExtResource("29_4wr2n")
 bus = &"SE"
 
 [connection signal="player_dead" from="." to="HUD" method="_on_player_player_dead"]
+[connection signal="player_shoot" from="." to="AttackComponent" method="_on_player_player_shoot"]
+[connection signal="player_use_item" from="." to="HUD/Control" method="_on_player_player_use_item"]
 [connection signal="area_entered" from="HitboxComponent" to="HitboxComponent" method="_on_area_entered"]
 [connection signal="area_exited" from="HitboxComponent" to="HitboxComponent" method="_on_area_exited"]
 [connection signal="timeout" from="HitboxComponent/Stun" to="HitboxComponent" method="_on_stun_timeout"]
@@ -720,7 +722,6 @@ bus = &"SE"
 [connection signal="quit_game" from="HUD/Menu" to="." method="_on_menu_quit_game"]
 [connection signal="reset_inventory_menu" from="HUD/Menu" to="HUD/Control" method="_on_menu_reset_inventory_menu"]
 [connection signal="reset_player_menu" from="HUD/Menu" to="." method="_on_menu_reset_player_menu"]
-[connection signal="pressed" from="HUD/game_button/Attack_button" to="AttackComponent" method="_on_attack_button_pressed"]
 [connection signal="pressed" from="HUD/game_button/build_Container/turret_1" to="BuildingComponent" method="_on_turret_1_pressed"]
 [connection signal="pressed" from="HUD/game_button/build_Container/turret_2" to="BuildingComponent" method="_on_turret_2_pressed"]
 [connection signal="pressed" from="HUD/game_button/build_Container/turret_3" to="BuildingComponent" method="_on_turret_3_pressed"]

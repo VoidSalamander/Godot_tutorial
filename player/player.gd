@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var tilemap: TileMap
 
 signal player_dead
+signal player_shoot
+signal player_use_item
 
 var move_vector = Vector2(0,0)
 var joystick_active = false
@@ -16,6 +18,9 @@ var menu_show = false
 var face = Vector2(1,0)
 var speed_modify: float
 var can_build = true
+var can_shoot = true
+var is_shooting = false
+var use_item_num = 0
 
 #==========#
 # resource #
@@ -57,6 +62,13 @@ func handle_input():
 	else:
 		velocity = Vector2(0,0) * speed
 		$HUD/game_button/Joystick_mark.position = $HUD/game_button/Joystick.position
+	
+	if can_shoot and is_shooting:
+		emit_signal("player_shoot")
+	
+	if use_item_num != 0:
+		emit_signal("player_use_item",use_item_num)
+		use_item_num = 0
 
 var left_hand_index = -1  
 var right_hand_index = -1  
@@ -66,12 +78,25 @@ func _input(event):
 		if event is InputEventScreenTouch:
 			if event.is_pressed():
 				# 检查触摸位置以确定左右手
-				if event.position.x < get_viewport_rect().size.x / 2:
+				if event.position.x < get_viewport_rect().size.x *0.22  or (event.position.x < get_viewport_rect().size.x / 2 and event.position.y < get_viewport_rect().size.y *0.77):
 					# 左手触摸事件
 					left_hand_index = event.index
 					handle_left_hand_touch(event.position)
 				else:
 					right_hand_index = event.index
+					if $HUD/game_button/Attack_button.get_global_rect().has_point(event.position):
+						$HUD/game_button/Attack_button.modulate = Color.ORANGE
+						is_shooting = true
+					for i in range(1,8):
+						var slot = 'inv_UI_slot' + str(i)
+						var button_path = "./HUD/Control/NinePatchRect/GridContainer/"+ slot +"/Button"  
+						var button = get_node(button_path)
+						if button.get_global_rect().has_point(event.position):
+							use_item_num = i 
+#					if $HUD/game_button/Build_button.get_global_rect().has_point(event.position):
+#						if can_build:
+#							emit_signal("build_terret")
+					
 			if event.is_pressed() == false:
 				if event.index == left_hand_index:
 					left_hand_index = -1
@@ -80,6 +105,8 @@ func _input(event):
 				elif event.index == right_hand_index:
 					right_hand_index = -1
 					$HUD/game_button/Attack_button.modulate = Color.WHITE
+					is_shooting = false
+					use_item_num = 0
 		if event is InputEventScreenDrag:
 			if event.index == left_hand_index:
 				handle_left_hand_touch(event.position)

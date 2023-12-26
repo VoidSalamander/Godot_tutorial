@@ -53,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 7
 
-[node name="inv_UI_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qht7a")]
+[node name="inv_UI_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qht7a")]
 layout_mode = 2
 
 [node name="inv_UI_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_qht7a")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bcgndkkx34l1w"]
+[gd_scene load_steps=34 format=3 uid="uid://bcgndkkx34l1w"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_7yl7d"]
 [ext_resource type="Texture2D" uid="uid://chalue1qvwuh3" path="res://art/Setting/設定按鈕.png" id="2_l0u62"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c7gew8if8ylft" path="res://art/音樂 (2).png" id="7_sthyp"]
 [ext_resource type="Script" path="res://Menu/Build.gd" id="8_1hwed"]
 [ext_resource type="Texture2D" uid="uid://dgyeaf0w5u8wl" path="res://art/移動桿.png" id="8_861lf"]
+[ext_resource type="Texture2D" uid="uid://6lruf58eii3a" path="res://art/Setting/可移位置.png" id="8_nstgq"]
 [ext_resource type="Texture2D" uid="uid://cba548ooihjni" path="res://art/攻擊.png" id="10_p7ogv"]
 [ext_resource type="Texture2D" uid="uid://7alyxjve2u0e" path="res://art/build_container.png" id="12_5iehe"]
 [ext_resource type="Texture2D" uid="uid://cf4qdlb35lder" path="res://art/設定返回.png" id="14_6sjg0"]
@@ -99,6 +100,7 @@ grow_vertical = 2
 script = ExtResource("1_7yl7d")
 
 [node name="Options" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -330,13 +332,17 @@ label_settings = SubResource("LabelSettings_6qubf")
 horizontal_alignment = 1
 
 [node name="Adjust_page" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Adjust_page"]
+position = Vector2(120, 67.5)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_nstgq")
 
 [node name="Joystick" type="Sprite2D" parent="Adjust_page"]
 position = Vector2(45, 95)

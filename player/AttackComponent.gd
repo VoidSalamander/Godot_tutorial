@@ -50,7 +50,7 @@ func shoot():
 	else:
 		Global.bullet_direction = get_parent().face
 
-func _on_attack_button_pressed():
+func _on_player_player_shoot():
 	if $Reload.is_stopped():
 		shoot()
 		$Reload.start()
