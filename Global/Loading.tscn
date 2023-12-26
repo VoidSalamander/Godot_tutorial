@@ -42,9 +42,10 @@ animations = [{
 }]
 
 [node name="Loading" type="Node2D"]
+position = Vector2(-4, 10)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(569, 323)
+position = Vector2(576, 267.25)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_se1l2")
 animation = &"loading"

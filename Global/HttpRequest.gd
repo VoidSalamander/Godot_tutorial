@@ -1,6 +1,6 @@
 extends Node
 
-var url: String = "http://140.122.185.168:30000/"
+var url: String = "http://140.122.185.168:30000/" #140.122.185.168
 
 func _ready():
 	pass
