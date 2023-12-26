@@ -1,7 +1,7 @@
 extends TouchScreenButton
 
 var cardTemp
-#var press = 0
+var press = 0
 var CardInfo
 var newcall
 var new
@@ -16,10 +16,9 @@ func _on_pressed():
 		$"../../Possibility".visible = false
 		$"../../CardSample/Timer".stop()
 		$"../../List".visible = false
-		$"../../Continue".visible = false
 		$"../../Transition".visible = true
 		$"../../Transition".play("transition")
-		Global.gacha = 1
+		press = 1
 		Global.response["status"] = ""
 		Global.gacha_args["username"] = Global.Account["username"]
 		Global.gacha_args["draws"] = 1
@@ -38,16 +37,16 @@ func _on_pressed():
 		$"../../Notice".visible = false
 	
 func _on_transition_animation_finished():
-	if Global.gacha == 1:
+	if press == 1:
 		$"../../Transition".visible = false
 		$"../../Back".visible = false
-		print(Global.response)
+		
 		if Global.response["status"] == "Successful":
 			remove_child(new)
 			var cardPosition = Vector2( 0, 0)
 			Global.storage[int(Global.response["1"]-1)] += 1
 			var CardInfo = Global.Card[int(Global.response["1"]-1)]
-			if (CardInfo[0] == "Tool" or CardInfo[0] == "Clothing"):
+			if CardInfo[0] == "Tool":
 				cardPosition = Vector2(400,120)
 			else:
 				cardPosition = Vector2(0,0)
@@ -56,8 +55,10 @@ func _on_transition_animation_finished():
 			cardTemp = Global.CardUnit.instantiate()
 			cardTemp.position = cardPosition
 			cardTemp.visible = false
-			if (CardInfo[0] == "Tool" or CardInfo[0] == "Clothing"):
-				cardTemp.scale *= Vector2(300,300) / cardTemp.size
+			if CardInfo[0] == "Tool":
+				cardTemp.scale = Vector2(300,300) / cardTemp.size
+			else:
+				cardTemp.scale =  cardTemp.size / cardTemp.size
 			$"../../Cards".add_child(cardTemp)
 			cardTemp.visible = true
 			Global.GemAmount -= 5
@@ -65,7 +66,6 @@ func _on_transition_animation_finished():
 				$"../../Continue/ContinueLabel".add_theme_color_override("font_color",Color(0.871, 0.852, 0.734))
 			else:
 				$"../../Continue/ContinueLabel".add_theme_color_override("font_color",Color(0.451, 0.388, 0.341))
-			$"../../Continue".visible = true
 		else:
 			remove_child(new)
 			$"../../Transition".visible = true
@@ -76,14 +76,14 @@ func _on_transition_animation_finished():
 			
 			await get_tree().create_timer(2).timeout
 		''''''
+		$"../../Continue".visible = true
 
 
 func _on_continue_pressed():
-	if Global.gacha == 1:
+	if press == 1:
 		cardTemp.queue_free()
-		Global.gacha = 1
+		press = 0
 	$"..".visible = true
-	#$"../../TenTimes".visible = true
 	$"../../Back".visible = true
 	$"../../CoinAndDiamond".visible = true
 	$"../../Name".visible = true

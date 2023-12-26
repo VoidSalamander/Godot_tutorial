@@ -566,9 +566,9 @@ text = "
 "
 
 [node name="Notice" type="MarginContainer" parent="."]
-offset_left = 446.238
+offset_left = 451.0
 offset_top = 259.381
-offset_right = 696.238
+offset_right = 701.0
 offset_bottom = 379.881
 
 [node name="Black_BG" type="ColorRect" parent="Notice"]
@@ -581,13 +581,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(0, -2.86102e-05)
+position = Vector2(0, 61.9047)
 
 [node name="YourRank" type="Label" parent="Node2D"]
 offset_left = 77.0
-offset_top = 127.333
+offset_top = 94.0
 offset_right = 305.0
-offset_bottom = 161.333
+offset_bottom = 128.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("5_jxikx")
 theme_override_font_sizes/font_size = 30
@@ -595,9 +595,9 @@ text = "Your rank"
 
 [node name="Highest" type="Label" parent="Node2D"]
 offset_left = 60.0
-offset_top = 408.333
+offset_top = 375.0
 offset_right = 226.0
-offset_bottom = 440.333
+offset_bottom = 407.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("5_jxikx")
 theme_override_font_sizes/font_size = 28
@@ -605,31 +605,29 @@ text = "Highest:"
 
 [node name="Score" type="Label" parent="Node2D"]
 offset_left = 242.0
-offset_top = 406.333
+offset_top = 373.0
 offset_right = 317.0
-offset_bottom = 440.333
+offset_bottom = 407.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("5_jxikx")
 theme_override_font_sizes/font_size = 30
 text = "100"
 
 [node name="Trophy" type="Sprite2D" parent="Node2D"]
-position = Vector2(187, 276.333)
+position = Vector2(187, 243)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("8_8r6y5")
 
 [node name="Ranking" type="Label" parent="Node2D"]
 offset_left = 146.0
-offset_top = 208.571
+offset_top = 180.0
 offset_right = 230.0
-offset_bottom = 267.571
+offset_bottom = 239.0
 pivot_offset = Vector2(25, 25)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_jxikx")
 theme_override_font_sizes/font_size = 30
 text = "300"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Back" type="MarginContainer" parent="."]
 offset_left = 44.0
@@ -652,7 +650,6 @@ scale = Vector2(6.5, 2.5)
 shape = SubResource("RectangleShape2D_ylayw")
 
 [node name="Loading" parent="." instance=ExtResource("9_tt2wh")]
-position = Vector2(0, 9.34601e-05)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 389.0

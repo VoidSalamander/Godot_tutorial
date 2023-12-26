@@ -3,7 +3,6 @@ extends Node2D
 
 func _ready():
 	$Notice.visible = false
-	$Whole/Left/InputBoxes/Password/PasswordInputBox.secret = false
 
 
 func _process(delta):
@@ -59,11 +58,7 @@ func _on_sign_up_pressed():
 			else:
 				remove_child(new)
 				$Notice.visible = true
-				$Notice/Label.text = str(Global.response)
-				$Notice/Label.text = $Notice/Label.text+"\nSign up failed"
-				await get_tree().create_timer(2).timeout
-				$Notice.visible = false
-				$Notice/Label.text = ""
+				$Notice/Label.text = "Sign up failed"
 		else:
 			$Notice.visible = true
 			$Notice/Label.text = "Something is invalid"
