@@ -1,16 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0mripivslgh"]
+[gd_scene load_steps=9 format=3 uid="uid://d0mripivslgh"]
 
 [ext_resource type="Script" path="res://Storage/StoragePage.gd" id="1_1o46y"]
 [ext_resource type="Texture2D" uid="uid://dsjm6n8njvbqo" path="res://png/frame.png" id="1_n4seb"]
 [ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_7h7vo"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="3_tog2w"]
+[ext_resource type="Texture2D" uid="uid://c81qr11unx4xe" path="res://png/通知.png" id="5_os08u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi406"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljunc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tljc6"]
 
 [node name="Storage" type="Node2D"]
 position = Vector2(-1, 9)
 scale = Vector2(0.21, 0.21)
 script = ExtResource("1_1o46y")
+
+[node name="BG" parent="." instance=ExtResource("3_tog2w")]
 
 [node name="Object" type="Node2D" parent="."]
 
@@ -32,6 +39,10 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button1" type="TouchScreenButton" parent="Frame/Frame1"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame2" type="Sprite2D" parent="Frame"]
 position = Vector2(371, 175)
 scale = Vector2(0.08, 0.08)
@@ -47,6 +58,10 @@ theme_override_fonts/font = ExtResource("3_7h7vo")
 theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="TouchScreenButton" parent="Frame/Frame2"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
 
 [node name="Frame3" type="Sprite2D" parent="Frame"]
 position = Vector2(576, 175)
@@ -64,6 +79,10 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button3" type="TouchScreenButton" parent="Frame/Frame3"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame4" type="Sprite2D" parent="Frame"]
 position = Vector2(781, 175)
 scale = Vector2(0.08, 0.08)
@@ -79,6 +98,10 @@ theme_override_fonts/font = ExtResource("3_7h7vo")
 theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="TouchScreenButton" parent="Frame/Frame4"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
 
 [node name="Frame5" type="Sprite2D" parent="Frame"]
 position = Vector2(986, 175)
@@ -96,6 +119,10 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button5" type="TouchScreenButton" parent="Frame/Frame5"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame6" type="Sprite2D" parent="Frame"]
 position = Vector2(166, 375)
 scale = Vector2(0.08, 0.08)
@@ -111,6 +138,10 @@ theme_override_fonts/font = ExtResource("3_7h7vo")
 theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Button6" type="TouchScreenButton" parent="Frame/Frame6"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
 
 [node name="Frame7" type="Sprite2D" parent="Frame"]
 position = Vector2(371, 375)
@@ -128,6 +159,10 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button7" type="TouchScreenButton" parent="Frame/Frame7"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame8" type="Sprite2D" parent="Frame"]
 position = Vector2(576, 375)
 scale = Vector2(0.08, 0.08)
@@ -144,6 +179,10 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button8" type="TouchScreenButton" parent="Frame/Frame8"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame9" type="Sprite2D" parent="Frame"]
 position = Vector2(781, 375)
 scale = Vector2(0.08, 0.08)
@@ -159,6 +198,10 @@ theme_override_fonts/font = ExtResource("3_7h7vo")
 theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Button9" type="TouchScreenButton" parent="Frame/Frame9"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
 
 [node name="Frame10" type="Sprite2D" parent="Frame"]
 position = Vector2(986, 375)
@@ -179,7 +222,9 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="BG" parent="." instance=ExtResource("3_tog2w")]
+[node name="Button10" type="TouchScreenButton" parent="Frame/Frame10"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
 
 [node name="Back" type="MarginContainer" parent="."]
 offset_left = 1060.0
@@ -201,4 +246,75 @@ position = Vector2(40, 13)
 scale = Vector2(4.5, 2)
 shape = SubResource("RectangleShape2D_ljunc")
 
+[node name="Information" type="Node2D" parent="."]
+position = Vector2(576.191, 276.19)
+scale = Vector2(1.6, 1.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="Information"]
+texture = ExtResource("5_os08u")
+
+[node name="ObjName" type="Label" parent="Information"]
+offset_left = -148.81
+offset_top = -83.3333
+offset_right = 151.19
+offset_bottom = 16.6667
+theme_override_colors/font_color = Color(0.449219, 0.386719, 0.339844, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="use" type="MarginContainer" parent="Information"]
+offset_left = -127.976
+offset_top = 35.7143
+offset_right = -49.9761
+offset_bottom = 75.7143
+
+[node name="Label" type="Label" parent="Information/use"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.449219, 0.386719, 0.339844, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 30
+text = "Use"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UseButton" type="TouchScreenButton" parent="Information/use"]
+position = Vector2(38.6905, 17.8808)
+scale = Vector2(4.3, 1.9)
+shape = SubResource("RectangleShape2D_tljc6")
+
+[node name="cancel" type="MarginContainer" parent="Information"]
+offset_left = 41.6667
+offset_top = 35.7143
+offset_right = 151.667
+offset_bottom = 75.7143
+
+[node name="Label" type="Label" parent="Information/cancel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.449219, 0.386719, 0.339844, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 22
+text = "Cancel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelButton" type="TouchScreenButton" parent="Information/cancel"]
+position = Vector2(53.5715, 17.8808)
+scale = Vector2(5.7, 1.9)
+shape = SubResource("RectangleShape2D_tljc6")
+
+[connection signal="pressed" from="Frame/Frame1/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Frame/Frame2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Frame/Frame3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Frame/Frame4/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Frame/Frame5/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Frame/Frame6/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Frame/Frame7/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Frame/Frame8/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Frame/Frame9/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Frame/Frame10/Button10" to="." method="_on_button_10_pressed"]
 [connection signal="pressed" from="Back/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Information/use/UseButton" to="." method="_on_use_button_pressed"]
+[connection signal="pressed" from="Information/cancel/CancelButton" to="." method="_on_cancel_button_pressed"]

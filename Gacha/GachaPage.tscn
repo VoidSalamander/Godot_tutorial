@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://doxegckhemifq"]
+[gd_scene load_steps=32 format=3 uid="uid://dygmdff7w6ism"]
 
 [ext_resource type="Script" path="res://Gacha/GachaPage.gd" id="1_g35st"]
-[ext_resource type="PackedScene" path="res://Global/BG.tscn" id="2_sdeuc"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="2_sdeuc"]
 [ext_resource type="Texture2D" uid="uid://b1phog1uordx6" path="res://png/Gacha/big_WarCorrespondent.png" id="3_6ybra"]
 [ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="5_v8qjs"]
 [ext_resource type="Texture2D" uid="uid://dat1rk2bpv8ps" path="res://png/Gacha/單抽.png" id="6_xtjt2"]
