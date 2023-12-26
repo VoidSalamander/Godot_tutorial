@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dw5oqvrejpg8p"]
+[gd_scene load_steps=18 format=3 uid="uid://dw5oqvrejpg8p"]
 
 [ext_resource type="Script" path="res://MainScene/TopUpPage.gd" id="1_a7u3s"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="2_2akp7"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://csighurmtx8ox" path="res://png/TopUp/通知.png" id="12_mwd4s"]
 [ext_resource type="Texture2D" uid="uid://uhtt4bqp1vy7" path="res://png/TopUp/取消鈕.png" id="13_vev1b"]
 [ext_resource type="Texture2D" uid="uid://dyr7csnntrsdl" path="res://png/TopUp/確認鈕.png" id="14_xf5ss"]
-[ext_resource type="PackedScene" uid="uid://cuc8q0gmdxa5w" path="res://Global/Loading.tscn" id="15_03act"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yotp"]
 
@@ -271,9 +270,6 @@ color = Color(0.203922, 0.203922, 0.203922, 1)
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Loading" parent="." instance=ExtResource("15_03act")]
-position = Vector2(0, -2.86102e-05)
 
 [connection signal="pressed" from="Back/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/Gems90/gem90" to="." method="_on_gem_90_pressed"]

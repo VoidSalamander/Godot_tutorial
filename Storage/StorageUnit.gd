@@ -3,9 +3,6 @@ extends MarginContainer
 func _on_visibility_changed():
 	SetStorage()
 
-#func _process(delta):
-#	SetStorage()
-
 func SetStorage():
 	#print(Global.currentStorage)
 	var StorageInfo = Global.Card[Global.currentStorage]
