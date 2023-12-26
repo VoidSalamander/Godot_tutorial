@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgq2i7ujvev66"]
+[gd_scene load_steps=10 format=3 uid="uid://dgq2i7ujvev66"]
 
 [ext_resource type="Script" path="res://things/crate/crate.gd" id="1_raopw"]
 [ext_resource type="PackedScene" uid="uid://c4acewfd7thdw" path="res://things/item/item.tscn" id="2_dluqo"]
 [ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_w7d1d"]
-[ext_resource type="PackedScene" uid="uid://qrifcfardkrg" path="res://things/item/shield_item.tscn" id="3_eod87"]
+[ext_resource type="PackedScene" uid="uid://qrifcfardkrg" path="res://things/item/shild.tscn" id="3_eod87"]
+[ext_resource type="PackedScene" uid="uid://dtbt13cydvq55" path="res://things/item/resorces_item/wood.tscn" id="4_32v8k"]
+[ext_resource type="PackedScene" uid="uid://chnun7qkryl43" path="res://things/item/resorces_item/gear.tscn" id="5_5amk2"]
+[ext_resource type="PackedScene" uid="uid://c3fb3kkjgsxd0" path="res://things/item/resorces_item/stone.tscn" id="6_ll6hj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spw42"]
 size = Vector2(32, 11.5)
@@ -18,6 +21,9 @@ y_sort_enabled = true
 script = ExtResource("1_raopw")
 item = ExtResource("2_dluqo")
 shield = ExtResource("3_eod87")
+wood = ExtResource("4_32v8k")
+gear = ExtResource("5_5amk2")
+stone = ExtResource("6_ll6hj")
 
 [node name="crate_unopen" type="Sprite2D" parent="."]
 texture = ExtResource("2_w7d1d")

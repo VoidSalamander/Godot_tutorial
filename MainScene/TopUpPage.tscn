@@ -273,7 +273,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Loading" parent="." instance=ExtResource("15_03act")]
-position = Vector2(0, 57.1428)
+position = Vector2(0, -2.86102e-05)
 
 [connection signal="pressed" from="Back/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ScrollContainer/HBoxContainer/Gems90/gem90" to="." method="_on_gem_90_pressed"]

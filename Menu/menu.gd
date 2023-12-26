@@ -2,6 +2,8 @@ extends Control
 
 signal close_menu
 signal button_move
+signal reset_player_menu
+signal reset_inventory_menu
 
 var bgm_bus = AudioServer.get_bus_index("BGM")
 
@@ -47,6 +49,7 @@ func _on_no_pressed():
 	$Quit_page.hide()
 
 func _on_yes_pressed():
+	Global.playerMaxHealth = 100
+	Global.playerSpeed = 100
 	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
-	#get_tree().reload_current_scene()
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://djpbjvuf5yxp1"]
 
 [ext_resource type="Script" path="res://Login/ForgottenPwPage.gd" id="1_xxrns"]
-[ext_resource type="PackedScene" path="res://Global/BG.tscn" id="2_8kqwj"]
+[ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="2_8kqwj"]
 [ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_q2bc1"]
 
 [sub_resource type="SystemFont" id="SystemFont_p7tj7"]
@@ -56,22 +56,22 @@ script = ExtResource("1_xxrns")
 [node name="BG" parent="." instance=ExtResource("2_8kqwj")]
 
 [node name="ResetPwLabel" type="Label" parent="."]
-offset_left = 312.666
+offset_left = 279.332
 offset_top = 94.7614
-offset_right = 841.666
-offset_bottom = 138.761
+offset_right = 865.332
+offset_bottom = 143.761
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("3_q2bc1")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 45
 text = "RESET PASSWORD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Directions" type="Label" parent="."]
-offset_left = 289.952
-offset_top = 189.761
-offset_right = 874.952
-offset_bottom = 276.761
+offset_left = 280.428
+offset_top = 194.523
+offset_right = 865.428
+offset_bottom = 281.523
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("3_q2bc1")
 theme_override_font_sizes/font_size = 25
@@ -82,9 +82,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SendEmail" type="HSplitContainer" parent="."]
-offset_left = 257.143
+offset_left = 247.619
 offset_top = 333.333
-offset_right = 907.143
+offset_right = 897.619
 offset_bottom = 413.333
 theme_override_constants/separation = 10
 split_offset = 150
@@ -127,10 +127,10 @@ shape = SubResource("RectangleShape2D_fmo7s")
 
 [node name="Verify" type="HSplitContainer" parent="."]
 offset_left = 212.333
-offset_top = 169.524
+offset_top = 179.048
 offset_right = 962.333
-offset_bottom = 449.524
-theme_override_constants/separation = 25
+offset_bottom = 459.048
+theme_override_constants/separation = 10
 split_offset = 200
 dragger_visibility = 1
 
@@ -159,7 +159,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("3_q2bc1")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 32
 text = "New Password"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -168,7 +168,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("3_q2bc1")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 32
 text = "Vertify Code"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -207,9 +207,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_82lcr")
 
 [node name="ResetPassword" type="MarginContainer" parent="."]
 offset_left = 365.0
-offset_top = 496.667
+offset_top = 501.429
 offset_right = 797.0
-offset_bottom = 536.667
+offset_bottom = 541.429
 
 [node name="ResetPasswordLabel" type="Label" parent="ResetPassword"]
 layout_mode = 2
@@ -226,10 +226,10 @@ scale = Vector2(22, 2.5)
 shape = SubResource("RectangleShape2D_fmo7s")
 
 [node name="Notice" type="MarginContainer" parent="."]
-offset_left = 451.0
-offset_top = 207.0
-offset_right = 701.0
-offset_bottom = 327.5
+offset_left = 446.238
+offset_top = 259.381
+offset_right = 696.238
+offset_bottom = 379.881
 
 [node name="Black_BG" type="ColorRect" parent="Notice"]
 layout_mode = 2

@@ -82,13 +82,14 @@ script = ExtResource("1_ijjgh")
 
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(576, 112)
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("3_t51g7")
 
 [node name="Whole" type="HSplitContainer" parent="."]
 offset_left = 90.2382
-offset_top = 179.762
+offset_top = 189.286
 offset_right = 1060.24
-offset_bottom = 459.762
+offset_bottom = 469.286
 theme_override_constants/separation = 70
 split_offset = 425
 dragger_visibility = 1
@@ -278,9 +279,9 @@ theme_override_font_sizes/font_size = 20
 
 [node name="SignUp" type="MarginContainer" parent="."]
 offset_left = 473.476
-offset_top = 479.62
+offset_top = 484.382
 offset_right = 686.476
-offset_bottom = 518.62
+offset_bottom = 523.382
 
 [node name="SignUpLabel" type="Label" parent="SignUp"]
 layout_mode = 2
@@ -297,9 +298,9 @@ shape = SubResource("RectangleShape2D_3epov")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 277.476
-offset_top = 538.381
+offset_top = 543.143
 offset_right = 714.476
-offset_bottom = 564.381
+offset_bottom = 569.143
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("4_27oyt")
 theme_override_font_sizes/font_size = 22

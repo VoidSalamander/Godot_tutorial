@@ -9,7 +9,8 @@ func _ready():
 func _on_settings_pressed():
 	var setting = load("res://MainScene/Settings.tscn")
 	set = setting.instantiate()
-	set.scale = Vector2(1.0,1.0)
+	set.position = Vector2(0,0)
+	set.scale = Vector2(0.76,0.76)
 	$"..".add_child(set)
 	$".".visible = true
 	$"../Main/Character/Character".visible = false

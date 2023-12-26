@@ -10,7 +10,6 @@ size = Vector2(65, 64)
 [node name="item" type="Area2D"]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_q1ak7")
-drop_range = 50
 itemRes = ExtResource("2_y55wi")
 
 [node name="Icon" type="Sprite2D" parent="."]

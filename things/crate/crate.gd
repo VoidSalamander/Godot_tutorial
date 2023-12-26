@@ -2,14 +2,13 @@ extends Node2D
 
 @export var item : PackedScene
 @export var shield : PackedScene
+@export var wood : PackedScene
+@export var gear : PackedScene
+@export var stone : PackedScene
 
 signal open_signal
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+
+@onready var item_list_node = get_parent().get_node("item_list")
 
 func init_crate():
 	self.connect("open_signal", open_box)
@@ -24,24 +23,22 @@ func open_box():
 				$lid.position = Vector2($box.position.x + randf_range(30,-30), $box.position.y + randf_range(30,-30))
 				$box.visible = true
 				
-				var item_list_node = get_parent().get_node("item_list")
-				
 				for i in range(3):
-					var spawn_item = item.instantiate()
-					spawn_item.init_item($box.global_position)
-					print($box.global_position)
-					item_list_node.call_deferred("add_child", spawn_item)
-					
+					creat_item(wood)
+				creat_item(stone)
+				creat_item(gear)
 				if randi_range(0,1) == 1:
-					var spawn_item = shield.instantiate()
-					spawn_item.init_item($box.global_position)
-					item_list_node.call_deferred("add_child", spawn_item)
+					creat_item(shield)
 				$Timer.start()
 
 func _on_timer_timeout():
 	queue_free()
 
-
 func _on_interact_area_body_entered(body):
 	if body.is_in_group("player"):
 		open_box()
+
+func creat_item(item: PackedScene):
+	var created_item = item.instantiate()
+	created_item.init_item($box.global_position)
+	item_list_node.call_deferred("add_child", created_item)

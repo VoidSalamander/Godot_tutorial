@@ -37,7 +37,8 @@ func _process(delta):
 	$Main/CoinAndDiamond/CoinAmount.text = str(Global.CoinAmount)
 	$Main/CoinAndDiamond/GemAmount.text = str(Global.GemAmount)
 	$Main/Name/Name.text = Global.Account["nickname"]
-	
+	if Global.Account['cat'] != '':
+		$Main/UserCharacter/Cat.texture = load("res://png/Gacha/Cards/Clothing/"+Global.Account['cat']+".png")
 
 
 func _on_storage_pressed():

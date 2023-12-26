@@ -6,14 +6,6 @@ var time =  0
 var mob_dead = 0
 var bullet_direction = Vector2.ZERO
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
 
 func instance_node(node, location):
 	var node_instance = node.instantiate()
@@ -21,6 +13,9 @@ func instance_node(node, location):
 	node_instance.global_position = location
 	return node_instance
 
+
+var playerSpeed = 100
+var playerMaxHealth = 100
 
 var startGame = 0
 var CardAmount = 15
@@ -54,11 +49,11 @@ var search_args = {'username': '', 'cookies': ''}
 var gacha_args = {'username': '', 'draws': 1, 'cookies': ''}
 var leaderboard_args = {'username': '', 'time': 10, 'kills': 10, 'cookies': ''}
 var topup_args = {'username': '', 'coin': 0, 'diamond': 0, 'cookies': ''}
-var Account = {'username': '', 'nickname': '', 'cookies': '', 'time': 0, 'kills': 0, 'xposition': 0, 'yposition': 0}
+var Account = {'username': '', 'nickname': '', 'cookies': '', 'time': 0, 'kills': 0, 'clothing': '', 'accessory': '', 'cat': '', 'xposition': 0, 'yposition': 0}
 var CardUnit = preload("res://Gacha/CardUnit.tscn")
 
 # Cardinfo = [Type, Name]
-enum {Ecologist, WarCorrespondent, Bottle, Cake, AccessoryBanana, AccessoryCamera, AccessoryChristmashat, AccessoryMemo, ClothBananayellow, ClothBrown, ClothChristmas, ClothMemoyellow, ClothOrange, ClothWarCorrespondent, CatFlower}
+enum {Ecologist, WarCorrespondent, Bottle, Cake, AccessoryBanana, AccessoryCamera, AccessoryChristmashat, AccessoryMemo, ClothBananayellow, ClothChristmas, ClothMemoyellow, ClothOrange, ClothWarCorrespondent, CatGrey, CatFlower}
 
 var Card = {
 	Ecologist : 
@@ -78,17 +73,17 @@ var Card = {
 	AccessoryMemo :
 		["Clothing", "accessory_memo"],
 	ClothBananayellow :
-		["Clothing", "cloth_bananayellow"],
-	ClothBrown :
-		["Clothing", "cloth_brown"],
+		["Clothing", "clothing_bananayellow"],
 	ClothChristmas :
-		["Clothing", "cloth_christmas"],
+		["Clothing", "clothing_christmas"],
 	ClothMemoyellow :
-		["Clothing", "cloth_memoyellow"],
+		["Clothing", "clothing_memoyellow"],
 	ClothOrange :
-		["Clothing", "cloth_orange"],
+		["Clothing", "clothing_orange"],
 	ClothWarCorrespondent :
-		["Clothing", "cloth_war_correspondent"],
+		["Clothing", "clothing_war_correspondent"],
+	CatGrey :
+		["Clothing", "cat_grey"],
 	CatFlower :
 		["Clothing", "cat_flower"]
 }

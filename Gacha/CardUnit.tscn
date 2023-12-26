@@ -1,11 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx7aucfuwmtbs"]
+[gd_scene load_steps=7 format=3 uid="uid://c1jlqhdxcg71c"]
 
 [ext_resource type="Script" path="res://Gacha/CardUnit.gd" id="1_7atcq"]
+[ext_resource type="Texture2D" uid="uid://0tw82krie3tp" path="res://png/Gacha/Cards/light_effect_1.png" id="3_opbmg"]
+[ext_resource type="Texture2D" uid="uid://ccjarsdfi56b1" path="res://png/Gacha/Cards/light_effect_2.png" id="4_ou1hk"]
+[ext_resource type="Texture2D" uid="uid://ctoh5oh1pvbcj" path="res://png/Gacha/Cards/light_effect_3.png" id="5_y3x8f"]
+[ext_resource type="Texture2D" uid="uid://xlwpqs8y8wqp" path="res://png/Gacha/Cards/light_effect_4.png" id="6_h7b0k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fult3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_opbmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ou1hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y3x8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h7b0k")
+}],
+"loop": true,
+"name": &"sparkle",
+"speed": 5.0
+}]
 
 [node name="CardUnit" type="MarginContainer"]
-offset_right = 1152.0
+offset_right = 535.0
 offset_bottom = 535.0
 script = ExtResource("1_7atcq")
+
+[node name="Light" type="AnimatedSprite2D" parent="."]
+position = Vector2(267.5, 267.5)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_fult3")
+animation = &"sparkle"
+autoplay = "sparkle"
 
 [node name="Card" type="Sprite2D" parent="."]
 centered = false

@@ -127,19 +127,23 @@ func _on_confirm_button_pressed():
 		
 		Global.currentAction = 9
 		var newcall = load("res://Global/HttpRequest.tscn")
-		var new = newcall.instantiate()
-		add_child(new)
-		new.send()
-		
-		await get_tree().create_timer(2).timeout
-		if Global.response["status"] == "Successful":
-			Global.GemAmount += amount
-		else:
-			$Notice/Label.text = "Failed\nTry again?"
-			$Notice.visible = true
+		var new
+		Global.response["status"] = ""
+		while Global.response["status"] != "Successful":
+			new = newcall.instantiate()
+			add_child(new)
+			new.send()
+			
 			await get_tree().create_timer(2).timeout
-			$Notice.visible = false
-		remove_child(new)
+			if Global.response["status"] == "Successful":
+				Global.GemAmount += amount
+				break
+			else:
+				$Notice/Label.text = "Failed\nTry again?"
+				$Notice.visible = true
+				await get_tree().create_timer(2).timeout
+				$Notice.visible = false
+			remove_child(new)
 	else:
 		Global.topup_args["username"] = Global.Account["username"]
 		Global.topup_args["coin"] = amount

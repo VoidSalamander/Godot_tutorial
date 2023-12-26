@@ -1,18 +1,10 @@
 extends CanvasLayer
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 signal pause
 signal back_to_game
 signal button_position
 signal reset_player
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-	
+signal reset_inventory
 
 func _on_menu_button_pressed():
 	$Menu.show()
@@ -27,7 +19,6 @@ func _on_menu_close_menu():
 	$game_button.show()
 	emit_signal("back_to_game")
 
-
 func _on_menu_button_move(joystick, attack, build):
 	$game_button/Joystick.set_position(Vector2(joystick[0], joystick[1]))
 	$game_button/Joystick_mark.set_position(Vector2(joystick[0], joystick[1]))
@@ -35,18 +26,17 @@ func _on_menu_button_move(joystick, attack, build):
 	$game_button/Build_button.set_position(Vector2(build[0], build[1]))
 
 func _on_retry_pressed():
-	if Global.mob_dead > Global.Account["kills"]:
-		Global.Account["kills"] = Global.mob_dead
-		Global.Account["time"] = Global.time
 	emit_signal("reset_player")
+	emit_signal("reset_inventory")
+	Global.playerMaxHealth = 100
+	Global.playerSpeed = 100
 	get_tree().reload_current_scene()
 
 func _on_exit_pressed():
-	if Global.mob_dead > Global.Account["kills"]:
-		Global.Account["kills"] = Global.mob_dead
-		Global.Account["time"] = Global.time
 	emit_signal("reset_player")
 	emit_signal("reset_inventory")
+	Global.playerMaxHealth = 100
+	Global.playerSpeed = 100
 	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
 
 func _on_player_player_dead(time,mob):

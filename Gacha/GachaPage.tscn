@@ -158,10 +158,10 @@ script = ExtResource("1_g35st")
 [node name="BG" parent="." instance=ExtResource("2_sdeuc")]
 
 [node name="CardSample" type="Node2D" parent="."]
-position = Vector2(4.7619, 38.0952)
+position = Vector2(-3.8147e-06, -2.09808e-05)
 
 [node name="Card" type="Sprite2D" parent="CardSample"]
-position = Vector2(758, 244)
+position = Vector2(758, 291.619)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("3_6ybra")
 
@@ -249,23 +249,24 @@ scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("10_gbjpb")
 
 [node name="Name" type="Node2D" parent="."]
-position = Vector2(-9.52381, 42.8571)
+position = Vector2(-1.90735e-06, -2.09808e-05)
 
 [node name="Name" type="Label" parent="Name"]
 offset_left = 48.4762
-offset_top = 33.2381
-offset_right = 298.476
-offset_bottom = 77.2381
+offset_top = 71.3333
+offset_right = 498.476
+offset_bottom = 116.333
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("5_v8qjs")
 theme_override_font_sizes/font_size = 40
 text = "Player"
+vertical_alignment = 1
 
 [node name="Back" type="MarginContainer" parent="."]
-offset_left = 34.4762
-offset_top = 529.19
-offset_right = 154.476
-offset_bottom = 579.19
+offset_left = 53.5238
+offset_top = 543.476
+offset_right = 173.524
+offset_bottom = 593.476
 
 [node name="BackLabel" type="Label" parent="Back"]
 layout_mode = 2
@@ -283,10 +284,10 @@ shape = SubResource("RectangleShape2D_akrvt")
 
 [node name="Continue" type="MarginContainer" parent="."]
 visible = false
-offset_left = 971.624
-offset_top = 86.3809
-offset_right = 1133.62
-offset_bottom = 136.381
+offset_left = 952.576
+offset_top = 29.2381
+offset_right = 1114.58
+offset_bottom = 79.2382
 
 [node name="ContinueLabel" type="Label" parent="Continue"]
 layout_mode = 2
@@ -302,14 +303,14 @@ scale = Vector2(8.7, 2.2)
 shape = SubResource("RectangleShape2D_akrvt")
 
 [node name="List" type="Node2D" parent="."]
-position = Vector2(-9.52381, 38.0952)
+position = Vector2(-1.90735e-06, -2.09808e-05)
 
 [node name="First" type="Sprite2D" parent="List"]
-position = Vector2(205, 195)
+position = Vector2(205, 242.619)
 scale = Vector2(1.25, 1.25)
 
 [node name="Second" type="Sprite2D" parent="List"]
-position = Vector2(205, 340)
+position = Vector2(205, 387.619)
 scale = Vector2(1.25, 1.25)
 
 [node name="Transition" type="AnimatedSprite2D" parent="."]
@@ -322,10 +323,10 @@ frame = 17
 frame_progress = 1.0
 
 [node name="Notice" type="MarginContainer" parent="."]
-offset_left = 451.0
-offset_top = 254.619
-offset_right = 701.0
-offset_bottom = 375.119
+offset_left = 446.238
+offset_top = 259.381
+offset_right = 696.238
+offset_bottom = 379.881
 
 [node name="Black_BG" type="ColorRect" parent="Notice"]
 layout_mode = 2
