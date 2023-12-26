@@ -1,5 +1,7 @@
 extends Node2D
 
+var bgm_bus = AudioServer.get_bus_index("BGM")
+var se_bus = AudioServer.get_bus_index("SE")
 
 func _ready():
 	$SettingsBG.visible = true
@@ -40,4 +42,9 @@ func _on_touch_screen_button_pressed():
 			await get_tree().create_timer(1).timeout
 			$Notice.visible = false
 		remove_child(new)
-		
+
+func _on_bgm_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(bgm_bus, value)
+	
+func _on_s_elider_value_changed(value):
+	AudioServer.set_bus_volume_db(se_bus, value)

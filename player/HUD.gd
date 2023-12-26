@@ -39,10 +39,10 @@ func _on_retry_pressed():
 func _on_exit_pressed():
 	emit_signal("reset_player")
 	emit_signal("reset_inventory")
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
 
 func _on_player_player_dead(time,mob):
-	$Dead/Sprite2D/time/value.text = str(time/60) + " : " + str(time%60)
+	$Dead/Sprite2D/time/value.text = str((time/5)/24) + "day " + str((time/5)%24) + 'hr'
 	$Dead/Sprite2D/enemy/value.text = str(mob)
 	
 func button_color():
@@ -63,4 +63,13 @@ func button_color():
 
 func time_update():
 	var time = String()
-	$Time.text = ("%02d" % ((Global.time/5 + 6)%24)) + ':XX'
+	var apm = 'am'
+	var hr = (Global.time/5 + 6)%24
+	if hr < 12:
+		apm = 'am'
+	else:
+		apm = 'pm'
+			
+	$Time/Hour.text = ("%02d" % ((Global.time/5 + 6)%12))
+	$Time/Hour/APM.text = apm
+	$Time/Day.text = 'day ' + str(((Global.time/5 + 6)/24)+1)

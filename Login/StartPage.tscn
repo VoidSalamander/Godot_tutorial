@@ -15,7 +15,7 @@ script = ExtResource("1_pfcly")
 
 [node name="BG" parent="." instance=ExtResource("2_hkfrd")]
 
-[node name="Start" type="TouchScreenButton" parent="."]
+[node name="Start" type="TouchScreenButton" parent="." groups=["buttons"]]
 position = Vector2(575, 267)
 scale = Vector2(60, 30)
 shape = SubResource("RectangleShape2D_hoxcc")

@@ -4,8 +4,10 @@ signal close_menu
 signal button_move
 signal reset_player_menu
 signal reset_inventory_menu
+signal quit_game
 
 var bgm_bus = AudioServer.get_bus_index("BGM")
+var se_bus = AudioServer.get_bus_index("SE")
 
 
 func show_and_hide(first, second):
@@ -25,7 +27,9 @@ func _on_back_from_music_pressed():
 
 func _on_bgm_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(bgm_bus, value)
-	
+
+func _on_se_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(se_bus, value)
 
 func _on_adjustment_pressed():
 	show_and_hide($Adjust_page, $Options)
@@ -49,6 +53,10 @@ func _on_no_pressed():
 	$Quit_page.hide()
 
 func _on_yes_pressed():
-	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
-	#get_tree().reload_current_scene()
+	emit_signal("quit_game")
+	#get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
+	
+
+
+
 

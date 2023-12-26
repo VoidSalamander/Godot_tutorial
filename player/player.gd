@@ -35,13 +35,12 @@ var health: float = max_health
 
 
 
-
 func _physics_process(_delta):
 	handle_input()
 	move_and_slide()
 	dead_and_statistics()
 	speed_modify = tilemap.get_tile_data(self.position, "speed_modify")
-	$HUD/Shield/Label.text = str(wood)
+	$HUD/State/Wood/Label.text = str(wood)
 	
 func handle_input():
 	if joystick_active:
@@ -116,3 +115,5 @@ func _on_menu_reset_player_menu():
 	Global.mob_dead = 0
 
 
+func _on_menu_quit_game():
+	is_dead = true
