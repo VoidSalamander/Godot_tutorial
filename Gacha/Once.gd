@@ -102,7 +102,7 @@ func _on_continue_pressed():
 	var CardImg = str( "res://png/Gacha/big_" , CardInfo[1] , ".png" )
 	$"../../CardSample/Card".texture = load(CardImg)
 	$"../../CardSample".visible = true
-	$"../../Possibility".text = str(float(Global.Pcard[Global.currentCard]-Global.Pcard[Global.currentCard-1])*100.0/Global.Pcard[Global.CardAmount-1])+"%"
+	$"../../Possibility".text = "0.25%"
 	$"../../CardSample/Timer".start()
 	$"../../List".visible = true
 

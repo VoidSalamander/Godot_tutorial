@@ -25,6 +25,7 @@ func _ready():
 		add_child(new)
 		new.send()
 		
+		
 		await get_tree().create_timer(2).timeout
 		if Global.response["status"] == "Successful":
 			remove_child(new)

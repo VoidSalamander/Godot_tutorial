@@ -1,11 +1,11 @@
 extends Node
 
 
-var SAVE_PATH = "user://"+Global.Account["username"]+".bin"
+
 
 
 func saveGame():
-	var file = FileAccess.open(SAVE_PATH,FileAccess.WRITE)
+	var file = FileAccess.open(Global.SAVE_PATH,FileAccess.WRITE)
 	var data : Dictionary = {
 		"xposition" : Global.Account['xposition'],
 		"yposition" : Global.Account['yposition'],
@@ -21,8 +21,8 @@ func saveGame():
 	file.store_line(jstr)
 	
 func loadGame():
-	var file = FileAccess.open(SAVE_PATH,FileAccess.READ)
-	if FileAccess.file_exists(SAVE_PATH) == true:
+	var file = FileAccess.open(Global.SAVE_PATH,FileAccess.READ)
+	if FileAccess.file_exists(Global.SAVE_PATH) == true:
 		if not file.eof_reached():
 			var current_line = JSON.parse_string(file.get_line())
 			if current_line:

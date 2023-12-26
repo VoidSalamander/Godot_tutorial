@@ -50,6 +50,7 @@ var leaderboard_args = {'username': '', 'time': 10, 'kills': 10, 'cookies': ''}
 var topup_args = {'username': '', 'coin': 0, 'diamond': 0, 'cookies': ''}
 var Account = {'username': 'Visitor1111', 'nickname': 'Player', 'cookies': '', 'time': 0, 'kills': 0, 'clothing': 'cloth_brown', 'accessory': '', 'cat': '', 'xposition': 0, 'yposition': 0}
 var CardUnit = preload("res://Gacha/CardUnit.tscn")
+var SAVE_PATH = "user://"+Account["username"]+".bin"
 
 # Cardinfo = [Type, Name]
 enum {Ecologist, WarCorrespondent, Bottle, Cake, AccessoryBanana, AccessoryCamera, AccessoryMemo, ClothBananayellow, ClothChristmas, ClothMemoyellow, ClothOrange, ClothWarCorrespondent, CatGrey, CatWhite, CatFlower}

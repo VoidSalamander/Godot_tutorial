@@ -33,6 +33,7 @@ func send():
 	elif Global.currentAction == 9:
 		body = JSON.stringify(Global.topup_args)
 	
+	print(body)
 	
 	var http_request = HTTPRequest.new()
 	add_child(http_request)

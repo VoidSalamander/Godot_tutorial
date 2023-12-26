@@ -20,6 +20,7 @@ func _on_log_in_pressed():
 			remove_child(new)
 			Global.Account["username"] = Global.response["username"]
 			Global.Account["cookies"] = Global.response["cookies"]
+			Global.SAVE_PATH = "user://"+Global.Account["username"]+".bin"
 			LoadAndSave.loadGame()
 			get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
 		else:
