@@ -304,7 +304,7 @@ text = "Use"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="UseButton" type="TouchScreenButton" parent="Information/use"]
+[node name="UseButton" type="TouchScreenButton" parent="Information/use" groups=["buttons"]]
 position = Vector2(38.6905, 17.8808)
 scale = Vector2(4.3, 1.9)
 shape = SubResource("RectangleShape2D_tljc6")

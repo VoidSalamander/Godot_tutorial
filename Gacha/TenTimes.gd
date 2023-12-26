@@ -19,6 +19,9 @@ func _on_pressed():
 		$"../../Continue".visible = false
 		$"../../Transition".visible = true
 		$"../../Transition".play("transition")
+		
+		print(Global.response)
+		
 		Global.gacha = 10
 		cardTemp.resize(10)
 		Global.response["status"] = ""
@@ -42,10 +45,9 @@ func _on_pressed():
 	
 func _on_transition_animation_finished():
 	if Global.gacha == 10:
-		$"../../Transition".visible = false
-		$"../../Back".visible = false
 		$"../../Continue/ContinueLabel".add_theme_color_override("font_color",Color(0.451, 0.388, 0.341))
-		
+		$"../../Transition".visible = false
+		#print(Global.response)
 		if Global.response["status"] == "Successful":
 			remove_child(new)
 			
@@ -75,6 +77,7 @@ func _on_transition_animation_finished():
 					cardTemp[k*5+j].visible = true
 			Global.GemAmount -= 50
 			$"../../Continue".visible = true
+			$"../../Back".visible = false
 		else:
 			remove_child(new)
 			

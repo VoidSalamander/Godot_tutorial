@@ -49,7 +49,7 @@ var search_args = {'username': '', 'cookies': ''}
 var gacha_args = {'username': '', 'draws': 1, 'cookies': ''}
 var leaderboard_args = {'username': '', 'time': 10, 'kills': 10, 'cookies': ''}
 var topup_args = {'username': '', 'coin': 0, 'diamond': 0, 'cookies': ''}
-var Account = {'username': '', 'nickname': '', 'cookies': '', 'time': 0, 'kills': 0, 'clothing': '', 'accessory': '', 'cat': '', 'xposition': 0, 'yposition': 0}
+var Account = {'username': '', 'nickname': '', 'cookies': '', 'time': 0, 'kills': 0, 'clothing': 'cloth_brown', 'accessory': '', 'cat': '', 'xposition': 0, 'yposition': 0}
 var CardUnit = preload("res://Gacha/CardUnit.tscn")
 
 # Cardinfo = [Type, Name]

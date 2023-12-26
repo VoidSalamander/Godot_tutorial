@@ -119,6 +119,7 @@ func _on_cancel_button_pressed():
 
 
 func _on_confirm_button_pressed():
+	$Loading.visible = true
 	if amount < 100:
 		Global.topup_args["username"] = Global.Account["username"]
 		Global.topup_args["coin"] = 0
@@ -128,29 +129,26 @@ func _on_confirm_button_pressed():
 		Global.currentAction = 9
 		var newcall = load("res://Global/HttpRequest.tscn")
 		var new
-		Global.response["status"] = ""
-		while Global.response["status"] != "Successful":
-			new = newcall.instantiate()
-			add_child(new)
-			new.send()
-			
+		new = newcall.instantiate()
+		add_child(new)
+		new.send()
+		
+		await get_tree().create_timer(2).timeout
+		$Loading.visible = false
+		if Global.response["status"] == "Successful":
+			Global.GemAmount += amount
+		else:
+			$Notice/Label.text = "Failed\nTry again?"
+			$Notice.visible = true
 			await get_tree().create_timer(2).timeout
-			if Global.response["status"] == "Successful":
-				Global.GemAmount += amount
-				break
-			else:
-				$Notice/Label.text = "Failed\nTry again?"
-				$Notice.visible = true
-				await get_tree().create_timer(2).timeout
-				$Notice.visible = false
-			remove_child(new)
+			$Notice.visible = false
+		remove_child(new)
 	else:
 		Global.topup_args["username"] = Global.Account["username"]
 		Global.topup_args["coin"] = amount
 		Global.topup_args["diamond"] = 0
 		Global.topup_args["cookies"] = Global.Account["cookies"]
 		
-		$Loading.visible = true
 		Global.currentAction = 9
 		var newcall = load("res://Global/HttpRequest.tscn")
 		var new = newcall.instantiate()

@@ -14,6 +14,21 @@ func _ready():
 
 
 func _process(delta):
+	'''
+	if $ResetPassword.visible == true:
+		if (!$Whole/Left/InputBoxes/Password/PasswordInputBox.text.is_empty()) and (!(("a"+$Whole/Left/InputBoxes/Password/PasswordInputBox.text).is_valid_identifier()) or ("_" in $Whole/Left/InputBoxes/Password/PasswordInputBox.text)):
+			$Whole/Left/Labels/Password/Label.text = "Password can only"
+			$Whole/Left/InputBoxes/Password/Label.text = "contain letters and numbers"
+		elif (!$Whole/Left/InputBoxes/Password/PasswordInputBox.text.is_empty()) and ($Whole/Left/InputBoxes/Password/PasswordInputBox.text.length() < 8):
+			$Whole/Left/Labels/Password/Label.text = ""
+			$Whole/Left/InputBoxes/Password/Label.text = "Password is too short"
+		elif (!$Whole/Left/InputBoxes/Password/PasswordInputBox.text.is_empty()) and ($Whole/Left/InputBoxes/Password/PasswordInputBox.text.length() > 12):
+			$Whole/Left/Labels/Password/Label.text = ""
+			$Whole/Left/InputBoxes/Password/Label.text = "Password is too long"
+		else:
+			$Whole/Left/Labels/Password/Label.text = ""
+			$Whole/Left/InputBoxes/Password/Label.text = ""
+	'''
 	pass
 
 

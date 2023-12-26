@@ -41,7 +41,7 @@ func _on_transition_animation_finished():
 	if Global.gacha == 1:
 		$"../../Transition".visible = false
 		$"../../Back".visible = false
-		
+		print(Global.response)
 		if Global.response["status"] == "Successful":
 			remove_child(new)
 			var cardPosition = Vector2( 0, 0)

@@ -30,7 +30,7 @@ func _ready():
 			#print(Global.currentStorage)
 			if Global.currentStorage == Global.CardAmount:
 				break
-			print(Global.currentStorage)###################################################
+			#print(Global.currentStorage)###################################################
 			var cardPosition = Vector2( 0, 0)
 			cardPosition = Vector2( 100+205*j , 155+229*k )
 			
@@ -112,6 +112,8 @@ func _on_button_1_pressed():
 		$Information/ObjName.position = Vector2(-149,-120)
 		$Information/ObjInformation.text = "Use to add health in the next game."
 		$Information/ObjInformation.visible = true
+	else:
+		$Information/ObjInformation.visible = false
 
 func _on_button_2_pressed():
 	$Frame/Frame1/Button1.visible = false
@@ -132,6 +134,8 @@ func _on_button_2_pressed():
 		$Information/ObjName.position = Vector2(-149,-120)
 		$Information/ObjInformation.text = "Use to add speed in the next game."
 		$Information/ObjInformation.visible = true
+	else:
+		$Information/ObjInformation.visible = false
 
 func _on_button_3_pressed():
 	$Frame/Frame1/Button1.visible = false
@@ -145,6 +149,7 @@ func _on_button_3_pressed():
 	$Frame/Frame9/Button9.visible = false
 	$Frame/Frame10/Button10.visible = false
 	$Back/Back.visible = false
+	$Information/ObjInformation.visible = false
 	$Information.visible = true
 	$Information/ObjName.text = Global.Card[Global.currentStorageStart+2][1].replace("_"," ")
 	object = Global.currentStorageStart+2
@@ -161,6 +166,7 @@ func _on_button_4_pressed():
 	$Frame/Frame9/Button9.visible = false
 	$Frame/Frame10/Button10.visible = false
 	$Back/Back.visible = false
+	$Information/ObjInformation.visible = false
 	$Information.visible = true
 	$Information/ObjName.text = Global.Card[Global.currentStorageStart+3][1].replace("_"," ")
 	object = Global.currentStorageStart+3
@@ -177,6 +183,7 @@ func _on_button_5_pressed():
 	$Frame/Frame9/Button9.visible = false
 	$Frame/Frame10/Button10.visible = false
 	$Back/Back.visible = false
+	$Information/ObjInformation.visible = false
 	$Information.visible = true
 	$Information/ObjName.text = Global.Card[Global.currentStorageStart+4][1].replace("_"," ")
 	object = Global.currentStorageStart+4
@@ -193,6 +200,7 @@ func _on_button_6_pressed():
 	$Frame/Frame9/Button9.visible = false
 	$Frame/Frame10/Button10.visible = false
 	$Back/Back.visible = false
+	$Information/ObjInformation.visible = false
 	$Information.visible = true
 	$Information/ObjName.text = Global.Card[Global.currentStorageStart+5][1].replace("_"," ")
 	object = Global.currentStorageStart+5
@@ -209,6 +217,7 @@ func _on_button_7_pressed():
 	$Frame/Frame9/Button9.visible = false
 	$Frame/Frame10/Button10.visible = false
 	$Back/Back.visible = false
+	$Information/ObjInformation.visible = false
 	$Information.visible = true
 	$Information/ObjName.text = Global.Card[Global.currentStorageStart+6][1].replace("_"," ")
 	object = Global.currentStorageStart+6
@@ -225,6 +234,7 @@ func _on_button_8_pressed():
 	$Frame/Frame9/Button9.visible = false
 	$Frame/Frame10/Button10.visible = false
 	$Back/Back.visible = false
+	$Information/ObjInformation.visible = false
 	$Information.visible = true
 	$Information/ObjName.text = Global.Card[Global.currentStorageStart+7][1].replace("_"," ")
 	object = Global.currentStorageStart+7
@@ -241,6 +251,7 @@ func _on_button_9_pressed():
 	$Frame/Frame9/Button9.visible = false
 	$Frame/Frame10/Button10.visible = false
 	$Back/Back.visible = false
+	$Information/ObjInformation.visible = false
 	$Information.visible = true
 	$Information/ObjName.text = Global.Card[Global.currentStorageStart+8][1].replace("_"," ")
 	object = Global.currentStorageStart+8
@@ -257,6 +268,7 @@ func _on_button_10_pressed():
 	$Frame/Frame9/Button9.visible = false
 	$Frame/Frame10/Button10.visible = false
 	$Back/Back.visible = false
+	$Information/ObjInformation.visible = false
 	$Information.visible = true
 	$Information/ObjName.text = Global.Card[Global.currentStorageStart+9][1].replace("_"," ")
 	object = Global.currentStorageStart+9
@@ -348,7 +360,7 @@ func _on_last_p_button_pressed():
 			
 			if Global.currentStorage == Global.CardAmount:
 				break
-			print(Global.currentStorage)###################################################
+			#print(Global.currentStorage)###################################################
 			storageTemp[k*5+j].visible = false
 			storageTemp[k*5+j].visible = true
 			
@@ -392,7 +404,7 @@ func _on_next_p_button_pressed():
 			
 			if Global.currentStorage == Global.CardAmount:
 				break
-			print(Global.currentStorage)###################################################
+			#print(Global.currentStorage)###################################################
 			storageTemp[k*5+j].visible = true
 			
 	if Global.currentStorageStart < Global.CardAmount and Global.storage[Global.currentStorageStart] > 0:

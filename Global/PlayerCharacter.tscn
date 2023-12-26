@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwawdjn711anr"]
+
+[ext_resource type="Texture2D" uid="uid://cj5lowte647oe" path="res://png/Gacha/Cards/Clothing/cloth_brown.png" id="1_1ggl4"]
+[ext_resource type="Script" path="res://Global/PlayerCharacter.gd" id="1_ybmwr"]
+[ext_resource type="Texture2D" uid="uid://dvjkc82fk7bxk" path="res://png/Gacha/Cards/Clothing/cat_grey.png" id="3_1e43i"]
+[ext_resource type="Texture2D" uid="uid://deksmufiooi5h" path="res://png/Gacha/Cards/Clothing/accessory_banana.png" id="3_lif81"]
+
+[node name="PlayerCharacter" type="Node2D"]
+script = ExtResource("1_ybmwr")
+
+[node name="Cloth" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1ggl4")
+
+[node name="Accessory" type="Sprite2D" parent="."]
+position = Vector2(3, -14)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_lif81")
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(28, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_1e43i")

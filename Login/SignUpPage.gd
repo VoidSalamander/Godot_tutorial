@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready():
 	$Notice.visible = false
+	$Whole/Left/InputBoxes/Password/PasswordInputBox.secret = false
 
 
 func _process(delta):
