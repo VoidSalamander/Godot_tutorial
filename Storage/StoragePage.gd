@@ -276,7 +276,7 @@ func _on_button_10_pressed():
 
 func _on_cancel_button_pressed():
 	$Information.visible = false
-	$Information/ObjName.position = Vector2(-149,-83)
+	$Information/ObjName.position = Vector2(-149,-95)
 	$Information/ObjInformation.visible = false
 	if Global.currentStorageStart < Global.CardAmount and Global.storage[Global.currentStorageStart] > 0:
 		$Frame/Frame1/Button1.visible = true
@@ -316,7 +316,7 @@ func _on_use_button_pressed():
 		elif Global.Card[object][1].contains("cat_"):
 			Global.Account["cat"] = Global.Card[object][1]
 	$Information.visible = false
-	$Information/ObjName.position = Vector2(-149,-83)
+	$Information/ObjName.position = Vector2(-149,-95)
 	$Information/ObjInformation.visible = false
 	
 	if Global.currentStorageStart < Global.CardAmount and Global.storage[Global.currentStorageStart] > 0:

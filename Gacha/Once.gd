@@ -79,6 +79,7 @@ func _on_transition_animation_finished():
 
 
 func _on_continue_pressed():
+	print(Global.storage)
 	if Global.gacha == 1:
 		cardTemp.queue_free()
 		Global.gacha = 1
