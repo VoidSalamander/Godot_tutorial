@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://things/resorces/tree.gd" id="1_0jkbn"]
 [ext_resource type="Texture2D" uid="uid://c87ljahs1oagr" path="res://art/tilemap-04.png" id="1_ftl07"]
-[ext_resource type="PackedScene" uid="uid://dtbt13cydvq55" path="res://things/item/resorces_item/wood.tscn" id="2_37fu7"]
 [ext_resource type="Texture2D" uid="uid://bjcilakpnyv02" path="res://art/joystick.png" id="3_7y28d"]
 [ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="3_b2k64"]
 [ext_resource type="Texture2D" uid="uid://crc53tkbwf1ye" path="res://art/Healthbar/HealthBack.png" id="5_ubllb"]
@@ -126,7 +125,6 @@ size = Vector2(52, 20)
 
 [node name="tree" type="Node2D"]
 script = ExtResource("1_0jkbn")
-wood = ExtResource("2_37fu7")
 
 [node name="tree_B" type="Sprite2D" parent="."]
 texture = ExtResource("1_ftl07")
