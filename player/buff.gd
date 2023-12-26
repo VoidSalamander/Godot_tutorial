@@ -7,15 +7,15 @@ func _ready():
 
 func get_wood(num: int):
 	get_parent().wood += num
-	sound.play()
+	#sound.play()
 
 func get_stone(num: int):
 	get_parent().stone += num
-	sound.play()
+	#sound.play()
 
 func get_gear(num: int):
 	get_parent().gear += num
-	sound.play()
+	#sound.play()
 
 # gradual decrease
 func speed_modify(increas: float):
