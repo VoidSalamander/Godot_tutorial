@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cmooqripkn2pq"]
+[gd_scene load_steps=25 format=3 uid="uid://cmooqripkn2pq"]
 
 [ext_resource type="Script" path="res://MainScene/MainPage.gd" id="1_bfu1e"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="2_jcx87"]
@@ -10,9 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://biylss5ftb8tj" path="res://png/MainScene/背包.png" id="8_j8xao"]
 [ext_resource type="Texture2D" uid="uid://do4wqlhjrjojy" path="res://png/MainScene/新房間.png" id="9_iifv4"]
 [ext_resource type="Texture2D" uid="uid://btq68yp1u4500" path="res://png/MainScene/快速配對.png" id="10_wvi1k"]
-[ext_resource type="Texture2D" uid="uid://bwa2rnrf0on2g" path="res://png/MainScene/UserCharacter.png" id="11_u8lf7"]
 [ext_resource type="Texture2D" uid="uid://b8f2erhh70o81" path="res://png/LeaderBoard/Others.png" id="12_vkrm3"]
 [ext_resource type="Script" path="res://MainScene/ToSetting.gd" id="13_1olx2"]
+[ext_resource type="PackedScene" uid="uid://dwawdjn711anr" path="res://Global/PlayerCharacter.tscn" id="14_vihai"]
+[ext_resource type="PackedScene" uid="uid://b0m1ex0u822nx" path="res://MainScene/Settings.tscn" id="15_3cuay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyb0c"]
 
@@ -42,23 +43,22 @@ points = PackedVector2Array(32, -59, 25, -15, 5, 10, 5, 27, 23, 27, 23, 46, 31, 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15l7t"]
 
 [node name="MainPage" type="Node2D"]
-position = Vector2(-1, 11)
 scale = Vector2(0.21, 0.21)
 script = ExtResource("1_bfu1e")
 
 [node name="BG" parent="." instance=ExtResource("2_jcx87")]
 
 [node name="Main" type="Node2D" parent="."]
-position = Vector2(1.90735e-06, -47.619)
+position = Vector2(1.90735e-06, 4.57764e-05)
 
 [node name="Name" type="Node2D" parent="Main"]
-position = Vector2(0, 23.8095)
+position = Vector2(0, -2.28882e-05)
 
 [node name="Name" type="Label" parent="Main/Name"]
 offset_left = 58.0
-offset_top = 38.0
+offset_top = 66.5714
 offset_right = 508.0
-offset_bottom = 80.0
+offset_bottom = 108.571
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("4_244lm")
 theme_override_font_sizes/font_size = 38
@@ -66,18 +66,18 @@ text = "Player"
 vertical_alignment = 1
 
 [node name="Settings" type="TouchScreenButton" parent="Main/Name"]
-position = Vector2(283, 57)
+position = Vector2(283, 85.5714)
 scale = Vector2(23, 2)
 shape = SubResource("RectangleShape2D_cyb0c")
 
 [node name="CoinAndDiamond" type="Node2D" parent="Main"]
-position = Vector2(0, 33.3333)
+position = Vector2(0, -2.28882e-05)
 
 [node name="CoinAmount" type="Label" parent="Main/CoinAndDiamond"]
 offset_left = 685.0
-offset_top = 35.0
+offset_top = 68.3333
 offset_right = 845.0
-offset_bottom = 75.0
+offset_bottom = 108.333
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("4_244lm")
 theme_override_font_sizes/font_size = 30
@@ -88,9 +88,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GemAmount" type="Label" parent="Main/CoinAndDiamond"]
 offset_left = 940.0
-offset_top = 35.0
+offset_top = 68.3333
 offset_right = 1040.0
-offset_bottom = 75.0
+offset_bottom = 108.333
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("4_244lm")
 theme_override_font_sizes/font_size = 30
@@ -99,22 +99,23 @@ horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TopUp1" type="TouchScreenButton" parent="Main/CoinAndDiamond" groups=["buttons"]]
-position = Vector2(860, 51)
+[node name="TopUp1" type="TouchScreenButton" parent="Main/CoinAndDiamond"]
+position = Vector2(860, 84.3333)
 scale = Vector2(1.3, 1.3)
 shape = SubResource("RectangleShape2D_tyw8i")
 
-[node name="TopUp2" type="TouchScreenButton" parent="Main/CoinAndDiamond" groups=["buttons"]]
-position = Vector2(1055, 51)
+[node name="TopUp2" type="TouchScreenButton" parent="Main/CoinAndDiamond"]
+position = Vector2(1055, 84.3333)
 scale = Vector2(1.3, 1.3)
 shape = SubResource("RectangleShape2D_tyw8i")
 
 [node name="CoinAndDiamond" type="Sprite2D" parent="Main/CoinAndDiamond"]
-position = Vector2(855, 51)
+position = Vector2(855, 84.3333)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("5_v4mhm")
 
 [node name="Character" type="Node2D" parent="Main"]
+visible = false
 position = Vector2(69, 173.381)
 
 [node name="Sprite2D" type="Sprite2D" parent="Main/Character"]
@@ -122,31 +123,31 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("6_c13ur")
 centered = false
 
-[node name="Character" type="TouchScreenButton" parent="Main/Character" groups=["buttons"]]
+[node name="Character" type="TouchScreenButton" parent="Main/Character"]
 position = Vector2(142, 89)
 scale = Vector2(14, 8.5)
 shape = SubResource("RectangleShape2D_35whs")
 
 [node name="Gacha" type="Node2D" parent="Main"]
-position = Vector2(139, 501.476)
+position = Vector2(170, 300)
 
 [node name="Sprite2D" type="Sprite2D" parent="Main/Gacha"]
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("7_w117k")
 
-[node name="Gacha" type="TouchScreenButton" parent="Main/Gacha" groups=["buttons"]]
+[node name="Gacha" type="TouchScreenButton" parent="Main/Gacha"]
 scale = Vector2(7, 7.5)
 shape = SubResource("ConvexPolygonShape2D_7gfbr")
 
 [node name="Storage" type="Node2D" parent="Main"]
-position = Vector2(293, 485.476)
+position = Vector2(160, 490.238)
 
 [node name="Sprite2D" type="Sprite2D" parent="Main/Storage"]
 position = Vector2(20, 15)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("8_j8xao")
 
-[node name="Storage" type="TouchScreenButton" parent="Main/Storage" groups=["buttons"]]
+[node name="Storage" type="TouchScreenButton" parent="Main/Storage"]
 shape = SubResource("ConvexPolygonShape2D_d8exy")
 
 [node name="NewRoom" type="Node2D" parent="Main"]
@@ -157,7 +158,7 @@ position = Vector2(981, 289)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("9_iifv4")
 
-[node name="NewRoom" type="TouchScreenButton" parent="Main/NewRoom" groups=["buttons"]]
+[node name="NewRoom" type="TouchScreenButton" parent="Main/NewRoom"]
 position = Vector2(0, -2)
 scale = Vector2(1.3, 1.3)
 shape = SubResource("RectangleShape2D_dt2pc")
@@ -171,13 +172,13 @@ position = Vector2(-2, 5)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("10_wvi1k")
 
-[node name="QuickMatch" type="TouchScreenButton" parent="Main/QuickMatch" groups=["buttons"]]
+[node name="QuickMatch" type="TouchScreenButton" parent="Main/QuickMatch"]
 position = Vector2(0, 4)
 scale = Vector2(1.3, 1.3)
 shape = SubResource("RectangleShape2D_w30yj")
 
 [node name="StartGame" type="Node2D" parent="Main"]
-position = Vector2(950, 523.665)
+position = Vector2(850, 520)
 
 [node name="Label" type="Label" parent="Main/StartGame"]
 offset_left = -126.0
@@ -186,55 +187,61 @@ offset_right = 128.0
 offset_bottom = 18.0
 theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
 theme_override_fonts/font = ExtResource("4_244lm")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "Start game"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="StartGame" type="TouchScreenButton" parent="Main/StartGame" groups=["buttons"]]
+[node name="StartGame" type="TouchScreenButton" parent="Main/StartGame"]
+position = Vector2(38.0952, 4.7619)
+scale = Vector2(1.3, 1.1)
 shape = SubResource("RectangleShape2D_ppmig")
 
-[node name="UserCharacter" type="Node2D" parent="Main"]
-position = Vector2(0, 52.3809)
-
-[node name="Sprite2D" type="Sprite2D" parent="Main/UserCharacter"]
-position = Vector2(550, 253)
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("11_u8lf7")
-
 [node name="LeaderBoard" type="Node2D" parent="Main"]
-position = Vector2(979, 232.429)
+visible = false
+position = Vector2(979, 250)
 
 [node name="Trophy" type="Sprite2D" parent="Main/LeaderBoard"]
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12_vkrm3")
 
-[node name="ToLeaderBoard" type="TouchScreenButton" parent="Main/LeaderBoard" groups=["buttons"]]
+[node name="ToLeaderBoard" type="TouchScreenButton" parent="Main/LeaderBoard"]
 shape = SubResource("ConvexPolygonShape2D_27aws")
+
+[node name="PlayerCharacter" parent="Main" instance=ExtResource("14_vihai")]
+position = Vector2(561.904, 323.809)
+scale = Vector2(4, 4)
 
 [node name="Back" type="Node2D" parent="."]
 scale = Vector2(1.309, 1.309)
 script = ExtResource("13_1olx2")
 
-[node name="Left" type="TouchScreenButton" parent="Back" groups=["buttons"]]
-position = Vector2(55.7639, 204.236)
+[node name="Left" type="TouchScreenButton" parent="Back"]
+position = Vector2(55.7639, 244.252)
 scale = Vector2(5.5, 24.5)
 shape = SubResource("RectangleShape2D_15l7t")
 
-[node name="Bottom" type="TouchScreenButton" parent="Back" groups=["buttons"]]
-position = Vector2(440.348, 411.993)
-scale = Vector2(44, 4)
+[node name="Bottom" type="TouchScreenButton" parent="Back"]
+position = Vector2(440.348, 462.923)
+scale = Vector2(44, 2.9)
 shape = SubResource("RectangleShape2D_15l7t")
 
-[node name="Right" type="TouchScreenButton" parent="Back" groups=["buttons"]]
-position = Vector2(825.817, 204.236)
+[node name="Right" type="TouchScreenButton" parent="Back"]
+position = Vector2(822.179, 244.252)
 scale = Vector2(5.5, 24.5)
 shape = SubResource("RectangleShape2D_15l7t")
 
-[node name="Top" type="TouchScreenButton" parent="Back" groups=["buttons"]]
-position = Vector2(440.348, -3.33733)
-scale = Vector2(44, 4)
+[node name="Top" type="TouchScreenButton" parent="Back"]
+position = Vector2(440.348, 29.403)
+scale = Vector2(44, 3.1)
 shape = SubResource("RectangleShape2D_15l7t")
+
+[node name="Settings" parent="Back" instance=ExtResource("15_3cuay")]
+visible = false
+scale = Vector2(0.76, 0.76)
 
 [node name="Loading" parent="." instance=ExtResource("3_8o55a")]
+visible = false
 
 [connection signal="pressed" from="Main/Name/Settings" to="Back" method="_on_settings_pressed"]
 [connection signal="pressed" from="Main/CoinAndDiamond/TopUp1" to="." method="_on_coin_and_gem_pressed"]

@@ -14,6 +14,7 @@ func _ready():
 	Global.leaderboard_args["kills"] = Global.Account["kills"]
 	Global.leaderboard_args["cookies"] = Global.Account["cookies"]
 	
+	Global.leaderboard_args["kills"] = 10
 	Global.currentAction = 8
 	var newcall = load("res://Global/HttpRequest.tscn")
 	Global.response["status"] = ""
@@ -26,28 +27,25 @@ func _ready():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
+		print(Global.response)
 		if Global.response["status"] == "Successful":
 			remove_child(new)
 			$Node2D/Score.text = str(Global.Account["kills"])
 			if Global.response["user_rank"] == 1:
 				$Node2D/Trophy.texture = load("res://png/LeaderBoard/First.png")
 				$Node2D/Ranking.text = "1"
-				$Node2D/Ranking.position = Vector2(170,170)
 				$Node2D/Ranking.add_theme_font_size_override("font_size", 55)
 			elif Global.response["user_rank"] == 2:
 				$Node2D/Trophy.texture = load("res://png/LeaderBoard/Second.png")
 				$Node2D/Ranking.text = "2"
-				$Node2D/Ranking.position = Vector2(165,170)
 				$Node2D/Ranking.add_theme_font_size_override("font_size", 55)
 			elif Global.response["user_rank"] == 3:
 				$Node2D/Trophy.texture = load("res://png/LeaderBoard/Third.png")
 				$Node2D/Ranking.text = "3"
-				$Node2D/Ranking.position = Vector2(165,170)
 				$Node2D/Ranking.add_theme_font_size_override("font_size", 55)
 			else:
 				$Node2D/Trophy.texture = load("res://png/LeaderBoard/Others.png")
 				$Node2D/Ranking.text = str(Global.response["user_rank"])
-				$Node2D/Ranking.position = Vector2(146,180)
 				$Node2D/Ranking.add_theme_font_size_override("font_size", 30)
 			
 			if Global.response["result"][0]["nickname"] != "None":

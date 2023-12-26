@@ -7,8 +7,7 @@ func _ready():
 	$Start.visible = true
 	Global.storage.resize(100)
 	Global.storage.fill(0)
-	Global.lastrand = 0
-	Global.startGame = 1
+	Global.gacha = 0
 	Global.currentCard = 0
 	Global.currentStorage = 0
 	Global.currentStorageStart = 0
@@ -26,4 +25,3 @@ func _on_timer_timeout():
 	else:
 		$Tip.add_theme_color_override("font_color",Color(0.871, 0.851, 0.733))
 		counter = 1
-

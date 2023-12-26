@@ -52,13 +52,16 @@ func _on_sign_up_pressed():
 			new.send()
 			
 			await get_tree().create_timer(2).timeout
-			if Global.response["status"] == "Successful":
+			if Global.response != null and Global.response["status"] == "Successful":
 				remove_child(new)
 				get_tree().change_scene_to_file("res://Login/LoginPage.tscn")
 			else:
 				remove_child(new)
 				$Notice.visible = true
 				$Notice/Label.text = "Sign up failed"
+				await get_tree().create_timer(2).timeout
+				$Notice.visible = false
+				$Notice/Label.text = ""
 		else:
 			$Notice.visible = true
 			$Notice/Label.text = "Something is invalid"
