@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://c15qahtojfr32"]
+
+[ext_resource type="Script" path="res://things/item/useful_item/bang.gd" id="1_eyxf7"]
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="2_rpxgp"]
+[ext_resource type="Texture2D" uid="uid://daodjf3cl0rb6" path="res://Item_res/item_icon/bang.png" id="5_frn8p"]
+
+[sub_resource type="Resource" id="Resource_mg2y0"]
+script = ExtResource("2_rpxgp")
+name = "bang"
+texture = ExtResource("5_frn8p")
+background_color = 1
+
+[sub_resource type="Resource" id="Resource_1ait7"]
+script = ExtResource("2_rpxgp")
+name = "bang"
+texture = ExtResource("5_frn8p")
+background_color = 2
+
+[sub_resource type="Resource" id="Resource_qj0wy"]
+script = ExtResource("2_rpxgp")
+name = "bang"
+texture = ExtResource("5_frn8p")
+background_color = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbo7q"]
+size = Vector2(65, 64)
+
+[node name="bang" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_eyxf7")
+itemRes_1 = SubResource("Resource_mg2y0")
+itemRes_2 = SubResource("Resource_1ait7")
+itemRes_3 = SubResource("Resource_qj0wy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fbo7q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("5_frn8p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

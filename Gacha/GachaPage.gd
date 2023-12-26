@@ -17,7 +17,7 @@ func _ready():
 	CardInfo = Global.Card[Global.currentCard]
 	var CardImg = str( "res://png/Gacha/big_" , CardInfo[1] , ".png" )
 	$CardSample/Card.texture = load(CardImg)
-	$Possibility.text = "0.6%"
+	$Possibility.text = "0.25%"
 	CardInfo = Global.Card[Global.currentCard-1]
 	CardImg = str( "res://png/Gacha/small_" , CardInfo[1] , ".png" )
 	$List/First.texture = load(CardImg)
@@ -44,7 +44,7 @@ func _on_timer_timeout():
 	CardInfo = Global.Card[Global.currentCard]
 	var CardImg = str( "res://png/Gacha/big_" , CardInfo[1] , ".png" )
 	$CardSample/Card.texture = load(CardImg)
-	$Possibility.text = "0.6%"
+	$Possibility.text = "0.25%"
 
 
 func _on_coin_and_gem_pressed():

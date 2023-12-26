@@ -57,8 +57,8 @@ func _on_transition_animation_finished():
 					Global.cards += 1
 					var cardPosition = Vector2( 0, 0)
 					
-					Global.storage[int(Global.response[str(k*5+j+1)]-1)] += 1
-					var CardInfo = Global.Card[int(Global.response[str(k*5+j+1)]-1)]
+					Global.storage[int(Global.response[str(k*5+j+1)])] += 1
+					var CardInfo = Global.Card[int(Global.response[str(k*5+j+1)])]
 					cardPosition = Vector2(135+190*j , 95+240*k)
 					CardSize = Vector2(Global.cardsizeUnit*8,Global.cardsizeUnit*8)
 					#if CardInfo[0] == "Tool":
@@ -67,7 +67,7 @@ func _on_transition_animation_finished():
 					#else:
 					#	cardPosition = Vector2(115+190*j , 115+230*k)
 					#	CardSize = Vector2(Global.cardsizeUnit*11,Global.cardsizeUnit*5)
-					Global.currentCard = int(Global.response[str(k*5+j+1)]-1)
+					Global.currentCard = int(Global.response[str(k*5+j+1)])
 			
 					cardTemp[k*5+j] = Global.CardUnit.instantiate()
 					cardTemp[k*5+j].position = cardPosition

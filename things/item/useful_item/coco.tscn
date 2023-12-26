@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bu4wsrkaafrp7"]
+
+[ext_resource type="Script" path="res://things/item/useful_item/coco.gd" id="1_w5pa2"]
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="2_oshdy"]
+[ext_resource type="Texture2D" uid="uid://d1th8q3ax07pn" path="res://Item_res/item_icon/coco.png" id="3_1mooy"]
+
+[sub_resource type="Resource" id="Resource_gveyn"]
+script = ExtResource("2_oshdy")
+name = "coco"
+texture = ExtResource("3_1mooy")
+background_color = 1
+
+[sub_resource type="Resource" id="Resource_0rebg"]
+script = ExtResource("2_oshdy")
+name = "coco"
+texture = ExtResource("3_1mooy")
+background_color = 2
+
+[sub_resource type="Resource" id="Resource_7ova3"]
+script = ExtResource("2_oshdy")
+name = "coco"
+texture = ExtResource("3_1mooy")
+background_color = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqwoa"]
+size = Vector2(65, 64)
+
+[node name="coco" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_w5pa2")
+itemRes_1 = SubResource("Resource_gveyn")
+itemRes_2 = SubResource("Resource_0rebg")
+itemRes_3 = SubResource("Resource_7ova3")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("3_1mooy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oqwoa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

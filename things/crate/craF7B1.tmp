@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgq2i7ujvev66"]
+
+[ext_resource type="Script" path="res://things/crate/crate.gd" id="1_raopw"]
+[ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_w7d1d"]
+[ext_resource type="PackedScene" uid="uid://d007yfs5heqxo" path="res://things/item/useful_item/armor.res" id="3_o6gl6"]
+[ext_resource type="PackedScene" uid="uid://c15qahtojfr32" path="res://things/item/useful_item/bang.tscn" id="4_ns184"]
+[ext_resource type="PackedScene" uid="uid://chnun7qkryl43" path="res://things/item/resorces_item/gear.tscn" id="5_5amk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spw42"]
+size = Vector2(32, 11.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkk3r"]
+radius = 15.0
+height = 54.0
+
+[node name="crate" type="Node2D" groups=["crate"]]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_raopw")
+gear = ExtResource("5_5amk2")
+item_array = Array[PackedScene]([ExtResource("3_o6gl6"), ExtResource("4_ns184")])
+
+[node name="crate_unopen" type="Sprite2D" parent="."]
+texture = ExtResource("2_w7d1d")
+offset = Vector2(0, -15)
+region_enabled = true
+region_rect = Rect2(64, 32, 32, 32)
+
+[node name="box" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 0)
+texture = ExtResource("2_w7d1d")
+offset = Vector2(0, -16)
+region_enabled = true
+region_rect = Rect2(128, 32, 32, 32)
+
+[node name="lid" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(1, -16)
+rotation = -3.14159
+texture = ExtResource("2_w7d1d")
+region_enabled = true
+region_rect = Rect2(160, 32, 32, 32)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="crate_area" type="StaticBody2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crate_area"]
+position = Vector2(0, -6.25)
+shape = SubResource("RectangleShape2D_spw42")
+
+[node name="interact_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact_area"]
+position = Vector2(0, -6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dkk3r")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="interact_area" to="." method="_on_interact_area_body_entered"]

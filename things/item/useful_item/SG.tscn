@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://dryx5cfpcchlf"]
+
+[ext_resource type="Script" path="res://things/item/useful_item/SG.gd" id="1_o7t5f"]
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="2_v3a08"]
+[ext_resource type="Texture2D" uid="uid://dgiwrr1r1y8fj" path="res://Item_res/item_icon/SG.png" id="3_iiqpn"]
+
+[sub_resource type="Resource" id="Resource_57spm"]
+script = ExtResource("2_v3a08")
+name = "SG"
+texture = ExtResource("3_iiqpn")
+background_color = 1
+
+[sub_resource type="Resource" id="Resource_hllmj"]
+script = ExtResource("2_v3a08")
+name = "SG"
+texture = ExtResource("3_iiqpn")
+background_color = 2
+
+[sub_resource type="Resource" id="Resource_wfjam"]
+script = ExtResource("2_v3a08")
+name = "SG"
+texture = ExtResource("3_iiqpn")
+background_color = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bw1e"]
+size = Vector2(65, 64)
+
+[node name="SG" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_o7t5f")
+itemRes_1 = SubResource("Resource_57spm")
+itemRes_2 = SubResource("Resource_hllmj")
+itemRes_3 = SubResource("Resource_wfjam")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("3_iiqpn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3bw1e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

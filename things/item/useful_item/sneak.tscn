@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsuaaoalw51ku"]
+
+[ext_resource type="Script" path="res://things/item/useful_item/sneak.gd" id="1_yws2i"]
+[ext_resource type="Texture2D" uid="uid://c1dvrbq1tbxe2" path="res://Item_res/item_icon/sneak.png" id="2_63p6m"]
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="2_dorei"]
+
+[sub_resource type="Resource" id="Resource_g3efh"]
+script = ExtResource("2_dorei")
+name = "sneak"
+texture = ExtResource("2_63p6m")
+background_color = 1
+
+[sub_resource type="Resource" id="Resource_rrwd3"]
+script = ExtResource("2_dorei")
+name = "sneak"
+texture = ExtResource("2_63p6m")
+background_color = 2
+
+[sub_resource type="Resource" id="Resource_1l5ww"]
+script = ExtResource("2_dorei")
+name = "sneak"
+texture = ExtResource("2_63p6m")
+background_color = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvkdf"]
+size = Vector2(65, 64)
+
+[node name="sneak" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_yws2i")
+itemRes_1 = SubResource("Resource_g3efh")
+itemRes_2 = SubResource("Resource_rrwd3")
+itemRes_3 = SubResource("Resource_1l5ww")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_63p6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fvkdf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

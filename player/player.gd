@@ -15,6 +15,7 @@ var dead_moment = 0
 var menu_show = false
 var face = Vector2(1,0)
 var speed_modify: float
+var can_build = true
 
 #==========#
 # resource #
@@ -26,11 +27,20 @@ var gear: int = 0
 #==============#
 # Player State #
 #==============#
-var speed: int = Global.playerSpeed
+var speed: int = 100
 var armor: int = 0
 var attack_damage: float = 5.0
-var max_health: float = Global.playerMaxHealth
-var health: float = max_health
+var bonus_damage: float = 0
+var max_health: float
+var health: float
+var attack_speed: float = 0.5 #shoot()/seconds
+var is_blasphemy: bool = false
+var blasphemy_damage:float = 0
+
+var bomb_damage:float =0
+var is_sneak: bool = false
+@onready var reduce_attack:float = attack_damage
+var chain_num:float = 0
 
 
 func _physics_process(_delta):
@@ -38,8 +48,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	dead_and_statistics()
 	speed_modify = tilemap.get_tile_data(self.position, "speed_modify")
-	$HUD/Shield/Label.text = str(wood)
-	print("health = ", max_health)
+	$HUD/State/Wood/Label.text = str(wood)
 	
 func handle_input():
 	if joystick_active:
@@ -112,3 +121,7 @@ func _on_hud_reset_player():
 func _on_menu_reset_player_menu():
 	Global.time = 0
 	Global.mob_dead = 0
+
+
+func _on_menu_quit_game():
+	is_dead = true

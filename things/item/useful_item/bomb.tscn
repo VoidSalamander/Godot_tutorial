@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://qdm2dx8d8krb"]
+
+[ext_resource type="Script" path="res://things/item/useful_item/bomb.gd" id="1_y1cg3"]
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="2_y0gj8"]
+[ext_resource type="Texture2D" uid="uid://m7o1rim2wjdg" path="res://Item_res/item_icon/bomb.png" id="3_kby0j"]
+
+[sub_resource type="Resource" id="Resource_d66no"]
+script = ExtResource("2_y0gj8")
+name = "bomb"
+texture = ExtResource("3_kby0j")
+background_color = 1
+
+[sub_resource type="Resource" id="Resource_x0r1s"]
+script = ExtResource("2_y0gj8")
+name = "bomb"
+texture = ExtResource("3_kby0j")
+background_color = 2
+
+[sub_resource type="Resource" id="Resource_tdhqu"]
+script = ExtResource("2_y0gj8")
+name = "bomb"
+texture = ExtResource("3_kby0j")
+background_color = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lxtd"]
+size = Vector2(65, 64)
+
+[node name="bomb" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_y1cg3")
+itemRes_1 = SubResource("Resource_d66no")
+itemRes_2 = SubResource("Resource_x0r1s")
+itemRes_3 = SubResource("Resource_tdhqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0lxtd")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("3_kby0j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

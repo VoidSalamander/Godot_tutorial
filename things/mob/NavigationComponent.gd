@@ -17,14 +17,16 @@ func _on_update_timer_timeout():
 	else:
 		nav_agent.target_position = target.global_position
 	
-	dir = to_local(nav_agent.get_next_path_position()).normalized()
+	motion()
 
 func motion():
-	#白天
-	if Global.time % 60 < 30:
+	if target.is_sneak:
 		dir = face[random_number].normalized()
-		if global_position.distance_to(target.global_position) < attack_range:
-			dir = to_local(nav_agent.get_next_path_position()).normalized()
+		
+	#elif Global.time % 60 < 30:
+	#	dir = face[random_number].normalized()
+	#	if self.global_position.distance_to(target.global_position) < attack_range:
+	#		dir = to_local(nav_agent.get_next_path_position()).normalized()
 	#夜晚
 	else:
 		dir = to_local(nav_agent.get_next_path_position()).normalized()

@@ -45,14 +45,14 @@ func _on_transition_animation_finished():
 		if Global.response["status"] == "Successful":
 			remove_child(new)
 			var cardPosition = Vector2( 0, 0)
-			Global.storage[int(Global.response["1"]-1)] += 1
-			var CardInfo = Global.Card[int(Global.response["1"]-1)]
+			Global.storage[int(Global.response["1"])] += 1
+			var CardInfo = Global.Card[int(Global.response["1"])]
 			if (CardInfo[0] == "Tool" or CardInfo[0] == "Clothing"):
 				cardPosition = Vector2(400,120)
 			else:
 				cardPosition = Vector2(0,0)
 
-			Global.currentCard = int(Global.response["1"]-1)
+			Global.currentCard = int(Global.response["1"])
 			cardTemp = Global.CardUnit.instantiate()
 			cardTemp.position = cardPosition
 			cardTemp.visible = false
