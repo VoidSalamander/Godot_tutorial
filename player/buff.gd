@@ -21,6 +21,9 @@ func get_gear(num: int):
 func armor_modify(num: int):
 	get_parent().armor += num
 
+func bonus_damage_modify(num: int):
+	get_parent().bonus_damage += num
+
 func speed_modify(increas: float, effect_time: float, is_permanent:bool = false):
 	if !is_permanent: get_timer(effect_time, _on_speed_modify_Timer_timeout, increas)
 	get_parent().speed += increas
@@ -34,6 +37,12 @@ func attack_speed_modify(increas: float, effect_time: float, is_permanent:bool =
 func _on_attack_speed_modify_Timer_timeout(arg: float):
 	get_parent().attack_speed -= arg
 	
+func chain_num_modify(increas: float, effect_time: float, is_permanent:bool = false):
+	if !is_permanent: get_timer(effect_time, _on_chain_num_modify_Timer_timeout, increas)
+	get_parent().chain_num += increas
+func _on_chain_num_modify_Timer_timeout(arg: float):
+	get_parent().chain_num -= arg
+	
 func blasphemy_modify(increas: float, effect_time: float):
 	get_timer(effect_time, _on_blasphemy_modify_Timer_timeout, increas)
 	get_parent().is_blasphemy = true
@@ -41,6 +50,12 @@ func blasphemy_modify(increas: float, effect_time: float):
 func _on_blasphemy_modify_Timer_timeout(arg: float):
 	get_parent().blasphemy_damage -= arg
 	get_parent().is_blasphemy = false
+	
+func reduce_attack_modify(increas: float, effect_time: float):
+	get_timer(effect_time, _on_reduce_attack_modify_Timer_timeout, increas)
+	get_parent().reduce_attack = increas
+func _on_reduce_attack_modify_Timer_timeout(arg: float):
+	get_parent().reduce_attack = get_parent().attack_damage
 
 func bomb_modify(num: int):
 	get_parent().bomb_damage = num
@@ -68,7 +83,6 @@ func duration_modify(num: float):
 func get_timer(wait_time:float, time_out_func, arg):
 	var timer = get_tree().create_timer(wait_time + duration_bonus)
 	timer.connect("timeout", Callable(time_out_func).bind(arg))
-
 
 func get_pick_sound():
 	var player = get_parent()

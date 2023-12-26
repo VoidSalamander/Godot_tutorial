@@ -25,7 +25,6 @@ func open_box():
 				var random_item = item_array[randi_range(0, item_array.size() - 1)]
 				creat_item(random_item)
 				
-				creat_item(item_array[9])
 				$Timer.start()
 
 func _on_timer_timeout():

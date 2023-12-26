@@ -7,7 +7,7 @@ var face = [Vector2(1,0), Vector2(0,1), Vector2(-1,0), Vector2(0,-1),
 			Vector2(1,1), Vector2(-1,1), Vector2(-1,-1), Vector2(1,-1)]
 			
 var random_number = 0
-var attack_range = 100 
+var attack_range = 300 
 var dir = Vector2(1,0)
 var temp_target
 
@@ -23,11 +23,10 @@ func motion():
 	if target.is_sneak:
 		dir = face[random_number].normalized()
 		
-	#elif Global.time % 60 < 30:
-	#	dir = face[random_number].normalized()
-	#	if self.global_position.distance_to(target.global_position) < attack_range:
-	#		dir = to_local(nav_agent.get_next_path_position()).normalized()
-	#夜晚
+	elif (Global.time % 120) < 60:
+		dir = face[random_number].normalized()
+		if self.global_position.distance_to(target.global_position) < attack_range:
+			dir = to_local(nav_agent.get_next_path_position()).normalized()
 	else:
 		dir = to_local(nav_agent.get_next_path_position()).normalized()
 

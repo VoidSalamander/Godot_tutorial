@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgq2i7ujvev66"]
+[gd_scene load_steps=19 format=3 uid="uid://dgq2i7ujvev66"]
 
 [ext_resource type="Script" path="res://things/crate/crate.gd" id="1_raopw"]
 [ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_w7d1d"]
@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://dryx5cfpcchlf" path="res://things/item/useful_item/SG.tscn" id="10_wmv5c"]
 [ext_resource type="PackedScene" uid="uid://44drgo2e0hgv" path="res://things/item/useful_item/shooes.tscn" id="11_6urna"]
 [ext_resource type="PackedScene" uid="uid://dsuaaoalw51ku" path="res://things/item/useful_item/sneak.tscn" id="12_vqe5a"]
+[ext_resource type="PackedScene" uid="uid://droqacgvicoac" path="res://things/item/useful_item/magic.tscn" id="13_fwqkr"]
+[ext_resource type="PackedScene" uid="uid://c0whj2pp0dp7u" path="res://things/item/useful_item/sword.tscn" id="14_i0px4"]
+[ext_resource type="PackedScene" uid="uid://dm1tcm6xrdew5" path="res://things/item/useful_item/weapon.tscn" id="15_wl7au"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spw42"]
 size = Vector2(32, 11.5)
@@ -26,7 +29,7 @@ z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_raopw")
 gear = ExtResource("5_5amk2")
-item_array = Array[PackedScene]([ExtResource("3_o6gl6"), ExtResource("4_ns184"), ExtResource("5_kii6g"), ExtResource("6_c6ef1"), ExtResource("7_0ubvs"), ExtResource("8_8urpd"), ExtResource("9_wapix"), ExtResource("10_wmv5c"), ExtResource("11_6urna"), ExtResource("12_vqe5a")])
+item_array = Array[PackedScene]([ExtResource("3_o6gl6"), ExtResource("4_ns184"), ExtResource("5_kii6g"), ExtResource("6_c6ef1"), ExtResource("7_0ubvs"), ExtResource("8_8urpd"), ExtResource("9_wapix"), ExtResource("10_wmv5c"), ExtResource("11_6urna"), ExtResource("12_vqe5a"), ExtResource("13_fwqkr"), ExtResource("14_i0px4"), ExtResource("15_wl7au")])
 
 [node name="crate_unopen" type="Sprite2D" parent="."]
 texture = ExtResource("2_w7d1d")
@@ -57,6 +60,7 @@ wait_time = 3.0
 [node name="crate_area" type="StaticBody2D" parent="."]
 z_index = 1
 y_sort_enabled = true
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="crate_area"]
 position = Vector2(0, -6.25)

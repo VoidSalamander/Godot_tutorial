@@ -3,7 +3,6 @@ extends Node2D
 @export var turret : PackedScene
 
 
-
 func _on_turret_1_pressed():
 	if get_parent().can_build and get_parent().wood >= 5:
 		Global.instance_node(turret, global_position)

@@ -40,7 +40,7 @@ var blasphemy_damage:float = 0
 var bomb_damage:float =0
 var is_sneak: bool = false
 @onready var reduce_attack:float = attack_damage
-var chain_num:float = 0
+var chain_num:int = 0
 
 
 func _physics_process(_delta):
@@ -121,7 +121,6 @@ func _on_hud_reset_player():
 func _on_menu_reset_player_menu():
 	Global.time = 0
 	Global.mob_dead = 0
-
 
 func _on_menu_quit_game():
 	is_dead = true

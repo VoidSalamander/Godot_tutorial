@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bciw6kfd4p5ha" path="res://art/icon.svg" id="15_ly0ld"]
 [ext_resource type="Texture2D" uid="uid://c3hpce6op7pcp" path="res://art/Setting/設定確認.png" id="16_f4mmv"]
 [ext_resource type="Script" path="res://player/Sound.gd" id="28_gq4r0"]
-[ext_resource type="AudioStream" path="res://art/Music/pick_item.mp3" id="29_4wr2n"]
+[ext_resource type="AudioStream" uid="uid://b01tx6xd75f8k" path="res://art/Music/pick_item.mp3" id="29_4wr2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3dpv"]
 size = Vector2(15, 15)
@@ -236,8 +236,6 @@ loop = true
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("1_n4vna")
 inventory = ExtResource("2_lwlky")
 

@@ -71,9 +71,9 @@ func usage(name: String, rarity: int):
 		if rarity == 1:
 			player.get_node("StateModifyer").blasphemy_modify(2, 10)
 		if rarity == 2:
-			player.get_node("StateModifyer").blasphemy_modify(4, 10)
+			player.get_node("StateModifyer").blasphemy_modify(4, 15)
 		if rarity == 3:
-			player.get_node("StateModifyer").blasphemy_modify(8, 10)
+			player.get_node("StateModifyer").blasphemy_modify(8, 20)
 	
 	if name == "bomb":
 		if rarity == 1:
@@ -131,9 +131,21 @@ func usage(name: String, rarity: int):
 			player.get_node("StateModifyer").speed_modify(10, 20, true)
 	
 	if name == "sword":
-		pass
+		if rarity == 1:
+			player.get_node("StateModifyer").bonus_damage_modify(1)
+		if rarity == 2:
+			player.get_node("StateModifyer").bonus_damage_modify(2)
+		if rarity == 3:
+			player.get_node("StateModifyer").bonus_damage_modify(4)
+			
 	if name == "weapon":
-		pass
+		if rarity == 1:
+			player.get_node("StateModifyer").reduce_attack_modify(3, 10)
+		if rarity == 2:
+			player.get_node("StateModifyer").reduce_attack_modify(1, 15)
+		if rarity == 3:
+			player.get_node("StateModifyer").reduce_attack_modify(0, 20)
+		
 	if name == "sneak":
 		if rarity == 1:
 			player.get_node("StateModifyer").sneak_modify(10)
@@ -141,6 +153,13 @@ func usage(name: String, rarity: int):
 			player.get_node("StateModifyer").sneak_modify(30)
 		if rarity == 3:
 			player.get_node("StateModifyer").sneak_modify(0, true)
+			
 	if name == "magic":
-		pass
+		if rarity == 1:
+			player.get_node("StateModifyer").chain_num_modify(1,10)
+		if rarity == 2:
+			player.get_node("StateModifyer").chain_num_modify(3,10)
+		if rarity == 3:
+			player.get_node("StateModifyer").chain_num_modify(1,10, true)
+			player.get_node("StateModifyer").chain_num_modify(6,10)
 		

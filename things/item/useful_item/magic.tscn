@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://droqacgvicoac"]
+
+[ext_resource type="Script" path="res://things/item/useful_item/magic.gd" id="1_odfgm"]
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="2_d4vib"]
+[ext_resource type="Texture2D" uid="uid://jsusc775mtq3" path="res://Item_res/item_icon/magic.png" id="3_og4pq"]
+
+[sub_resource type="Resource" id="Resource_60ry7"]
+script = ExtResource("2_d4vib")
+name = "magic"
+texture = ExtResource("3_og4pq")
+background_color = 1
+
+[sub_resource type="Resource" id="Resource_liekp"]
+script = ExtResource("2_d4vib")
+name = "magic"
+texture = ExtResource("3_og4pq")
+background_color = 2
+
+[sub_resource type="Resource" id="Resource_i1bs2"]
+script = ExtResource("2_d4vib")
+name = "magic"
+texture = ExtResource("3_og4pq")
+background_color = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dv5sb"]
+size = Vector2(65, 64)
+
+[node name="magic" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_odfgm")
+itemRes_1 = SubResource("Resource_60ry7")
+itemRes_2 = SubResource("Resource_liekp")
+itemRes_3 = SubResource("Resource_i1bs2")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("3_og4pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dv5sb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

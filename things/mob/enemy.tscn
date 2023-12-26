@@ -83,9 +83,14 @@ shape = SubResource("CircleShape2D_lc7eu")
 [node name="attack_rate" type="Timer" parent="AttackComponent"]
 autostart = true
 
+[node name="grow_up_timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
 [connection signal="timeout" from="HitboxComponent/Mob_stun" to="HitboxComponent" method="_on_mob_stun_timeout"]
 [connection signal="timeout" from="NavigationComponent/Update_timer" to="NavigationComponent" method="_on_update_timer_timeout" flags=18]
 [connection signal="timeout" from="NavigationComponent/Wander_timer" to="NavigationComponent" method="_on_wander_timer_timeout" flags=18]
 [connection signal="area_entered" from="AttackComponent" to="AttackComponent" method="_on_area_entered"]
 [connection signal="area_exited" from="AttackComponent" to="AttackComponent" method="_on_area_exited"]
 [connection signal="timeout" from="AttackComponent/attack_rate" to="AttackComponent" method="_on_attack_rate_timeout"]
+[connection signal="timeout" from="grow_up_timer" to="." method="_on_grow_up_timer_timeout"]

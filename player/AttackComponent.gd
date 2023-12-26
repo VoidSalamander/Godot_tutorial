@@ -25,7 +25,7 @@ func update_bomb():
 	if get_parent().bomb_damage > 0:
 		for area in $AttacRange.get_overlapping_areas():
 			if area.has_method("damage") and area.is_in_group("mob"):
-				area.damage(get_parent().bomb_damage)
+				area.damage(get_parent().bomb_damage + get_parent().bonus_damage)
 	get_parent().bomb_damage = 0
 	
 	
@@ -40,7 +40,7 @@ func _on_attac_range_body_exited(body):
 func shoot():
 	get_parent().is_sneak = false
 	var bullet_node = Global.instance_node(bullet, global_position)
-	bullet_node.init(get_parent().attack_damage, get_parent().reduce_attack, get_parent().chain_num)
+	bullet_node.init(get_parent().attack_damage + get_parent().bonus_damage, get_parent().reduce_attack, get_parent().chain_num)
 	if !attack_able_mob.is_empty():
 		var nearest_mob = attack_able_mob[0]
 		for i in range(attack_able_mob.size()):

@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://dm1tcm6xrdew5"]
+
+[ext_resource type="Script" path="res://things/item/useful_item/weapon.gd" id="1_4gx0q"]
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="2_6yamq"]
+[ext_resource type="Texture2D" uid="uid://7mq04fvjn6ow" path="res://Item_res/item_icon/weapon.png" id="3_xrc7j"]
+
+[sub_resource type="Resource" id="Resource_55cnp"]
+script = ExtResource("2_6yamq")
+name = "weapon"
+texture = ExtResource("3_xrc7j")
+background_color = 1
+
+[sub_resource type="Resource" id="Resource_v8t4m"]
+script = ExtResource("2_6yamq")
+name = "weapon"
+texture = ExtResource("3_xrc7j")
+background_color = 2
+
+[sub_resource type="Resource" id="Resource_krqk6"]
+script = ExtResource("2_6yamq")
+name = "weapon"
+texture = ExtResource("3_xrc7j")
+background_color = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byitq"]
+size = Vector2(65, 64)
+
+[node name="weapon" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_4gx0q")
+itemRes_1 = SubResource("Resource_55cnp")
+itemRes_2 = SubResource("Resource_v8t4m")
+itemRes_3 = SubResource("Resource_krqk6")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("3_xrc7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_byitq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
