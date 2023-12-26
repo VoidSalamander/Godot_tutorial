@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://b8kkkyihybjsj"]
+[gd_scene load_steps=58 format=3 uid="uid://b8kkkyihybjsj"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_n4vna"]
 [ext_resource type="Texture2D" uid="uid://0x5igftjrf4x" path="res://art/SpriteSheet.png" id="1_nfqv3"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d2e1cwl4oqmrd" path="res://art/方向.png" id="4_xfutu"]
 [ext_resource type="Script" path="res://player/Sprite2D.gd" id="4_xpvyt"]
 [ext_resource type="Texture2D" uid="uid://dgyeaf0w5u8wl" path="res://art/移動桿.png" id="5_kmxrf"]
-[ext_resource type="PackedScene" uid="uid://c2ovwrgxcxbgg" path="res://inventory/Inventory.tscn" id="6_ecnbl"]
+[ext_resource type="PackedScene" uid="uid://c2ovwrgxcxbgg" path="res://inventory/inventory.tscn" id="6_ecnbl"]
 [ext_resource type="Script" path="res://player/HitboxComponent.gd" id="6_fklgp"]
 [ext_resource type="Script" path="res://player/HealthComponent.gd" id="7_gc1v4"]
 [ext_resource type="PackedScene" uid="uid://bcgndkkx34l1w" path="res://Menu/menu.tscn" id="8_5cky0"]
@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bciw6kfd4p5ha" path="res://art/icon.svg" id="15_ly0ld"]
 [ext_resource type="Texture2D" uid="uid://c3hpce6op7pcp" path="res://art/Setting/設定確認.png" id="16_f4mmv"]
 [ext_resource type="Script" path="res://player/Sound.gd" id="28_gq4r0"]
-[ext_resource type="AudioStream" path="res://art/Music/pick_item.mp3" id="29_4wr2n"]
+[ext_resource type="AudioStream" uid="uid://b01tx6xd75f8k" path="res://art/Music/pick_item.mp3" id="29_4wr2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3dpv"]
 size = Vector2(15, 15)
