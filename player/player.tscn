@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://b8kkkyihybjsj"]
+[gd_scene load_steps=64 format=3 uid="uid://b8kkkyihybjsj"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_n4vna"]
 [ext_resource type="Texture2D" uid="uid://0x5igftjrf4x" path="res://art/SpriteSheet.png" id="1_nfqv3"]
@@ -27,8 +27,11 @@
 [ext_resource type="Texture2D" uid="uid://b16mvt6thnf05" path="res://art/Healthbar/HealthProcess.png" id="13_nqaog"]
 [ext_resource type="FontFile" uid="uid://cdsft4jit0pak" path="res://art/font.TTF" id="14_7y230"]
 [ext_resource type="Texture2D" uid="uid://bd3ostqgn4gxw" path="res://art/Setting/設定背景.png" id="14_vw4du"]
+[ext_resource type="PackedScene" uid="uid://qilfy1cruggf" path="res://things/turret/bone fire/bonefire.tscn" id="15_5qu0w"]
 [ext_resource type="Texture2D" uid="uid://bciw6kfd4p5ha" path="res://art/icon.svg" id="15_ly0ld"]
+[ext_resource type="PackedScene" uid="uid://bg4xw1k5i3bqr" path="res://things/turret/Gatling/Gatling.tscn" id="16_3rn4v"]
 [ext_resource type="Texture2D" uid="uid://c3hpce6op7pcp" path="res://art/Setting/設定確認.png" id="16_f4mmv"]
+[ext_resource type="PackedScene" uid="uid://cw61ynutfaqay" path="res://things/turret/canno/canno.tscn" id="17_6box0"]
 [ext_resource type="Script" path="res://player/Sound.gd" id="28_gq4r0"]
 [ext_resource type="AudioStream" uid="uid://b01tx6xd75f8k" path="res://art/Music/pick_item.mp3" id="29_4wr2n"]
 
@@ -261,7 +264,7 @@ libraries = {
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("4_xfutu")
 
-[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("HealthComponent")]
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("HealthComponent") groups=["player"]]
 script = ExtResource("6_fklgp")
 HealthComponent = NodePath("../HealthComponent")
 
@@ -311,6 +314,9 @@ one_shot = true
 [node name="BuildingComponent" type="Node2D" parent="."]
 script = ExtResource("11_0v8i8")
 turret = ExtResource("12_pbwto")
+bonefire = ExtResource("15_5qu0w")
+gatling = ExtResource("16_3rn4v")
+canno = ExtResource("17_6box0")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("4_un3h3")

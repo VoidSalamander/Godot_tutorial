@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://qilfy1cruggf"]
+
+[ext_resource type="Script" path="res://things/turret/turret.gd" id="1_84y6q"]
+[ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_clqhy"]
+[ext_resource type="Script" path="res://things/turret/HitboxComponent.gd" id="3_5dpto"]
+[ext_resource type="Script" path="res://things/turret/bone fire/AttackComponent.gd" id="4_6t68d"]
+[ext_resource type="Script" path="res://things/turret/HealthComponent.gd" id="6_u4ubm"]
+[ext_resource type="Texture2D" uid="uid://crc53tkbwf1ye" path="res://art/Healthbar/HealthBack.png" id="7_frf66"]
+[ext_resource type="Texture2D" uid="uid://dc6yx4e317edp" path="res://art/Healthbar/Healthover.png" id="8_4qxrk"]
+[ext_resource type="Texture2D" uid="uid://b16mvt6thnf05" path="res://art/Healthbar/HealthProcess.png" id="9_v112q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibbat"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1h3pc"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vq8ds"]
+radius = 138.362
+
+[node name="bonefire" type="Node2D"]
+script = ExtResource("1_84y6q")
+RQ_wood = 5
+RQ_stone = 1
+RQ_gear = 0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -28)
+texture = ExtResource("2_clqhy")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(256, 160, 32, 64)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_ibbat")
+
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("HealthComponent") groups=["turret"]]
+script = ExtResource("3_5dpto")
+HealthComponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_1h3pc")
+
+[node name="AttackComponent" type="Area2D" parent="."]
+script = ExtResource("4_6t68d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
+shape = SubResource("CircleShape2D_vq8ds")
+
+[node name="fire_rate" type="Timer" parent="AttackComponent"]
+wait_time = 2.0
+autostart = true
+
+[node name="HealthComponent" type="Node2D" parent="."]
+position = Vector2(8, 4)
+script = ExtResource("6_u4ubm")
+
+[node name="HealthBar" type="TextureProgressBar" parent="HealthComponent"]
+offset_left = -30.0
+offset_top = -1.0
+offset_right = 873.0
+offset_bottom = 134.0
+scale = Vector2(0.05, 0.05)
+max_value = 10.0
+value = 10.0
+texture_under = ExtResource("7_frf66")
+texture_over = ExtResource("8_4qxrk")
+texture_progress = ExtResource("9_v112q")
+
+[connection signal="body_exited" from="HitboxComponent" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="AttackComponent" to="AttackComponent" method="_on_body_entered"]
+[connection signal="body_exited" from="AttackComponent" to="AttackComponent" method="_on_body_exited"]
+[connection signal="timeout" from="AttackComponent/fire_rate" to="AttackComponent" method="_on_fire_rate_timeout"]

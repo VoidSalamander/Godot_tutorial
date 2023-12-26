@@ -46,20 +46,22 @@ func _on_player_player_dead(time,mob):
 	$Dead/Sprite2D/enemy/value.text = str(mob)
 	
 func button_color():
-	if get_parent().can_build and get_parent().wood >= 5:
+	if get_parent().can_build and get_parent().wood >= 2 and get_parent().stone >= 2 and get_parent().gear >= 2:
 		$game_button/build_Container/turret_1.modulate = Color.WHITE
 	else:
 		$game_button/build_Container/turret_1.modulate = Color.DIM_GRAY
-	if get_parent().can_build and get_parent().stone >= 5:
+	if get_parent().can_build and get_parent().wood >= 5 and get_parent().stone >= 1:
 		$game_button/build_Container/turret_2.modulate = Color.WHITE
 	else:
 		$game_button/build_Container/turret_2.modulate = Color.DIM_GRAY
-	if get_parent().can_build and get_parent().wood >= 5 and get_parent().stone >= 5:
+	if get_parent().can_build and get_parent().wood >= 1 and get_parent().stone >= 3 and get_parent().gear >= 6:
 		$game_button/build_Container/turret_3.modulate = Color.WHITE
 	else:
 		$game_button/build_Container/turret_3.modulate = Color.DIM_GRAY
-		
-	$game_button/build_Container/turret_4.modulate = Color.DIM_GRAY
+	if get_parent().can_build and get_parent().wood >= 3 and get_parent().stone >= 7 and get_parent().gear >= 3:
+		$game_button/build_Container/turret_4.modulate = Color.WHITE
+	else:
+		$game_button/build_Container/turret_4.modulate = Color.DIM_GRAY
 
 func time_update():
 	var time = String()

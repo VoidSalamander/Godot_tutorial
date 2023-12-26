@@ -12,7 +12,7 @@ func attacking():
 	if !attack_able_stack.is_empty():
 		var nearest = attack_able_stack[0]
 		$"../NavigationComponent".temp_target = nearest
-		nearest.damage(2)
+		nearest.damage(get_parent().damage)
 
 func _on_area_entered(area):
 	if area.has_method("damage") and !area.is_in_group("mob"):

@@ -1,50 +1,53 @@
-[gd_scene load_steps=13 format=3 uid="uid://ikuuhsumbdhe"]
+[gd_scene load_steps=13 format=3 uid="uid://bg4xw1k5i3bqr"]
 
-[ext_resource type="Script" path="res://things/turret/turret.gd" id="1_miti0"]
-[ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_o5onj"]
-[ext_resource type="Script" path="res://things/turret/AttackComponent.gd" id="4_4uh3j"]
-[ext_resource type="Script" path="res://things/turret/HitboxComponent.gd" id="4_ch0m4"]
-[ext_resource type="Texture2D" uid="uid://crc53tkbwf1ye" path="res://art/Healthbar/HealthBack.png" id="5_0fgck"]
-[ext_resource type="PackedScene" uid="uid://dvxswhls63tpn" path="res://things/turret/projectile/bomb.tscn" id="5_ec38m"]
-[ext_resource type="Texture2D" uid="uid://dc6yx4e317edp" path="res://art/Healthbar/Healthover.png" id="6_7aexl"]
-[ext_resource type="Script" path="res://things/turret/HealthComponent.gd" id="6_lfpcm"]
-[ext_resource type="Texture2D" uid="uid://b16mvt6thnf05" path="res://art/Healthbar/HealthProcess.png" id="7_w3m2n"]
+[ext_resource type="Script" path="res://things/turret/turret.gd" id="1_wh8ng"]
+[ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_shwgv"]
+[ext_resource type="Script" path="res://things/turret/HitboxComponent.gd" id="3_teje2"]
+[ext_resource type="Script" path="res://things/turret/Gatling/AttackComponent.gd" id="4_k4wnl"]
+[ext_resource type="PackedScene" uid="uid://dvxswhls63tpn" path="res://things/turret/projectile/bomb.tscn" id="5_huljs"]
+[ext_resource type="Script" path="res://things/turret/HealthComponent.gd" id="6_w31kp"]
+[ext_resource type="Texture2D" uid="uid://crc53tkbwf1ye" path="res://art/Healthbar/HealthBack.png" id="7_xebed"]
+[ext_resource type="Texture2D" uid="uid://dc6yx4e317edp" path="res://art/Healthbar/Healthover.png" id="8_q7v5a"]
+[ext_resource type="Texture2D" uid="uid://b16mvt6thnf05" path="res://art/Healthbar/HealthProcess.png" id="9_1bpju"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibbat"]
-radius = 16.0
+radius = 28.0179
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1h3pc"]
-radius = 16.0
+radius = 29.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vq8ds"]
-radius = 268.007
+radius = 319.025
 
 [node name="turret" type="Node2D"]
-script = ExtResource("1_miti0")
+script = ExtResource("1_wh8ng")
 RQ_stone = 5
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_o5onj")
+position = Vector2(-12, 1)
+texture = ExtResource("2_shwgv")
 offset = Vector2(12, -9)
 flip_h = true
 region_enabled = true
-region_rect = Rect2(288, 0, 64, 64)
+region_rect = Rect2(192, 64, 64, 64)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, -6)
 shape = SubResource("CircleShape2D_ibbat")
 
 [node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("HealthComponent") groups=["turret"]]
-script = ExtResource("4_ch0m4")
+script = ExtResource("3_teje2")
 HealthComponent = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(1, -6)
 shape = SubResource("CircleShape2D_1h3pc")
 
 [node name="AttackComponent" type="Area2D" parent="."]
-script = ExtResource("4_4uh3j")
-bullet = ExtResource("5_ec38m")
+script = ExtResource("4_k4wnl")
+bullet = ExtResource("5_huljs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
 shape = SubResource("CircleShape2D_vq8ds")
@@ -52,12 +55,9 @@ shape = SubResource("CircleShape2D_vq8ds")
 [node name="fire_rate" type="Timer" parent="AttackComponent"]
 autostart = true
 
-[node name="Marker2D" type="Marker2D" parent="AttackComponent"]
-position = Vector2(26, -8)
-
 [node name="HealthComponent" type="Node2D" parent="."]
-script = ExtResource("6_lfpcm")
-MAX_HEALTH = 20.0
+script = ExtResource("6_w31kp")
+MAX_HEALTH = 30.0
 
 [node name="HealthBar" type="TextureProgressBar" parent="HealthComponent"]
 offset_left = -21.0
@@ -67,9 +67,9 @@ offset_bottom = 154.0
 scale = Vector2(0.05, 0.05)
 max_value = 30.0
 value = 30.0
-texture_under = ExtResource("5_0fgck")
-texture_over = ExtResource("6_7aexl")
-texture_progress = ExtResource("7_w3m2n")
+texture_under = ExtResource("7_xebed")
+texture_over = ExtResource("8_q7v5a")
+texture_progress = ExtResource("9_1bpju")
 
 [connection signal="body_exited" from="HitboxComponent" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="AttackComponent" to="AttackComponent" method="_on_body_entered"]

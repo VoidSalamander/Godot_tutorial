@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2ytkp03s0gyg"]
-
-[ext_resource type="Script" path="res://things/turret/junk_pile/junk_pile.gd" id="1_nib42"]
-
-[node name="junk_pile" type="Node2D"]
-script = ExtResource("1_nib42")
-bullet = null
-fire_rate = null
