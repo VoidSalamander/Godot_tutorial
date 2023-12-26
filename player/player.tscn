@@ -428,8 +428,12 @@ grow_vertical = 2
 text = "HP"
 label_settings = SubResource("LabelSettings_tylob")
 
+<<<<<<< Updated upstream
 [node name="Wood" type="Label" parent="HUD/State"]
 layout_mode = 0
+=======
+[node name="wood" type="Label" parent="HUD"]
+>>>>>>> Stashed changes
 offset_left = 7.0
 offset_top = 16.0
 offset_right = 470.0
@@ -438,7 +442,61 @@ scale = Vector2(0.05, 0.05)
 text = "wood"
 label_settings = SubResource("LabelSettings_ufbqe")
 
+<<<<<<< Updated upstream
 [node name="Label" type="Label" parent="HUD/State/Wood"]
+=======
+[node name="Label" type="Label" parent="HUD/wood"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 137.0
+offset_top = -50.5
+offset_right = 231.0
+offset_bottom = 50.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_mfr28")
+
+[node name="stone" type="Label" parent="HUD"]
+offset_left = 7.0
+offset_top = 24.0
+offset_right = 470.0
+offset_bottom = 125.0
+scale = Vector2(0.05, 0.05)
+text = "stone"
+label_settings = SubResource("LabelSettings_ufbqe")
+
+[node name="Label" type="Label" parent="HUD/stone"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 137.0
+offset_top = -50.5
+offset_right = 231.0
+offset_bottom = 50.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_mfr28")
+
+[node name="gear" type="Label" parent="HUD"]
+offset_left = 7.0
+offset_top = 32.0
+offset_right = 470.0
+offset_bottom = 133.0
+scale = Vector2(0.05, 0.05)
+text = "gear"
+label_settings = SubResource("LabelSettings_ufbqe")
+
+[node name="Label" type="Label" parent="HUD/gear"]
+>>>>>>> Stashed changes
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
