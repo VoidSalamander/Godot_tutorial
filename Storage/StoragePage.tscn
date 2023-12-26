@@ -1,23 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0mripivslgh"]
+[gd_scene load_steps=13 format=3 uid="uid://d0mripivslgh"]
 
 [ext_resource type="Script" path="res://Storage/StoragePage.gd" id="1_1o46y"]
 [ext_resource type="Texture2D" uid="uid://dsjm6n8njvbqo" path="res://png/frame.png" id="1_n4seb"]
 [ext_resource type="FontFile" uid="uid://c8kfctqkt4qdk" path="res://png/font/大部分的字體/04B_30__.TTF" id="3_7h7vo"]
 [ext_resource type="PackedScene" uid="uid://dkk4ce7nk7mdd" path="res://Global/BG.tscn" id="3_tog2w"]
+[ext_resource type="Texture2D" uid="uid://c81qr11unx4xe" path="res://png/通知.png" id="5_os08u"]
+[ext_resource type="Texture2D" uid="uid://cibjocjsph5q" path="res://png/LastButton.png" id="7_3s3yt"]
+[ext_resource type="Texture2D" uid="uid://bchhsfa6bnvxa" path="res://png/NextButton.png" id="8_bud4p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi406"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljunc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tljc6"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3ti3d"]
+points = PackedVector2Array(22, 30, 22, -32, -31, -1.2)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ggwek"]
+points = PackedVector2Array(-20, 30, -20, -32, 32, -1)
+
 [node name="Storage" type="Node2D"]
-position = Vector2(-1, 9)
+position = Vector2(-5.96046e-08, 2.38419e-07)
 scale = Vector2(0.21, 0.21)
 script = ExtResource("1_1o46y")
 
+[node name="BG" parent="." instance=ExtResource("3_tog2w")]
+
 [node name="Object" type="Node2D" parent="."]
+position = Vector2(0, 1.90735e-06)
 
 [node name="Frame" type="Node2D" parent="."]
+position = Vector2(0, 1.90735e-06)
 
 [node name="Frame1" type="Sprite2D" parent="Frame"]
-position = Vector2(166, 175)
+position = Vector2(161.238, 217.855)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_n4seb")
 
@@ -32,8 +49,12 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button1" type="TouchScreenButton" parent="Frame/Frame1"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame2" type="Sprite2D" parent="Frame"]
-position = Vector2(371, 175)
+position = Vector2(366.238, 217.855)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_n4seb")
 
@@ -48,8 +69,12 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button2" type="TouchScreenButton" parent="Frame/Frame2"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame3" type="Sprite2D" parent="Frame"]
-position = Vector2(576, 175)
+position = Vector2(571.238, 217.855)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_n4seb")
 
@@ -64,8 +89,12 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button3" type="TouchScreenButton" parent="Frame/Frame3"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame4" type="Sprite2D" parent="Frame"]
-position = Vector2(781, 175)
+position = Vector2(776.238, 217.855)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_n4seb")
 
@@ -80,8 +109,12 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button4" type="TouchScreenButton" parent="Frame/Frame4"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame5" type="Sprite2D" parent="Frame"]
-position = Vector2(986, 175)
+position = Vector2(981.238, 217.855)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_n4seb")
 
@@ -96,8 +129,12 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button5" type="TouchScreenButton" parent="Frame/Frame5"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame6" type="Sprite2D" parent="Frame"]
-position = Vector2(166, 375)
+position = Vector2(161.238, 446.426)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_n4seb")
 
@@ -112,8 +149,12 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button6" type="TouchScreenButton" parent="Frame/Frame6"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame7" type="Sprite2D" parent="Frame"]
-position = Vector2(371, 375)
+position = Vector2(366.238, 446.426)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_n4seb")
 
@@ -128,8 +169,12 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button7" type="TouchScreenButton" parent="Frame/Frame7"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame8" type="Sprite2D" parent="Frame"]
-position = Vector2(576, 375)
+position = Vector2(571.238, 446.426)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_n4seb")
 
@@ -144,8 +189,12 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button8" type="TouchScreenButton" parent="Frame/Frame8"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame9" type="Sprite2D" parent="Frame"]
-position = Vector2(781, 375)
+position = Vector2(776.238, 446.426)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_n4seb")
 
@@ -160,8 +209,12 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Button9" type="TouchScreenButton" parent="Frame/Frame9"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
+
 [node name="Frame10" type="Sprite2D" parent="Frame"]
-position = Vector2(986, 375)
+position = Vector2(981.238, 446.426)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_n4seb")
 
@@ -179,13 +232,15 @@ theme_override_font_sizes/font_size = 400
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="BG" parent="." instance=ExtResource("3_tog2w")]
+[node name="Button10" type="TouchScreenButton" parent="Frame/Frame10"]
+scale = Vector2(85, 85)
+shape = SubResource("RectangleShape2D_wi406")
 
 [node name="Back" type="MarginContainer" parent="."]
-offset_left = 1060.0
-offset_top = 25.0
-offset_right = 1140.0
-offset_bottom = 55.0
+offset_left = 1026.67
+offset_top = 53.5714
+offset_right = 1106.67
+offset_bottom = 83.5714
 
 [node name="BackLabel" type="Label" parent="Back"]
 layout_mode = 2
@@ -201,4 +256,129 @@ position = Vector2(40, 13)
 scale = Vector2(4.5, 2)
 shape = SubResource("RectangleShape2D_ljunc")
 
+[node name="Information" type="Node2D" parent="."]
+position = Vector2(576.191, 319.047)
+scale = Vector2(1.6, 1.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="Information"]
+texture = ExtResource("5_os08u")
+
+[node name="ObjName" type="Label" parent="Information"]
+offset_left = -149.0
+offset_top = -120.0
+offset_right = 151.0
+offset_bottom = -20.0
+theme_override_colors/font_color = Color(0.449219, 0.386719, 0.339844, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 40
+text = "bottle"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ObjInformation" type="Label" parent="Information"]
+offset_left = -149.0
+offset_top = -50.0
+offset_right = 151.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0.449219, 0.386719, 0.339844, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 20
+text = "Use to add health in the next game."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="use" type="MarginContainer" parent="Information"]
+offset_left = -127.976
+offset_top = 35.7143
+offset_right = -49.9761
+offset_bottom = 75.7143
+
+[node name="Label" type="Label" parent="Information/use"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45098, 0.388235, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 30
+text = "Use"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UseButton" type="TouchScreenButton" parent="Information/use" groups=["buttons"]]
+position = Vector2(38.6905, 17.8808)
+scale = Vector2(4.3, 1.9)
+shape = SubResource("RectangleShape2D_tljc6")
+
+[node name="cancel" type="MarginContainer" parent="Information"]
+offset_left = 41.6667
+offset_top = 35.7143
+offset_right = 151.667
+offset_bottom = 75.7143
+
+[node name="Label" type="Label" parent="Information/cancel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.449219, 0.386719, 0.339844, 1)
+theme_override_fonts/font = ExtResource("3_7h7vo")
+theme_override_font_sizes/font_size = 22
+text = "Cancel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelButton" type="TouchScreenButton" parent="Information/cancel"]
+position = Vector2(53.5715, 17.8808)
+scale = Vector2(5.7, 1.9)
+shape = SubResource("RectangleShape2D_tljc6")
+
+[node name="ChangePage" type="Node2D" parent="."]
+
+[node name="LastPage" type="Node2D" parent="ChangePage"]
+position = Vector2(490.476, 590.476)
+
+[node name="Sprite2D" type="Sprite2D" parent="ChangePage/LastPage"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_3s3yt")
+
+[node name="LastPButton" type="TouchScreenButton" parent="ChangePage/LastPage"]
+shape = SubResource("ConvexPolygonShape2D_3ti3d")
+
+[node name="NextPage" type="Node2D" parent="ChangePage"]
+position = Vector2(647.619, 590.476)
+
+[node name="Sprite2D" type="Sprite2D" parent="ChangePage/NextPage"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_bud4p")
+
+[node name="NextPButton" type="TouchScreenButton" parent="ChangePage/NextPage"]
+shape = SubResource("ConvexPolygonShape2D_ggwek")
+
+[node name="Notice" type="MarginContainer" parent="."]
+visible = false
+offset_left = 446.238
+offset_top = 259.381
+offset_right = 696.238
+offset_bottom = 379.881
+
+[node name="Black_BG" type="ColorRect" parent="Notice"]
+layout_mode = 2
+color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[node name="Label" type="Label" parent="Notice"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Frame/Frame1/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Frame/Frame2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Frame/Frame3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Frame/Frame4/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Frame/Frame5/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Frame/Frame6/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Frame/Frame7/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Frame/Frame8/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Frame/Frame9/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Frame/Frame10/Button10" to="." method="_on_button_10_pressed"]
 [connection signal="pressed" from="Back/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Information/use/UseButton" to="." method="_on_use_button_pressed"]
+[connection signal="pressed" from="Information/cancel/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="ChangePage/LastPage/LastPButton" to="." method="_on_last_p_button_pressed"]
+[connection signal="pressed" from="ChangePage/NextPage/NextPButton" to="." method="_on_next_p_button_pressed"]

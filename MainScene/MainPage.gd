@@ -37,7 +37,23 @@ func _process(delta):
 	$Main/CoinAndDiamond/CoinAmount.text = str(Global.CoinAmount)
 	$Main/CoinAndDiamond/GemAmount.text = str(Global.GemAmount)
 	$Main/Name/Name.text = Global.Account["nickname"]
-	
+	if Global.Account['cat'] != '':
+		$Main/UserCharacter/Cat.texture = load("res://png/Gacha/Cards/Clothing/"+Global.Account['cat']+".png")
+		$Main/UserCharacter/Cat.visible = true
+	else:
+		$Main/UserCharacter/Cat.visible = false
+	$Main/UserCharacter/Cloth.texture = load("res://png/Gacha/Cards/Clothing/"+Global.Account['clothing']+".png")
+	if Global.Account['accessory'] != '':
+		if Global.Account['accessory'].contains("hat") or Global.Account['accessory'].contains("banana"):
+			$Main/UserCharacter/Accessory.position = Vector2(592,285)
+			$Main/UserCharacter/Accessory.scale = Vector2(1.7,1.7)
+		else:
+			$Main/UserCharacter/Accessory.position = Vector2(529,371)
+			$Main/UserCharacter/Accessory.scale = Vector2(1.5,1.5)
+		$Main/UserCharacter/Accessory.texture = load("res://png/Gacha/Cards/Clothing/"+Global.Account['accessory']+".png")
+		$Main/UserCharacter/Accessory.visible = true
+	else:
+		$Main/UserCharacter/Accessory.visible = false
 
 
 func _on_storage_pressed():
@@ -70,5 +86,5 @@ func _on_to_leader_board_pressed():
 
 func _on_start_game_pressed():
 	LoadAndSave.loadGame()
-	get_tree().change_scene_to_file("res://main/world.tscn")
+	get_tree().change_scene_to_file("res://MainScene/newWorld.tscn")
 
