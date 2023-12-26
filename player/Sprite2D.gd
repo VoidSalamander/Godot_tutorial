@@ -4,6 +4,10 @@ extends Sprite2D
 
 func _physics_process(_delta):
 	updatAnimation()
+	if get_parent().is_sneak:
+		self.self_modulate.a = 0.5
+	else:
+		self.self_modulate.a = 1
 
 func updatAnimation():
 	if(get_parent().velocity.length() == 0):

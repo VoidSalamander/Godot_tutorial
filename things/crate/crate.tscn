@@ -1,12 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://dgq2i7ujvev66"]
+[gd_scene load_steps=16 format=3 uid="uid://dgq2i7ujvev66"]
 
 [ext_resource type="Script" path="res://things/crate/crate.gd" id="1_raopw"]
-[ext_resource type="PackedScene" uid="uid://c4acewfd7thdw" path="res://things/item/item.tscn" id="2_dluqo"]
 [ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_w7d1d"]
-[ext_resource type="PackedScene" uid="uid://qrifcfardkrg" path="res://things/item/shild.tscn" id="3_eod87"]
-[ext_resource type="PackedScene" uid="uid://dtbt13cydvq55" path="res://things/item/resorces_item/wood.tscn" id="4_32v8k"]
+[ext_resource type="PackedScene" uid="uid://d007yfs5heqxo" path="res://things/item/useful_item/armor.res" id="3_o6gl6"]
+[ext_resource type="PackedScene" uid="uid://c15qahtojfr32" path="res://things/item/useful_item/bang.tscn" id="4_ns184"]
 [ext_resource type="PackedScene" uid="uid://chnun7qkryl43" path="res://things/item/resorces_item/gear.tscn" id="5_5amk2"]
-[ext_resource type="PackedScene" uid="uid://c3fb3kkjgsxd0" path="res://things/item/resorces_item/stone.tscn" id="6_ll6hj"]
+[ext_resource type="PackedScene" uid="uid://c0danqqxkodb" path="res://things/item/useful_item/blasphemy.tscn" id="5_kii6g"]
+[ext_resource type="PackedScene" uid="uid://qdm2dx8d8krb" path="res://things/item/useful_item/bomb.tscn" id="6_c6ef1"]
+[ext_resource type="PackedScene" uid="uid://bu4wsrkaafrp7" path="res://things/item/useful_item/coco.tscn" id="7_0ubvs"]
+[ext_resource type="PackedScene" uid="uid://d2d8q4cgm5t78" path="res://things/item/useful_item/cola.tscn" id="8_8urpd"]
+[ext_resource type="PackedScene" uid="uid://soqy0i5ecrrd" path="res://things/item/useful_item/resorces_pack.tscn" id="9_wapix"]
+[ext_resource type="PackedScene" uid="uid://dryx5cfpcchlf" path="res://things/item/useful_item/SG.tscn" id="10_wmv5c"]
+[ext_resource type="PackedScene" uid="uid://44drgo2e0hgv" path="res://things/item/useful_item/shooes.tscn" id="11_6urna"]
+[ext_resource type="PackedScene" uid="uid://dsuaaoalw51ku" path="res://things/item/useful_item/sneak.tscn" id="12_vqe5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spw42"]
 size = Vector2(32, 11.5)
@@ -19,11 +25,8 @@ height = 54.0
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_raopw")
-item = ExtResource("2_dluqo")
-shield = ExtResource("3_eod87")
-wood = ExtResource("4_32v8k")
 gear = ExtResource("5_5amk2")
-stone = ExtResource("6_ll6hj")
+item_array = Array[PackedScene]([ExtResource("3_o6gl6"), ExtResource("4_ns184"), ExtResource("5_kii6g"), ExtResource("6_c6ef1"), ExtResource("7_0ubvs"), ExtResource("8_8urpd"), ExtResource("9_wapix"), ExtResource("10_wmv5c"), ExtResource("11_6urna"), ExtResource("12_vqe5a")])
 
 [node name="crate_unopen" type="Sprite2D" parent="."]
 texture = ExtResource("2_w7d1d")

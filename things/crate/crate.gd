@@ -1,10 +1,7 @@
 extends Node2D
 
-@export var item : PackedScene
-@export var shield : PackedScene
-@export var wood : PackedScene
 @export var gear : PackedScene
-@export var stone : PackedScene
+@export var item_array: Array[PackedScene]
 
 signal open_signal
 
@@ -24,11 +21,11 @@ func open_box():
 				$box.visible = true
 				
 				for i in range(3):
-					creat_item(wood)
-				creat_item(stone)
-				creat_item(gear)
-				if randi_range(0,1) == 1:
-					creat_item(shield)
+					creat_item(gear)
+				var random_item = item_array[randi_range(0, item_array.size() - 1)]
+				creat_item(random_item)
+				
+				creat_item(item_array[9])
 				$Timer.start()
 
 func _on_timer_timeout():
@@ -40,5 +37,12 @@ func _on_interact_area_body_entered(body):
 
 func creat_item(item: PackedScene):
 	var created_item = item.instantiate()
-	created_item.init_item($box.global_position)
+	created_item.init_item($box.global_position, get_rarity())
 	item_list_node.call_deferred("add_child", created_item)
+
+func get_rarity()->int:
+	var rand = randf_range(0, 100) 
+	if rand < 78: return 1
+	if rand < 95: return 2
+	return 3
+		

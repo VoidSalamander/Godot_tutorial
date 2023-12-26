@@ -29,9 +29,17 @@ var gear: int = 0
 var speed: int = 100
 var armor: int = 0
 var attack_damage: float = 5.0
-var max_health: float = 100
-var health: float = max_health
+var bonus_damage: float = 0
+var max_health: float
+var health: float
+var attack_speed: float = 0.5 #shoot()/seconds
+var is_blasphemy: bool = false
+var blasphemy_damage:float = 0
 
+var bomb_damage:float =0
+var is_sneak: bool = false
+@onready var reduce_attack:float = attack_damage
+var chain_num:float = 0
 
 func _physics_process(_delta):
 	handle_input()

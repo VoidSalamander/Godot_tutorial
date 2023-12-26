@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://b8kkkyihybjsj"]
+[gd_scene load_steps=53 format=3 uid="uid://b8kkkyihybjsj"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_n4vna"]
 [ext_resource type="Texture2D" uid="uid://0x5igftjrf4x" path="res://art/SpriteSheet.png" id="1_nfqv3"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://cktm45pf8xyqd" path="res://art/設定.png" id="10_0iej2"]
 [ext_resource type="PackedScene" uid="uid://dv5opwqfk6xq2" path="res://player/bullet/bullet.tscn" id="10_xxaob"]
 [ext_resource type="Script" path="res://player/BuildingComponent.gd" id="11_0v8i8"]
+[ext_resource type="Texture2D" uid="uid://cyxttr2sg67tn" path="res://inventory/background.png" id="11_73acp"]
+[ext_resource type="Script" path="res://player/blasphemy.gd" id="11_b0s4e"]
 [ext_resource type="Texture2D" uid="uid://crc53tkbwf1ye" path="res://art/Healthbar/HealthBack.png" id="11_crass"]
 [ext_resource type="Texture2D" uid="uid://dc6yx4e317edp" path="res://art/Healthbar/Healthover.png" id="12_dxm7j"]
 [ext_resource type="PackedScene" uid="uid://ikuuhsumbdhe" path="res://things/turret/turret.tscn" id="12_pbwto"]
@@ -144,6 +146,9 @@ size = Vector2(15, 15)
 [sub_resource type="CircleShape2D" id="CircleShape2D_eafo0"]
 radius = 116.501
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_itx84"]
+radius = 69.0072
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_v2mvb"]
 radius = 60.0
 
@@ -257,9 +262,23 @@ one_shot = true
 [node name="AttacRange" type="Area2D" parent="AttackComponent"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/AttacRange"]
-visible = false
-position = Vector2(0.5, -7.5)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_eafo0")
+
+[node name="blasphemy" type="Area2D" parent="AttackComponent"]
+visible = false
+script = ExtResource("11_b0s4e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent/blasphemy"]
+shape = SubResource("CircleShape2D_itx84")
+
+[node name="Sprite2D" type="Sprite2D" parent="AttackComponent/blasphemy"]
+modulate = Color(1, 0.211765, 0.203922, 0.223529)
+scale = Vector2(2, 2)
+texture = ExtResource("11_73acp")
+
+[node name="Timer" type="Timer" parent="AttackComponent/blasphemy"]
+one_shot = true
 
 [node name="BuildingComponent" type="Node2D" parent="."]
 script = ExtResource("11_0v8i8")
@@ -542,6 +561,7 @@ flat = true
 [connection signal="timeout" from="HitboxComponent/Stun" to="HitboxComponent" method="_on_stun_timeout"]
 [connection signal="body_entered" from="AttackComponent/AttacRange" to="AttackComponent" method="_on_attac_range_body_entered"]
 [connection signal="body_exited" from="AttackComponent/AttacRange" to="AttackComponent" method="_on_attac_range_body_exited"]
+[connection signal="timeout" from="AttackComponent/blasphemy/Timer" to="AttackComponent/blasphemy" method="_on_timer_timeout"]
 [connection signal="back_to_game" from="HUD" to="." method="_on_hud_back_to_game"]
 [connection signal="button_position" from="HUD" to="HUD/Menu" method="_on_hud_button_position"]
 [connection signal="pause" from="HUD" to="." method="_on_hud_pause"]

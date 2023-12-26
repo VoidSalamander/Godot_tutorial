@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://44drgo2e0hgv"]
+
+[ext_resource type="Script" path="res://things/item/useful_item/shooes.gd" id="1_qq2fg"]
+[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="2_hhmsq"]
+[ext_resource type="Texture2D" uid="uid://bi5nww31trfnf" path="res://Item_res/item_icon/shooes.png" id="3_infk1"]
+
+[sub_resource type="Resource" id="Resource_4psfb"]
+script = ExtResource("2_hhmsq")
+name = "shooes"
+texture = ExtResource("3_infk1")
+background_color = 1
+
+[sub_resource type="Resource" id="Resource_4lqro"]
+script = ExtResource("2_hhmsq")
+name = "shooes"
+texture = ExtResource("3_infk1")
+background_color = 2
+
+[sub_resource type="Resource" id="Resource_x6eki"]
+script = ExtResource("2_hhmsq")
+name = "shooes"
+texture = ExtResource("3_infk1")
+background_color = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jswub"]
+size = Vector2(65, 64)
+
+[node name="shooes" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_qq2fg")
+itemRes_1 = SubResource("Resource_4psfb")
+itemRes_2 = SubResource("Resource_4lqro")
+itemRes_3 = SubResource("Resource_x6eki")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("3_infk1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jswub")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
