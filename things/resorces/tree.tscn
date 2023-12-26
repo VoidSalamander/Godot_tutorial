@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://buf8qqwl5ptqc"]
+[gd_scene load_steps=18 format=3 uid="uid://buf8qqwl5ptqc"]
 
 [ext_resource type="Script" path="res://things/resorces/tree.gd" id="1_0jkbn"]
 [ext_resource type="Texture2D" uid="uid://c87ljahs1oagr" path="res://art/tilemap-04.png" id="1_ftl07"]
