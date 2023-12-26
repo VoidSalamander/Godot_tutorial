@@ -12,6 +12,7 @@ func _ready():
 	$BGM.visible = true
 	$SE.visible = true
 	$Notice.visible = false
+	$Loading.visible = false
 
 
 func _process(delta):
@@ -27,6 +28,7 @@ func _on_touch_screen_button_pressed():
 		Global.rename_args["nickname"] = $Name/Name.text
 		Global.rename_args["cookies"] = Global.Account["cookies"]
 		
+		$Loading.visible = true
 		Global.currentAction = 5
 		var newcall = load("res://Global/HttpRequest.tscn")
 		var new = newcall.instantiate()
@@ -34,12 +36,13 @@ func _on_touch_screen_button_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
+		$Loading.visible = false
 		if Global.response["status"] == "Successful":
 			Global.Account["nickname"] = $Name/Name.text
 		else:
 			$Notice/Label.text = "Failed to change nickname"
 			$Notice.visible = true
-			await get_tree().create_timer(1).timeout
+			await get_tree().create_timer(2).timeout
 			$Notice.visible = false
 		remove_child(new)
 

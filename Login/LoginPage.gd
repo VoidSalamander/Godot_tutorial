@@ -5,9 +5,9 @@ func _ready():
 	$Notice.visible = false
 
 func _on_log_in_pressed():
-	if $InputBox/UserID.text != "" and $InputBox/Password.text != "":
-		Global.login_args["username"] = $InputBox/UserID.text
-		Global.login_args["password"] = $InputBox/Password.text
+	if $HSplitContainer/InputBox/UserID.text != "" and $HSplitContainer/InputBox/Password.text != "":
+		Global.login_args["username"] = $HSplitContainer/InputBox/UserID.text
+		Global.login_args["password"] = $HSplitContainer/InputBox/Password.text
 		
 		Global.currentAction = 1
 		var newcall = load("res://Global/HttpRequest.tscn")
@@ -31,11 +31,11 @@ func _on_log_in_pressed():
 			$Notice/Label.text = ""
 	else:
 		$Notice.visible = true
-		if $InputBox/UserID.text == "":
+		if $HSplitContainer/InputBox/UserID.text == "":
 			if $Notice/Label.text != "":
 				$Notice/Label.text = $Notice/Label.text + "\n"
 			$Notice/Label.text = $Notice/Label.text + "- Username isn't filled in"
-		if $InputBox/Password.text == "":
+		if $HSplitContainer/InputBox/Password.text == "":
 			if $Notice/Label.text != "":
 				$Notice/Label.text = $Notice/Label.text + "\n"
 			$Notice/Label.text = $Notice/Label.text + "- Password isn't filled in"
