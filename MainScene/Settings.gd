@@ -36,7 +36,7 @@ func _on_touch_screen_button_pressed():
 			
 			await get_tree().create_timer(2).timeout
 			$Loading.visible = false
-			if Global.response["status"] == "Successful":
+			if Global.response != null and Global.response["status"] == "Successful":
 				Global.Account["nickname"] = $Name/Name.text
 			else:
 				$Notice/Label.text = "Failed to change nickname"

@@ -33,7 +33,15 @@ func _on_send_pressed():
 		
 		await get_tree().create_timer(2).timeout
 		print("Send: ", Global.response)
-		if Global.response["status"] == "Successful":
+		if Global.response == null:
+			remove_child(new)
+			$Notice.visible = true
+			$Notice/Label.text = "Email incorrect"
+			$Notice/Label.text = $Notice/Label.text + "\n" + str(Global.response)
+			await get_tree().create_timer(2).timeout
+			$Notice.visible = false
+			$Notice/Label.text = ""
+		elif Global.response["status"] == "Successful":
 			remove_child(new)
 			$Verify.visible = true
 			$ResetPassword.visible = true
@@ -91,7 +99,14 @@ func _on_reset_password_pressed():
 			new.send()
 			
 			await get_tree().create_timer(2).timeout
-			if Global.response["status"] == "Successful":
+			if Global.response == null:
+				remove_child(new)
+				$Notice.visible = true
+				$Notice/Label.text = "Reset password failed"
+				await get_tree().create_timer(2).timeout
+				$Notice.visible = false
+				$Notice/Label.text = ""
+			elif Global.response["status"] == "Successful":
 				remove_child(new)
 				get_tree().change_scene_to_file("res://Login/LoginPage.tscn")
 			else:

@@ -16,7 +16,7 @@ func _on_log_in_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
-		if Global.response["status"] == "Successful":
+		if Global.response != null and Global.response["status"] == "Successful":
 			remove_child(new)
 			Global.Account["username"] = Global.response["username"]
 			Global.Account["cookies"] = Global.response["cookies"]
