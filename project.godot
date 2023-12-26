@@ -19,7 +19,6 @@ config/icon="res://art/icon.svg"
 
 Global="*res://main/Global.gd"
 LoadAndSave="*res://Global/LoadAndSave.gd"
-AudioManager="*res://Global/AudioManager.gd"
 
 [display]
 

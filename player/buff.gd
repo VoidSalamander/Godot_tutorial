@@ -1,22 +1,15 @@
 extends Node2D
 
 var duration_bonus = 0
-var sound
-
-func _ready():
-	get_pick_sound()
 
 func get_wood(num: int):
 	get_parent().wood += num
-	sound.play()
 
 func get_stone(num: int):
 	get_parent().stone += num
-	sound.play()
 
 func get_gear(num: int):
 	get_parent().gear += num
-	sound.play()
 
 func armor_modify(num: int):
 	get_parent().armor += num
@@ -69,9 +62,3 @@ func get_timer(wait_time:float, time_out_func, arg):
 	var timer = get_tree().create_timer(wait_time + duration_bonus)
 	timer.connect("timeout", Callable(time_out_func).bind(arg))
 
-
-func get_pick_sound():
-	var player = get_parent()
-	if player:
-		sound = player.get_node_or_null("Sound/Pick")
-	
