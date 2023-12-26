@@ -99,12 +99,12 @@ horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="TopUp1" type="TouchScreenButton" parent="Main/CoinAndDiamond"]
+[node name="TopUp1" type="TouchScreenButton" parent="Main/CoinAndDiamond" groups=["buttons"]]
 position = Vector2(860, 51)
 scale = Vector2(1.3, 1.3)
 shape = SubResource("RectangleShape2D_tyw8i")
 
-[node name="TopUp2" type="TouchScreenButton" parent="Main/CoinAndDiamond"]
+[node name="TopUp2" type="TouchScreenButton" parent="Main/CoinAndDiamond" groups=["buttons"]]
 position = Vector2(1055, 51)
 scale = Vector2(1.3, 1.3)
 shape = SubResource("RectangleShape2D_tyw8i")
@@ -122,7 +122,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("6_c13ur")
 centered = false
 
-[node name="Character" type="TouchScreenButton" parent="Main/Character"]
+[node name="Character" type="TouchScreenButton" parent="Main/Character" groups=["buttons"]]
 position = Vector2(142, 89)
 scale = Vector2(14, 8.5)
 shape = SubResource("RectangleShape2D_35whs")
@@ -134,7 +134,7 @@ position = Vector2(139, 501.476)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("7_w117k")
 
-[node name="Gacha" type="TouchScreenButton" parent="Main/Gacha"]
+[node name="Gacha" type="TouchScreenButton" parent="Main/Gacha" groups=["buttons"]]
 scale = Vector2(7, 7.5)
 shape = SubResource("ConvexPolygonShape2D_7gfbr")
 
@@ -146,7 +146,7 @@ position = Vector2(20, 15)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("8_j8xao")
 
-[node name="Storage" type="TouchScreenButton" parent="Main/Storage"]
+[node name="Storage" type="TouchScreenButton" parent="Main/Storage" groups=["buttons"]]
 shape = SubResource("ConvexPolygonShape2D_d8exy")
 
 [node name="NewRoom" type="Node2D" parent="Main"]
@@ -157,7 +157,7 @@ position = Vector2(981, 289)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("9_iifv4")
 
-[node name="NewRoom" type="TouchScreenButton" parent="Main/NewRoom"]
+[node name="NewRoom" type="TouchScreenButton" parent="Main/NewRoom" groups=["buttons"]]
 position = Vector2(0, -2)
 scale = Vector2(1.3, 1.3)
 shape = SubResource("RectangleShape2D_dt2pc")
@@ -171,7 +171,7 @@ position = Vector2(-2, 5)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("10_wvi1k")
 
-[node name="QuickMatch" type="TouchScreenButton" parent="Main/QuickMatch"]
+[node name="QuickMatch" type="TouchScreenButton" parent="Main/QuickMatch" groups=["buttons"]]
 position = Vector2(0, 4)
 scale = Vector2(1.3, 1.3)
 shape = SubResource("RectangleShape2D_w30yj")
@@ -189,7 +189,7 @@ theme_override_fonts/font = ExtResource("4_244lm")
 theme_override_font_sizes/font_size = 30
 text = "Start game"
 
-[node name="StartGame" type="TouchScreenButton" parent="Main/StartGame"]
+[node name="StartGame" type="TouchScreenButton" parent="Main/StartGame" groups=["buttons"]]
 shape = SubResource("RectangleShape2D_ppmig")
 
 [node name="UserCharacter" type="Node2D" parent="Main"]
@@ -207,29 +207,29 @@ position = Vector2(979, 232.429)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12_vkrm3")
 
-[node name="ToLeaderBoard" type="TouchScreenButton" parent="Main/LeaderBoard"]
+[node name="ToLeaderBoard" type="TouchScreenButton" parent="Main/LeaderBoard" groups=["buttons"]]
 shape = SubResource("ConvexPolygonShape2D_27aws")
 
 [node name="Back" type="Node2D" parent="."]
 scale = Vector2(1.309, 1.309)
 script = ExtResource("13_1olx2")
 
-[node name="Left" type="TouchScreenButton" parent="Back"]
+[node name="Left" type="TouchScreenButton" parent="Back" groups=["buttons"]]
 position = Vector2(55.7639, 204.236)
 scale = Vector2(5.5, 24.5)
 shape = SubResource("RectangleShape2D_15l7t")
 
-[node name="Bottom" type="TouchScreenButton" parent="Back"]
+[node name="Bottom" type="TouchScreenButton" parent="Back" groups=["buttons"]]
 position = Vector2(440.348, 411.993)
 scale = Vector2(44, 4)
 shape = SubResource("RectangleShape2D_15l7t")
 
-[node name="Right" type="TouchScreenButton" parent="Back"]
+[node name="Right" type="TouchScreenButton" parent="Back" groups=["buttons"]]
 position = Vector2(825.817, 204.236)
 scale = Vector2(5.5, 24.5)
 shape = SubResource("RectangleShape2D_15l7t")
 
-[node name="Top" type="TouchScreenButton" parent="Back"]
+[node name="Top" type="TouchScreenButton" parent="Back" groups=["buttons"]]
 position = Vector2(440.348, -3.33733)
 scale = Vector2(44, 4)
 shape = SubResource("RectangleShape2D_15l7t")

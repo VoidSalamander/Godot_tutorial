@@ -291,7 +291,7 @@ theme_override_font_sizes/font_size = 30
 text = "SIGN UP"
 horizontal_alignment = 1
 
-[node name="SignUp" type="TouchScreenButton" parent="SignUp"]
+[node name="SignUp" type="TouchScreenButton" parent="SignUp" groups=["buttons"]]
 position = Vector2(93, 14)
 scale = Vector2(9.5, 2)
 shape = SubResource("RectangleShape2D_3epov")
@@ -322,7 +322,7 @@ text = "LOG IN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LogIn" type="TouchScreenButton" parent="Label/LogIn"]
+[node name="LogIn" type="TouchScreenButton" parent="Label/LogIn" groups=["buttons"]]
 position = Vector2(63, 16)
 scale = Vector2(6.5, 1.5)
 shape = SubResource("RectangleShape2D_3epov")

@@ -53,7 +53,7 @@ position = Vector2(884.762, 160.667)
 scale = Vector2(1.309, 1.309)
 texture = ExtResource("4_cyrx8")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Pen"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Pen" groups=["buttons"]]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_08y5o")
 
@@ -74,7 +74,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="HSlider" type="HSlider" parent="BGM"]
+[node name="BGMSlider" type="HSlider" parent="BGM"]
 offset_left = 265.088
 offset_top = 249.045
 offset_right = 515.088
@@ -83,7 +83,9 @@ theme_override_icons/grabber = ExtResource("5_2ov7a")
 theme_override_icons/grabber_highlight = ExtResource("5_2ov7a")
 theme_override_icons/grabber_disabled = ExtResource("5_2ov7a")
 theme_override_icons/tick = ExtResource("6_bssvw")
-step = 10.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
 ticks_on_borders = true
 metadata/_edit_use_anchors_ = true
 
@@ -103,7 +105,7 @@ text = "SE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="SE"]
+[node name="SElider" type="HSlider" parent="SE"]
 offset_left = 265.088
 offset_top = 249.045
 offset_right = 515.088
@@ -112,7 +114,9 @@ theme_override_icons/grabber = ExtResource("5_2ov7a")
 theme_override_icons/grabber_highlight = ExtResource("5_2ov7a")
 theme_override_icons/grabber_disabled = ExtResource("5_2ov7a")
 theme_override_icons/tick = ExtResource("6_bssvw")
-step = 10.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
 ticks_on_borders = true
 
 [node name="Notice" type="MarginContainer" parent="."]
@@ -131,3 +135,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Pen/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="value_changed" from="BGM/BGMSlider" to="." method="_on_bgm_slider_value_changed"]
+[connection signal="value_changed" from="SE/SElider" to="." method="_on_s_elider_value_changed"]

@@ -55,7 +55,7 @@ text = "BACK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="TouchScreenButton" parent="Back"]
+[node name="Back" type="TouchScreenButton" parent="Back" groups=["buttons"]]
 position = Vector2(58, 15)
 scale = Vector2(6.5, 2)
 shape = SubResource("RectangleShape2D_0yotp")
@@ -84,7 +84,7 @@ text = "100"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CoinAndGem" type="TouchScreenButton" parent="."]
+[node name="CoinAndGem" type="TouchScreenButton" parent="." groups=["buttons"]]
 position = Vector2(636, 71.6191)
 scale = Vector2(1.3, 1.3)
 texture_normal = ExtResource("4_dmoar")
@@ -110,7 +110,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("5_t0pon")
 centered = false
 
-[node name="gem90" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Gems90"]
+[node name="gem90" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Gems90" groups=["buttons"]]
 position = Vector2(105, 131)
 scale = Vector2(10, 12)
 shape = SubResource("RectangleShape2D_jpi1v")
@@ -127,7 +127,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("6_g7t4h")
 centered = false
 
-[node name="gem60" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Gems60"]
+[node name="gem60" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Gems60" groups=["buttons"]]
 position = Vector2(105, 131)
 scale = Vector2(10, 12)
 shape = SubResource("RectangleShape2D_jpi1v")
@@ -144,7 +144,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("7_6lbtw")
 centered = false
 
-[node name="gem30" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Gems30"]
+[node name="gem30" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Gems30" groups=["buttons"]]
 position = Vector2(105, 131)
 scale = Vector2(10, 12)
 shape = SubResource("RectangleShape2D_jpi1v")
@@ -161,7 +161,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("8_xu0ph")
 centered = false
 
-[node name="gem6" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Gems6"]
+[node name="gem6" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Gems6" groups=["buttons"]]
 position = Vector2(105, 131)
 scale = Vector2(10, 12)
 shape = SubResource("RectangleShape2D_jpi1v")
@@ -178,7 +178,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("9_dnmit")
 centered = false
 
-[node name="coin700" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Coins700"]
+[node name="coin700" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Coins700" groups=["buttons"]]
 position = Vector2(105, 131)
 scale = Vector2(10, 12)
 shape = SubResource("RectangleShape2D_jpi1v")
@@ -195,7 +195,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("10_fc6hm")
 centered = false
 
-[node name="coin350" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Coins350"]
+[node name="coin350" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Coins350" groups=["buttons"]]
 position = Vector2(105, 131)
 scale = Vector2(10, 12)
 shape = SubResource("RectangleShape2D_jpi1v")
@@ -212,7 +212,7 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("11_t3wpw")
 centered = false
 
-[node name="coin100" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Coins100"]
+[node name="coin100" type="TouchScreenButton" parent="ScrollContainer/HBoxContainer/Coins100" groups=["buttons"]]
 position = Vector2(105, 131)
 scale = Vector2(10, 12)
 shape = SubResource("RectangleShape2D_jpi1v")
@@ -242,7 +242,7 @@ horizontal_alignment = 1
 position = Vector2(-100.764, 65.649)
 texture = ExtResource("13_vev1b")
 
-[node name="CancelButton" type="TouchScreenButton" parent="ConfirmBG/Cancel"]
+[node name="CancelButton" type="TouchScreenButton" parent="ConfirmBG/Cancel" groups=["buttons"]]
 position = Vector2(0, 0.763947)
 scale = Vector2(5, 2)
 shape = SubResource("RectangleShape2D_lpjdj")
@@ -251,7 +251,7 @@ shape = SubResource("RectangleShape2D_lpjdj")
 position = Vector2(100, 65)
 texture = ExtResource("14_xf5ss")
 
-[node name="ConfirmButton" type="TouchScreenButton" parent="ConfirmBG/Confirm"]
+[node name="ConfirmButton" type="TouchScreenButton" parent="ConfirmBG/Confirm" groups=["buttons"]]
 position = Vector2(0, 0.763947)
 scale = Vector2(5, 2)
 shape = SubResource("RectangleShape2D_lpjdj")

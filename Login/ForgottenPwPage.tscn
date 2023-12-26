@@ -120,7 +120,7 @@ text = "SEND"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Send" type="TouchScreenButton" parent="Send"]
+[node name="Send" type="TouchScreenButton" parent="Send" groups=["buttons"]]
 position = Vector2(65, 19)
 scale = Vector2(7, 2.5)
 shape = SubResource("RectangleShape2D_fmo7s")
@@ -220,7 +220,7 @@ text = "RESET PASSWORD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResetPassword" type="TouchScreenButton" parent="ResetPassword"]
+[node name="ResetPassword" type="TouchScreenButton" parent="ResetPassword" groups=["buttons"]]
 position = Vector2(214, 19)
 scale = Vector2(22, 2.5)
 shape = SubResource("RectangleShape2D_fmo7s")
@@ -255,7 +255,7 @@ text = "BACK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back" type="TouchScreenButton" parent="Back"]
+[node name="Back" type="TouchScreenButton" parent="Back" groups=["buttons"]]
 position = Vector2(58, 15)
 scale = Vector2(6.5, 2)
 shape = SubResource("RectangleShape2D_i81f5")

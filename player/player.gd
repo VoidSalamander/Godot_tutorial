@@ -15,6 +15,7 @@ var dead_moment = 0
 var menu_show = false
 var face = Vector2(1,0)
 var speed_modify: float
+var can_build = true
 
 #==========#
 # resource #
@@ -41,12 +42,13 @@ var is_sneak: bool = false
 @onready var reduce_attack:float = attack_damage
 var chain_num:float = 0
 
+
 func _physics_process(_delta):
 	handle_input()
 	move_and_slide()
 	dead_and_statistics()
 	speed_modify = tilemap.get_tile_data(self.position, "speed_modify")
-	$HUD/Shield/Label.text = str(wood)
+	$HUD/State/Wood/Label.text = str(wood)
 	
 func handle_input():
 	if joystick_active:
@@ -119,3 +121,7 @@ func _on_hud_reset_player():
 func _on_menu_reset_player_menu():
 	Global.time = 0
 	Global.mob_dead = 0
+
+
+func _on_menu_quit_game():
+	is_dead = true
