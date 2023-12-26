@@ -35,6 +35,3 @@ func _input(event):
 				newDeltaY = touchPos.y - deltaY
 				set_position(Vector2(newDeltaX, newDeltaY))
 				
-		#Global.Account["xposition"] = touchPos.x
-		#Global.Account["yposition"] = touchPos.y
-				

@@ -62,6 +62,7 @@ func send():
 		error = http_request.request( url+Global.topup_func, headers, HTTPClient.METHOD_POST, body)
 		
 	if error != OK:
+		print(error)
 		push_error("An error occurred in the HTTP request.")
 	
 	await get_tree().create_timer(1.5).timeout

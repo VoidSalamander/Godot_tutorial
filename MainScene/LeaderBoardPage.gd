@@ -14,6 +14,7 @@ func _ready():
 	Global.leaderboard_args["kills"] = Global.Account["kills"]
 	Global.leaderboard_args["cookies"] = Global.Account["cookies"]
 	
+	Global.leaderboard_args["kills"] = 10
 	Global.currentAction = 8
 	var newcall = load("res://Global/HttpRequest.tscn")
 	Global.response["status"] = ""
@@ -25,8 +26,8 @@ func _ready():
 		add_child(new)
 		new.send()
 		
-		
 		await get_tree().create_timer(2).timeout
+		print(Global.response)
 		if Global.response["status"] == "Successful":
 			remove_child(new)
 			$Node2D/Score.text = str(Global.Account["kills"])

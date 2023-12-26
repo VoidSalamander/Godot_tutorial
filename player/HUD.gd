@@ -42,6 +42,8 @@ func _on_exit_pressed():
 	if Global.mob_dead > Global.Account["kills"]:
 		Global.Account["kills"] = Global.mob_dead
 		Global.Account["time"] = Global.time
+	elif Global.mob_dead == Global.Account["kills"] and Global.Account["time"] < Global.time:
+		Global.Account["time"] = Global.time
 	emit_signal("reset_player")
 	emit_signal("reset_inventory")
 	Global.playerMaxHealth = 100
