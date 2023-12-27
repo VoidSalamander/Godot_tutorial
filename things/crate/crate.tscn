@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" path="res://things/crate/crate.gd" id="1_raopw"]
 [ext_resource type="Texture2D" uid="uid://b06xas31bmq16" path="res://art/tilemap-05.png" id="2_w7d1d"]
+[ext_resource type="PackedScene" uid="uid://d007yfs5heqxo" path="res://things/item/useful_item/armor.res" id="3_o6gl6"]
+[ext_resource type="PackedScene" uid="uid://c15qahtojfr32" path="res://things/item/useful_item/bang.tscn" id="4_ns184"]
 [ext_resource type="PackedScene" uid="uid://chnun7qkryl43" path="res://things/item/resorces_item/gear.tscn" id="5_5amk2"]
 [ext_resource type="PackedScene" uid="uid://c0danqqxkodb" path="res://things/item/useful_item/blasphemy.tscn" id="5_kii6g"]
 [ext_resource type="PackedScene" uid="uid://qdm2dx8d8krb" path="res://things/item/useful_item/bomb.tscn" id="6_c6ef1"]
