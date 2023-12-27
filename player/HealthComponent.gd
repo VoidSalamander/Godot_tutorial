@@ -7,7 +7,7 @@ var health: float
 func _ready():
 	health = MAX_HEALTH
 	$"../HUD/State/HealthBar".max_value = MAX_HEALTH
-	get_parent().max_health = MAX_HEALTH
+	get_parent().max_health = MAX_HEALTH + Global.playerMaxhealth
 	get_parent().health = health
 	
 func get_damage(Attack: float):

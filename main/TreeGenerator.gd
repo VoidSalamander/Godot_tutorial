@@ -3,7 +3,7 @@ extends Node2D
 
 @onready var tilemap = $"../TileMap"
 @export var tree_node: PackedScene
-@export var tree_num: int = 1000
+@export var tree_num: int = 500
 
 func _ready():
 	for i in range(tree_num):

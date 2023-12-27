@@ -8,7 +8,6 @@ func _on_log_in_pressed():
 	if $InputBox/UserID.text != "" and $InputBox/Password.text != "":
 		Global.login_args["username"] = $InputBox/UserID.text
 		Global.login_args["password"] = $InputBox/Password.text
-		
 		Global.currentAction = 1
 		var newcall = load("res://Global/HttpRequest.tscn")
 		var new = newcall.instantiate()

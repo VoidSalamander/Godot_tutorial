@@ -460,15 +460,33 @@ label_settings = SubResource("LabelSettings_mfr28")
 
 [node name="Stone" type="Label" parent="HUD/State"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 23.0
-offset_right = 417.0
-offset_bottom = 124.0
+offset_left = 7.35
+offset_top = 24.15
+offset_right = 417.35
+offset_bottom = 125.15
 scale = Vector2(0.05, 0.05)
 text = "stone"
 label_settings = SubResource("LabelSettings_g1sjq")
 
 [node name="Label" type="Label" parent="HUD/State/Stone"]
+layout_mode = 0
+offset_left = 600.0
+offset_right = 694.0
+offset_bottom = 101.0
+text = "0"
+label_settings = SubResource("LabelSettings_p506u")
+
+[node name="gear" type="Label" parent="HUD/State"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 31.0
+offset_right = 417.0
+offset_bottom = 132.0
+scale = Vector2(0.05, 0.05)
+text = "gear"
+label_settings = SubResource("LabelSettings_g1sjq")
+
+[node name="Label" type="Label" parent="HUD/State/gear"]
 layout_mode = 0
 offset_left = 600.0
 offset_right = 694.0
@@ -653,8 +671,9 @@ flat = true
 [node name="Time" type="Control" parent="HUD"]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 8.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 48.0
 
 [node name="Day" type="Label" parent="HUD/Time"]
 layout_mode = 1

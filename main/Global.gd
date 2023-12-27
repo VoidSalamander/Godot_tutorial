@@ -13,8 +13,9 @@ func instance_node(node, location):
 	node_instance.global_position = location
 	return node_instance
 
+var playerSpeed = 0
+var playerMaxhealth = 0
 
-var startGame = 0
 var CardAmount = 3
 var storage = []
 var cards = 0

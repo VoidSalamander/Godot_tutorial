@@ -42,6 +42,8 @@ var is_sneak: bool = false
 @onready var reduce_attack:float = attack_damage
 var chain_num:int = 0
 
+func _ready():
+	speed += Global.playerSpeed
 
 func _physics_process(_delta):
 	handle_input()

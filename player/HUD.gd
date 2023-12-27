@@ -9,6 +9,9 @@ signal reset_inventory
 func _process(_delta):
 	button_color()
 	time_update()
+	$State/Wood/Label.text = str(get_parent().wood)
+	$State/Stone/Label.text = str(get_parent().stone)
+	$State/gear/Label.text = str(get_parent().gear)
 
 func _on_menu_button_pressed():
 	$Menu.show()

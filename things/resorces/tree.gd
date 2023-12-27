@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var item: PackedScene
+
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
 		$TouchScreenButton.visible = true
@@ -10,20 +12,10 @@ func _on_area_2d_body_exited(body):
 		
 func _on_touch_screen_button_pressed():
 	$TextureProgressBar.visible = true
-
-	# Loop to decrease the progress bar value gradually
 	for i in range(40):
 		$TextureProgressBar.value -= 2.5
-		await get_tree().create_timer(0.05).timeout  
-	
-	$TouchScreenButton.visible = false	
-	$TextureProgressBar.visible = false
-	$tree_B.visible = false
-	$wood.visible = true
-	$wood/AnimationPlayer.play("falling")
-	await get_tree().create_timer(1).timeout
-	$wood/AnimationPlayer.play("fade")
-	await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.05).timeout
 	queue_free()
 
-	
+func _on_tree_exited():
+	var node = Global.instance_node(item, Vector2(global_position.x+randf_range(20,-20),global_position.y + randf_range(20,-20)))
