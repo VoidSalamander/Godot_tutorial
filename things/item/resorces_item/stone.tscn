@@ -1,26 +1,8 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=4 format=3 uid="uid://c3fb3kkjgsxd0"]
-=======
 [gd_scene load_steps=4 format=3 uid="uid://3p7pkcngp1e6"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://things/item/resorces_item/gear.gd" id="1_vhmqx"]
 [ext_resource type="Texture2D" uid="uid://8ms5twr88j08" path="res://art/item/Sprite-0002.png" id="2_qqx0v"]
 
-<<<<<<< Updated upstream
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf733"]
-size = Vector2(38, 38)
-
-[node name="stone" type="Area2D"]
-script = ExtResource("1_ubbjx")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qqx0v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_gf733")
-
-=======
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dd2de"]
 size = Vector2(38, 38)
 
@@ -33,5 +15,4 @@ shape = SubResource("RectangleShape2D_dd2de")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qqx0v")
 
->>>>>>> Stashed changes
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
