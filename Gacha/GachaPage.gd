@@ -17,7 +17,7 @@ func _ready():
 	CardInfo = Global.Card[Global.currentCard]
 	var CardImg = str( "res://png/Gacha/big_" , CardInfo[1] , ".png" )
 	$CardSample/Card.texture = load(CardImg)
-	$Possibility.text = str(float(Global.Pcard[Global.currentCard]-Global.Pcard[Global.currentCard-1])*100.0/Global.Pcard[Global.CardAmount-1])+"%"
+	$Possibility.text = "0.25%"
 	CardInfo = Global.Card[Global.currentCard-1]
 	CardImg = str( "res://png/Gacha/small_" , CardInfo[1] , ".png" )
 	$List/First.texture = load(CardImg)
@@ -26,6 +26,8 @@ func _ready():
 	$List/Second.texture = load(CardImg)
 	$List.visible = true
 	$Notice.visible = false
+	if Global.Account['cookies'] == "":
+		$CoinAndDiamond/CoinAndGem.visible = false
 	
 func _process(delta):
 	$Name/Name.text = Global.Account["nickname"]
@@ -44,10 +46,7 @@ func _on_timer_timeout():
 	CardInfo = Global.Card[Global.currentCard]
 	var CardImg = str( "res://png/Gacha/big_" , CardInfo[1] , ".png" )
 	$CardSample/Card.texture = load(CardImg)
-	if Global.currentCard == 0:
-		$Possibility.text = str(float(Global.Pcard[Global.currentCard])*100.0/Global.Pcard[Global.CardAmount-1])+"%"
-	else:
-		$Possibility.text = str(float(Global.Pcard[Global.currentCard]-Global.Pcard[Global.currentCard-1])*100.0/Global.Pcard[Global.CardAmount-1])+"%"
+	$Possibility.text = "0.25%"
 
 
 func _on_coin_and_gem_pressed():
