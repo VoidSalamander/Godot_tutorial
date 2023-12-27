@@ -1,6 +1,7 @@
 extends Node
 
-var url: String = "http://140.122.185.168:30000/" #140.122.185.168
+#var url: String = "http://127.0.0.1:5000/"
+var url: String = "http://140.122.185.168:30000/"
 
 func _ready():
 	pass
@@ -32,6 +33,7 @@ func send():
 	elif Global.currentAction == 9:
 		body = JSON.stringify(Global.topup_args)
 	
+	#print(body)
 	
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
@@ -60,6 +62,7 @@ func send():
 		error = http_request.request( url+Global.topup_func, headers, HTTPClient.METHOD_POST, body)
 		
 	if error != OK:
+		#print(error)
 		push_error("An error occurred in the HTTP request.")
 	
 	await get_tree().create_timer(1.5).timeout

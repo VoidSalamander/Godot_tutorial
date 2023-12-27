@@ -15,7 +15,10 @@ func instance_node(node, location):
 
 
 var startGame = 0
-var CardAmount = 3
+var playerSpeed = 100
+var playerMaxHealth = 100
+
+var CardAmount = 15
 var storage = []
 var cards = 0
 var lastrand = 0
@@ -46,11 +49,12 @@ var search_args = {'username': '', 'cookies': ''}
 var gacha_args = {'username': '', 'draws': 1, 'cookies': ''}
 var leaderboard_args = {'username': '', 'time': 10, 'kills': 10, 'cookies': ''}
 var topup_args = {'username': '', 'coin': 0, 'diamond': 0, 'cookies': ''}
-var Account = {'username': '', 'nickname': '', 'cookies': '', 'time': 0, 'kills': 0, 'xposition': 0, 'yposition': 0}
+var Account = {'username': 'Visitor1111', 'nickname': 'Player', 'cookies': '', 'time': 0, 'kills': 0, 'clothing': 'cloth_brown', 'accessory': '', 'cat': '', 'xposition': 0, 'yposition': 0}
 var CardUnit = preload("res://Gacha/CardUnit.tscn")
+var SAVE_PATH = "user://"+Account["username"]+".bin"
 
 # Cardinfo = [Type, Name]
-enum {Ecologist, WarCorrespondent, Bottle}
+enum {Ecologist, WarCorrespondent, Bottle, Cake, AccessoryBanana, AccessoryCamera, AccessoryMemo, ClothBananayellow, ClothChristmas, ClothMemoyellow, ClothOrange, ClothWarCorrespondent, CatGrey, CatWhite, CatFlower}
 
 var Card = {
 	Ecologist : 
@@ -58,7 +62,31 @@ var Card = {
 	WarCorrespondent :
 		["Character", "WarCorrespondent"],
 	Bottle :
-		["Tool", "bottle"]
+		["Tool", "bottle"],
+	Cake :
+		["Tool", "cake"],
+	AccessoryBanana :
+		["Clothing", "accessory_banana"],
+	AccessoryCamera :
+		["Clothing", "accessory_camera"],
+	AccessoryMemo :
+		["Clothing", "accessory_memo"],
+	ClothBananayellow :
+		["Clothing", "clothing_bananayellow"],
+	ClothChristmas :
+		["Clothing", "clothing_christmas"],
+	ClothMemoyellow :
+		["Clothing", "clothing_memoyellow"],
+	ClothOrange :
+		["Clothing", "clothing_orange"],
+	ClothWarCorrespondent :
+		["Clothing", "clothing_war_correspondent"],
+	CatGrey :
+		["Clothing", "cat_grey"],
+	CatWhite :
+		["Clothing", "cat_white"],
+	CatFlower :
+		["Clothing", "cat_flower"]
 }
 
 var RareCards = [Ecologist, WarCorrespondent]
