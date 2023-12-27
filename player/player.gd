@@ -42,13 +42,16 @@ var is_sneak: bool = false
 @onready var reduce_attack:float = attack_damage
 var chain_num:float = 0
 
-
 func _physics_process(_delta):
 	handle_input()
 	move_and_slide()
 	dead_and_statistics()
 	speed_modify = tilemap.get_tile_data(self.position, "speed_modify")
+<<<<<<< Updated upstream
 	$HUD/State/Wood/Label.text = str(wood)
+=======
+	$HUD/wood/Label.text = str(wood)
+>>>>>>> Stashed changes
 	
 func handle_input():
 	if joystick_active:
@@ -123,5 +126,9 @@ func _on_menu_reset_player_menu():
 	Global.mob_dead = 0
 
 
+<<<<<<< Updated upstream
 func _on_menu_quit_game():
 	is_dead = true
+=======
+
+>>>>>>> Stashed changes
