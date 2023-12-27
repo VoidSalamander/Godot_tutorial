@@ -16,11 +16,10 @@ func _on_log_in_pressed():
 		new.send()
 		
 		await get_tree().create_timer(2).timeout
-		if Global.response != null and Global.response["status"] == "Successful":
+		if Global.response["status"] == "Successful":
 			remove_child(new)
 			Global.Account["username"] = Global.response["username"]
 			Global.Account["cookies"] = Global.response["cookies"]
-			Global.SAVE_PATH = "user://"+Global.Account["username"]+".bin"
 			LoadAndSave.loadGame()
 			get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
 		else:
@@ -53,9 +52,4 @@ func _on_forgotten_password_pressed():
 	get_tree().change_scene_to_file("res://Login/ForgottenPwPage.tscn")
 
 
-func _on_visitor_pressed():
-	LoadAndSave.loadGame()
-	if len(Global.storage) == 0:
-		Global.storage.resize(100)
-		Global.storage.fill(0)
-	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
+
