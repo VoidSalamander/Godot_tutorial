@@ -14,8 +14,8 @@ func instance_node(node, location):
 	return node_instance
 
 
-var playerSpeed = 100
-var playerMaxHealth = 100
+var playerSpeed = 0
+var playerMaxHealth = 0
 
 var CardAmount = 15
 var storage = []

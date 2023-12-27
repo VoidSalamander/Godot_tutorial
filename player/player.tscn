@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1_n4vna"]
 [ext_resource type="Resource" uid="uid://b0ywjx6yvx7re" path="res://inventory/playerInventory.tres" id="2_lwlky"]
 [ext_resource type="Script" path="res://player/buff.gd" id="3_31cge"]
+[ext_resource type="Texture2D" uid="uid://0x5igftjrf4x" path="res://art/SpriteSheet.png" id="3_tkmhj"]
 [ext_resource type="Texture2D" uid="uid://bqwm5a6u2vwa2" path="res://art/建造.png" id="4_c4j7u"]
 [ext_resource type="Texture2D" uid="uid://cba548ooihjni" path="res://art/攻擊.png" id="4_ggsow"]
 [ext_resource type="Texture2D" uid="uid://bjcilakpnyv02" path="res://art/joystick.png" id="4_twmut"]
@@ -10,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://d2e1cwl4oqmrd" path="res://art/方向.png" id="4_xfutu"]
 [ext_resource type="Script" path="res://player/Sprite2D.gd" id="4_xpvyt"]
 [ext_resource type="Texture2D" uid="uid://dgyeaf0w5u8wl" path="res://art/移動桿.png" id="5_kmxrf"]
-[ext_resource type="PackedScene" uid="uid://dwawdjn711anr" path="res://Global/PlayerCharacter.tscn" id="5_w82pb"]
 [ext_resource type="PackedScene" uid="uid://c2ovwrgxcxbgg" path="res://inventory/inventory.tscn" id="6_ecnbl"]
 [ext_resource type="Script" path="res://player/HitboxComponent.gd" id="6_fklgp"]
 [ext_resource type="Script" path="res://player/HealthComponent.gd" id="7_gc1v4"]
@@ -151,6 +151,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_rjyn4")
+texture = ExtResource("3_tkmhj")
 offset = Vector2(-0.5, -0.5)
 hframes = 4
 vframes = 7
@@ -159,10 +160,6 @@ script = ExtResource("4_xpvyt")
 [node name="Face" type="Sprite2D" parent="Sprite2D"]
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("4_xfutu")
-
-[node name="PlayerCharacter" parent="Sprite2D" instance=ExtResource("5_w82pb")]
-position = Vector2(-10, 0)
-scale = Vector2(0.4, 0.4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 
