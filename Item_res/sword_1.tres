@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=2 format=3 uid="uid://c0kb10wi3dnio"]
-
-[ext_resource type="Script" path="res://inventory/inventoryItem.gd" id="1_oqyc4"]
-
-[resource]
-script = ExtResource("1_oqyc4")
-name = ""
-background_color = 0

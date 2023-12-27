@@ -54,9 +54,7 @@ func _on_no_pressed():
 
 func _on_yes_pressed():
 	emit_signal("quit_game")
-	Global.playerMaxHealth = 100
-	Global.playerSpeed = 100
-	get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
+	#get_tree().change_scene_to_file("res://MainScene/MainPage.tscn")
 	
 
 

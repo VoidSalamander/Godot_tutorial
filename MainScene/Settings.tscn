@@ -9,7 +9,6 @@
 
 [sub_resource type="SystemFont" id="SystemFont_5kynq"]
 font_names = PackedStringArray("Constantia")
-subpixel_positioning = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08y5o"]
 
