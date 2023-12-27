@@ -13,7 +13,7 @@ func instance_node(node, location):
 	node_instance.global_position = location
 	return node_instance
 
-var gacha = 0
+
 var startGame = 0
 var playerSpeed = 100
 var playerMaxHealth = 100

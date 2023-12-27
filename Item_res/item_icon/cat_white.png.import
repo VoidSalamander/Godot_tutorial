@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvpqjekmubxsf"
-path="res://.godot/imported/cat_white.png-c36542140c3ec45140c0b53fc7a89d72.ctex"
+path="res://.godot/imported/cat_white.png-11dbcf8bde1ae1475ef29a3d1d52d375.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Item_res/item_icon/cat_white.png"
-dest_files=["res://.godot/imported/cat_white.png-c36542140c3ec45140c0b53fc7a89d72.ctex"]
+source_file="res://png/Gacha/Cards/Clothing/cat_white.png"
+dest_files=["res://.godot/imported/cat_white.png-11dbcf8bde1ae1475ef29a3d1d52d375.ctex"]
 
 [params]
 
